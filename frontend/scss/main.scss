@@ -1,24 +1,26 @@
 // Main SCSS file importing all partials.
 // BASE
-@import "base/colors";
-@import "base/mixins";
-@import "base/variable";
-@import "base/reset";
+@use "base/breakpoints";
+@use "base/typography";
+@use "base/colors";
+@use "base/mixins";
+@use "base/variable";
+@use "base/reset";
 
 // COMPONENTS
-@import "components/animations";
-@import "components/buttons";
-@import "components/cards";
-@import "components/navbar";
+@use "components/animations";
+@use "components/buttons";
+@use "components/cards";
+@use "components/navbar";
 
 // LAYOUTS
-@import "layouts/footer";
-@import "layouts/header";
-@import "layouts/grid";
+@use "layouts/footer";
+@use "layouts/header";
+@use "layouts/grid";
 
 // PAGES
-@import "pages/home";
-@import "pages/about";
-@import "pages/contact";
-@import "pages/projects";
+@use "pages/home";
+@use "pages/about";
+@use "pages/contact";
+@use "pages/projects";
 

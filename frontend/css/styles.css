@@ -1,0 +1,18 @@
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @use '../base' as *;
+ *   | ^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   frontend\scss\pages\_home.scss 1:1  @use
+ *   frontend\scss\main.scss 22:1        root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use '../base' as *;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^\a   \2575 \a   frontend\\scss\\pages\\_home.scss 1:1  @use\a   frontend\\scss\\main.scss 22:1        root stylesheet";
+}

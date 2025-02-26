@@ -1,0 +1,73 @@
+@use '../base' as *;
+
+.home-page{
+    .h1{
+        font-family: $font-montserrat;
+        font-weight: $fw-bold;
+        @include mobile {
+            font-size: 28px;
+        }
+        @include tablet {
+            font-size: 36px;
+        }
+        @include desktop {
+            font-size: 48px;
+        }
+    }
+
+    .h2{
+        font-family: $font-raleway;
+        font-weight: $fw-semibold;
+        @include mobile {
+            font-size: 24px;
+        }
+        @include tablet {
+            font-size: 30px;
+        }
+        @include desktop {
+            font-size: 36px;
+        }
+    }
+
+    .h3{
+        font-family: $font-raleway;
+        font-weight: $fw-medium;
+        @include mobile {
+            font-size: 20px;
+        }
+        @include tablet {
+            font-size: 24px;
+        }
+        @include desktop {
+            font-size: 28px;
+        }
+    }
+
+    .p{
+        font-family: $font-ibm;
+        font-weight: $fw-regular;
+        @include mobile {
+            font-size: 16px;
+        }
+        @include tablet {
+            font-size: 18px;
+        }
+        @include desktop {
+            font-size: 20px;
+        }
+    }
+
+    .cta{
+        font-family: $font-raleway;
+        font-weight: $fw-semibold;
+        @include mobile {
+            font-size: 24px;
+        }
+        @include tablet {
+            font-size: 30px;
+        }
+        @include desktop {
+            font-size: 36px;
+        }
+    }
+}

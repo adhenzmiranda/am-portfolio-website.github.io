@@ -1,3 +1,103 @@
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+@media screen and (min-width: 320px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+@media screen and (min-width: 320px) {
+  h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h2 {
+    font-size: 36px;
+  }
+}
+
+h3 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+@media screen and (min-width: 320px) {
+  h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  h3 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h3 {
+    font-size: 28px;
+  }
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+}
+@media screen and (min-width: 320px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+.cta {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+@media screen and (min-width: 320px) {
+  .cta {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cta {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .cta {
+    font-size: 20px;
+  }
+}
+
 /* Box sizing rules */
 *,
 *::before,
