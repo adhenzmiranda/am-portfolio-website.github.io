@@ -1,1 +1,24 @@
+<<<<<<< Updated upstream
 // Main SCSS file importing all partials.
+=======
+// BASE
+@import "base/colors";
+@import "base/reset";
+
+// COMPONENTS
+@import "components/animations";
+@import "components/buttons";
+@import "components/cards";
+@import "components/navbar";
+
+// LAYOUTS
+@import "layouts/footer";
+@import "layouts/header";
+@import "layouts/grid";
+
+// PAGES
+@import "pages/home";
+@import "pages/about";
+@import "pages/contact";
+@import "pages/projects";
+>>>>>>> Stashed changes
