@@ -1,8 +1,8 @@
-<<<<<<< Updated upstream
 // Main SCSS file importing all partials.
-=======
 // BASE
 @import "base/colors";
+@import "base/mixins";
+@import "base/variable";
 @import "base/reset";
 
 // COMPONENTS
@@ -21,4 +21,4 @@
 @import "pages/about";
 @import "pages/contact";
 @import "pages/projects";
->>>>>>> Stashed changes
+

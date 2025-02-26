@@ -1,0 +1,20 @@
+// Dark Mode
+// Dark Mode Colors
+$dark-mode-white: #EDEFF8;
+$dark-mode-dark-blue: #0D0D0D;
+$dark-mode-primary-blue: #2436BC;
+$dark-mode-secondary-blue: #2F50E4;
+$dark-mode-accent-blue: #245CD1;
+
+// White Mode Colors
+$white-mode-black: #000000;
+$white-mode-white: #F2F2F2;
+$white-mode-primary-violet: #4354DB;
+$white-mode-secondary-violet: #C0ADFF;
+$white-mode-accent-violet: #C0ADFF;
+
+// Define the gradient in your colors.scss file
+$black-to-navy-gradient: linear-gradient(to bottom, #000000, #0a0a2e);
+
+// Define the gradient in your colors.scss file
+$navy-to-lavender-gradient: linear-gradient(to bottom, #0a0a4e, #9090b0);
