@@ -1,0 +1,355 @@
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+@media screen and (min-width: 220px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+@media screen and (min-width: 220px) {
+  h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h2 {
+    font-size: 36px;
+  }
+}
+
+h3 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+@media screen and (min-width: 220px) {
+  h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  h3 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h3 {
+    font-size: 28px;
+  }
+}
+
+body, p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+}
+@media screen and (min-width: 220px) {
+  body, p {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  body, p {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body, p {
+    font-size: 20px;
+  }
+}
+
+.cta {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+@media screen and (min-width: 220px) {
+  .cta {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cta {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .cta {
+    font-size: 20px;
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements */
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(13, 13, 13, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+.navbar-logo a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #EDEFF8;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+@media screen and (min-width: 220px) {
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #0D0D0D;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar-links.active {
+    display: flex;
+  }
+}
+.navbar-links a {
+  font-family: "Raleway", sans-serif;
+  color: #EDEFF8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.navbar-links a:hover, .navbar-links a.active {
+  color: #245CD1;
+}
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+@media screen and (min-width: 220px) {
+  .navbar-toggle {
+    display: flex;
+  }
+}
+.navbar-toggle span {
+  width: 25px;
+  height: 2px;
+  background-color: #EDEFF8;
+  transition: all 0.3s ease;
+}
+.navbar-toggle.active span:first-child {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+.navbar-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggle.active span:last-child {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.home-page .h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #EDEFF8;
+}
+@media screen and (min-width: 220px) {
+  .home-page .h1 {
+    font-size: 28px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home-page .h1 {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home-page .h1 {
+    font-size: 48px;
+  }
+}
+.home-page .h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: #EDEFF8;
+}
+@media screen and (min-width: 220px) {
+  .home-page .h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home-page .h2 {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home-page .h2 {
+    font-size: 36px;
+  }
+}
+.home-page .h3 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  color: #EDEFF8;
+}
+@media screen and (min-width: 220px) {
+  .home-page .h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home-page .h3 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home-page .h3 {
+    font-size: 28px;
+  }
+}
+.home-page .p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  color: #EDEFF8;
+}
+@media screen and (min-width: 220px) {
+  .home-page .p {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home-page .p {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home-page .p {
+    font-size: 20px;
+  }
+}
+.home-page .cta {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: #EDEFF8;
+}
+@media screen and (min-width: 220px) {
+  .home-page .cta {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home-page .cta {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home-page .cta {
+    font-size: 36px;
+  }
+}/*# sourceMappingURL=main.css.map */

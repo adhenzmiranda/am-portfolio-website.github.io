@@ -1,9 +1,17 @@
-@use '../base' as *;
+@use '../base/breakpoints' as *;
+@use '../base/typography' as *;
+@use '../base/colors' as *;
+@use '../base/mixins' as *;
+@use '../base/variable' as *;
 
 .home-page{
+    // background-color: $dark-mode-dark-blue; // Add this at the top of .home-page
+    // min-height: 100vh; // This ensures the background covers the full viewport height
+
     .h1{
         font-family: $font-montserrat;
         font-weight: $fw-bold;
+        color: $dark-mode-white;
         @include mobile {
             font-size: 28px;
         }
@@ -18,6 +26,7 @@
     .h2{
         font-family: $font-raleway;
         font-weight: $fw-semibold;
+        color: $dark-mode-white;
         @include mobile {
             font-size: 24px;
         }
@@ -32,6 +41,7 @@
     .h3{
         font-family: $font-raleway;
         font-weight: $fw-medium;
+        color: $dark-mode-white;
         @include mobile {
             font-size: 20px;
         }
@@ -46,6 +56,7 @@
     .p{
         font-family: $font-ibm;
         font-weight: $fw-regular;
+        color: $dark-mode-white;
         @include mobile {
             font-size: 16px;
         }
@@ -60,6 +71,7 @@
     .cta{
         font-family: $font-raleway;
         font-weight: $fw-semibold;
+        color: $dark-mode-white;
         @include mobile {
             font-size: 24px;
         }
