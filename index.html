@@ -5,19 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&family=Montserrat:wght@600;700&family=Raleway:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="frontend/css/styles.css">
+    <script src="frontend/js/components/navbar.js"></script>
     <title>AM04 | Adhenz Miranda</title>
 </head>
 <body class="home-page">
     <!-- Navigation Bar -->
-    <div class="navbar-container"></div>
+    <div id="navbar-container"></div>
+
+    <!-- Script for loading navbar -->
     <script>
-        // Load the navbar
-        fetch('frontend/templates/navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-container').innerHTML = data;
-            });
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('frontend/templates/navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        });
     </script>
+
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Script for loading footer -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('frontend/templates/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
+
 
 </body>
 </html>

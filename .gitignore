@@ -1,0 +1,23 @@
+# filepath: /d:/Github Desktop/am-portfolio-website/.gitignore
+# Dependencies
+node_modules/
+package-lock.json
+
+# IDE and workspace
+*.code-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Environment variables
+.env
+.env.*
+
+# Build outputs
+dist/
+frontend/css/*
+!frontend/css/.gitkeep
+
+# System files
+.DS_Store
+Thumbs.db
