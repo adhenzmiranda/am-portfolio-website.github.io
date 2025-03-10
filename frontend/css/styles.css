@@ -1,18 +1,336 @@
-/* Error: Expected expression.
- *    ,
- * 15 |     background-color: ;
- *    |                       ^
- *    '
- *   frontend\scss\components\_navbar.scss 15:23  @use
- *   frontend\scss\main.scss 14:1                 root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Expected expression.\a    \2577 \a 15 \2502      background-color: ;\d\a    \2502                        ^\a    \2575 \a   frontend\\scss\\components\\_navbar.scss 15:23  @use\a   frontend\\scss\\main.scss 14:1                 root stylesheet";
+.h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
+@media screen and (min-width: 440px) {
+  .h1 {
+    font-size: 28px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .h1 {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .h1 {
+    font-size: 48px;
+  }
+}
+
+.h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+@media screen and (min-width: 440px) {
+  .h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .h2 {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .h2 {
+    font-size: 36px;
+  }
+}
+
+.h3 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+@media screen and (min-width: 440px) {
+  .h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .h3 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .h3 {
+    font-size: 28px;
+  }
+}
+
+p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+}
+@media screen and (min-width: 440px) {
+  p {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  p {
+    font-size: 20px;
+  }
+}
+
+.cta {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+@media screen and (min-width: 440px) {
+  .cta {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cta {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .cta {
+    font-size: 20px;
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements */
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0D0D0D;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.navbar-logo {
+  width: 180px;
+  height: 75px;
+}
+
+.line {
+  background-color: #EDEFF8;
+  width: 100%;
+  height: 1px;
+}
+
+.nav-menu .navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 75px;
+  list-style: none;
+  padding: 10px;
+}
+.nav-menu .navbar-links .nav-link {
+  text-decoration: none;
+  color: #EDEFF8;
+  position: relative;
+  padding-bottom: 5px;
+}
+.nav-menu .navbar-links .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #2436BC;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+.nav-menu .navbar-links .nav-link:hover::after {
+  width: 100%;
+}
+.nav-menu .navbar-links .nav-link.active::after {
+  width: 100%;
+}
+
+.home-page .h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #EDEFF8;
+}
+@media screen and (min-width: 440px) {
+  .home-page .h1 {
+    font-size: 28px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home-page .h1 {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home-page .h1 {
+    font-size: 48px;
+  }
+}
+.home-page .h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: #EDEFF8;
+}
+@media screen and (min-width: 440px) {
+  .home-page .h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home-page .h2 {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home-page .h2 {
+    font-size: 36px;
+  }
+}
+.home-page .h3 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  color: #EDEFF8;
+}
+@media screen and (min-width: 440px) {
+  .home-page .h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home-page .h3 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home-page .h3 {
+    font-size: 28px;
+  }
+}
+.home-page .p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  color: #EDEFF8;
+}
+@media screen and (min-width: 440px) {
+  .home-page .p {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home-page .p {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home-page .p {
+    font-size: 20px;
+  }
+}
+.home-page .cta {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: #EDEFF8;
+}
+@media screen and (min-width: 440px) {
+  .home-page .cta {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home-page .cta {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home-page .cta {
+    font-size: 36px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

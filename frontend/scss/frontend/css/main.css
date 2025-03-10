@@ -1,79 +1,79 @@
-h1 {
+.h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
 }
-@media screen and (min-width: 220px) {
-  h1 {
+@media screen and (min-width: 440px) {
+  .h1 {
     font-size: 28px;
   }
 }
 @media screen and (min-width: 768px) {
-  h1 {
+  .h1 {
     font-size: 36px;
   }
 }
 @media screen and (min-width: 1024px) {
-  h1 {
+  .h1 {
     font-size: 48px;
   }
 }
 
-h2 {
+.h2 {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
 }
-@media screen and (min-width: 220px) {
-  h2 {
+@media screen and (min-width: 440px) {
+  .h2 {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 768px) {
-  h2 {
+  .h2 {
     font-size: 30px;
   }
 }
 @media screen and (min-width: 1024px) {
-  h2 {
+  .h2 {
     font-size: 36px;
   }
 }
 
-h3 {
+.h3 {
   font-family: "Raleway", sans-serif;
   font-weight: 500;
 }
-@media screen and (min-width: 220px) {
-  h3 {
+@media screen and (min-width: 440px) {
+  .h3 {
     font-size: 20px;
   }
 }
 @media screen and (min-width: 768px) {
-  h3 {
+  .h3 {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 1024px) {
-  h3 {
+  .h3 {
     font-size: 28px;
   }
 }
 
-body, p {
+p {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
 }
-@media screen and (min-width: 220px) {
-  body, p {
+@media screen and (min-width: 440px) {
+  p {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 768px) {
-  body, p {
+  p {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 1024px) {
-  body, p {
+  p {
     font-size: 20px;
   }
 }
@@ -82,7 +82,7 @@ body, p {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
-@media screen and (min-width: 220px) {
+@media screen and (min-width: 440px) {
   .cta {
     font-size: 16px;
   }
@@ -179,78 +179,58 @@ select {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(13, 13, 13, 0.9);
+  background-color: #0D0D0D;
   -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   z-index: 1000;
-}
-.navbar-logo a {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  color: #EDEFF8;
-  text-decoration: none;
-  font-size: 1.5rem;
-}
-.navbar-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-@media screen and (min-width: 220px) {
-  .navbar-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #0D0D0D;
-    padding: 1rem;
-    flex-direction: column;
-    align-items: center;
-  }
-  .navbar-links.active {
-    display: flex;
-  }
-}
-.navbar-links a {
-  font-family: "Raleway", sans-serif;
-  color: #EDEFF8;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-.navbar-links a:hover, .navbar-links a.active {
-  color: #245CD1;
-}
-.navbar-toggle {
-  display: none;
   flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
 }
-@media screen and (min-width: 220px) {
-  .navbar-toggle {
-    display: flex;
-  }
+
+.navbar-logo {
+  width: 180px;
+  height: 75px;
 }
-.navbar-toggle span {
-  width: 25px;
-  height: 2px;
+
+.line {
   background-color: #EDEFF8;
-  transition: all 0.3s ease;
+  width: 100%;
+  height: 1px;
 }
-.navbar-toggle.active span:first-child {
-  transform: rotate(45deg) translate(7px, 7px);
+
+.nav-menu .navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 75px;
+  list-style: none;
+  padding: 10px;
 }
-.navbar-toggle.active span:nth-child(2) {
-  opacity: 0;
+.nav-menu .navbar-links .nav-link {
+  text-decoration: none;
+  color: #EDEFF8;
+  position: relative;
+  padding-bottom: 5px;
 }
-.navbar-toggle.active span:last-child {
-  transform: rotate(-45deg) translate(7px, -7px);
+.nav-menu .navbar-links .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #2436BC;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+.nav-menu .navbar-links .nav-link:hover::after {
+  width: 100%;
+}
+.nav-menu .navbar-links .nav-link.active::after {
+  width: 100%;
 }
 
 .home-page .h1 {
@@ -258,7 +238,7 @@ select {
   font-weight: 700;
   color: #EDEFF8;
 }
-@media screen and (min-width: 220px) {
+@media screen and (min-width: 440px) {
   .home-page .h1 {
     font-size: 28px;
   }
@@ -278,7 +258,7 @@ select {
   font-weight: 600;
   color: #EDEFF8;
 }
-@media screen and (min-width: 220px) {
+@media screen and (min-width: 440px) {
   .home-page .h2 {
     font-size: 24px;
   }
@@ -298,7 +278,7 @@ select {
   font-weight: 500;
   color: #EDEFF8;
 }
-@media screen and (min-width: 220px) {
+@media screen and (min-width: 440px) {
   .home-page .h3 {
     font-size: 20px;
   }
@@ -318,7 +298,7 @@ select {
   font-weight: 400;
   color: #EDEFF8;
 }
-@media screen and (min-width: 220px) {
+@media screen and (min-width: 440px) {
   .home-page .p {
     font-size: 16px;
   }
@@ -338,7 +318,7 @@ select {
   font-weight: 600;
   color: #EDEFF8;
 }
-@media screen and (min-width: 220px) {
+@media screen and (min-width: 440px) {
   .home-page .cta {
     font-size: 24px;
   }

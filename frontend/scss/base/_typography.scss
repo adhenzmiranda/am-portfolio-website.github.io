@@ -11,7 +11,7 @@ $fw-medium: 500;
 $fw-semibold: 600;
 $fw-bold: 700;
 
-h1 {
+.h1 {
 font-family: $font-montserrat;
 font-weight: $fw-bold;
 
@@ -28,7 +28,7 @@ font-weight: $fw-bold;
     }
 }
 
-h2 {
+.h2 {
 font-family: $font-raleway;
 font-weight: $fw-semibold;
 
@@ -45,7 +45,7 @@ font-weight: $fw-semibold;
     }
 }
 
-h3 {
+.h3 {
     font-family: $font-raleway;
     font-weight: $fw-medium;
 
@@ -62,7 +62,7 @@ h3 {
     }
 }
 
-body, p {
+p {
     font-family: $font-ibm;
     font-weight: $fw-regular;
 
