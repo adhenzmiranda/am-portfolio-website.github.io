@@ -98,6 +98,15 @@ p {
   }
 }
 
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: url("../assets/images/hero/Voronoi-Texture.png") repeat, linear-gradient(180deg, #060636 50%, #0D0D0D 100%);
+  background-blend-mode: overlay; /* Changed to match Figma's pass through */
+  background-attachment: fixed;
+  background-size: auto, 100% 100%; /* Ensures texture tiles properly and gradient covers full area */
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -182,7 +191,7 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0D0D0D;
+  background-color: transparent;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   z-index: 1000;
@@ -221,7 +230,7 @@ select {
   height: 2px;
   bottom: 0;
   left: 50%;
-  background-color: #2436BC;
+  background-color: #EDEFF8;
   transition: all 0.3s ease-in-out;
   transform: translateX(-50%);
 }

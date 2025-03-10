@@ -12,7 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $dark-mode-dark-blue;
+    background-color: transparent; // Changed from $dark-mode-dark-blue
     -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
     z-index: 1000;
@@ -50,7 +50,7 @@
                 height: 2px;
                 bottom: 0;
                 left: 50%;
-                background-color: $dark-mode-primary-blue;
+                background-color: $dark-mode-white;
                 transition: all 0.3s ease-in-out;
                 transform: translateX(-50%);
             }

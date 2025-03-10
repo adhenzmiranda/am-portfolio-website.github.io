@@ -1,0 +1,18 @@
+@use 'colors' as *;
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: 
+        /* Layer 1: Texture overlay at the front */
+        url('../assets/images/hero/Voronoi-Texture.png') repeat,
+        /* Layer 2: Gradient at the back */
+        linear-gradient(
+            180deg,
+            $gradient-dark-blue 50%,
+            $gradient-black 100%
+        );
+    background-blend-mode: overlay; /* Changed to match Figma's pass through */
+    background-attachment: fixed;
+    background-size: auto, 100% 100%; /* Ensures texture tiles properly and gradient covers full area */
+}
