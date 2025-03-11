@@ -16,8 +16,10 @@
 @use "components/footer";
 
 // LAYOUTS
-@use "layouts/header";
-@use "layouts/grid";
+@use "layouts/header-layout";
+@use "layouts/footer-layout";
+@use "layouts/grid-layout";
+@use "layouts/navbar-layout";
 
 // PAGES
 @use "pages/home";

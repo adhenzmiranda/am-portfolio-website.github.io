@@ -8,9 +8,20 @@
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&family=Montserrat:wght@600;700&family=Raleway:wght@500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="frontend/css/styles.css">
-    <script src="frontend/js/components/navbar.js"></script>
     <link rel="icon" type="image/png" href="frontend/assets/images/navbar/FaviconPortfolioLogo.png">
     <div id="head-container"></div>
+
+    <!-- Remove all GSAP CDN scripts and replace with your npm bundle -->
+    <script src="node_modules/gsap/dist/gsap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            // Import GSAP plugins
+            gsap.registerPlugin();
+            // gsap code here!
+        });
+    </script>
+
+    <script src="frontend/js/components/navbar.js"></script>
     <title>AM04 | Adhenz Miranda</title>
 </head>
 
@@ -45,7 +56,6 @@
                 .catch(error => console.error('Error loading footer:', error));
         });
     </script>
-
 
 </body>
 

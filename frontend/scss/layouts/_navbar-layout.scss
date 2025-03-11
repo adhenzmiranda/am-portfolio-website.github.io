@@ -1,0 +1,67 @@
+@use '../base/breakpoints' as *;
+@use '../base/typography' as *;
+@use '../base/colors' as *;
+
+
+#sidebar-active {
+    display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button {
+    display: none;
+}
+// Layout Breakpoints for the navbar layout.
+@media screen and (max-width: $mobile) {
+    // Remove the checkbox logic since we're using JavaScript
+    #sidebar-active {
+        display: none;
+    }
+
+    .nav-menu {
+        .navbar-links {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            position: fixed;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%); // Let GSAP handle the transform
+            background-color: $dark-mode-dark-blue;
+            width: 100%;
+            height: 50vh;
+            border-radius: 10px;
+            padding-bottom: 10vh;
+            // Remove transition properties since GSAP will handle animations
+        }
+    }
+
+    .open-sidebar-button {
+        display: block; // Let JavaScript handle the display
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1003;
+        
+        img {
+            width: 65px;
+            height: 65px;
+        }
+    }
+
+    .close-sidebar-button {
+        display: none; // Let JavaScript handle the display
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1003;
+        
+        img {
+            width: 65px;
+            height: 65px;
+        }
+    }
+
+    // Remove the #sidebar-active:checked rules since we're using JavaScript
+}

@@ -1,9 +1,9 @@
 <nav class="navbar">
+    <script src="frontend/js/components/navbar.js"></script>
+    <!-- Desktop Navigation -->
     <div class="navbar-logo-container">
-        <img class="navbar-logo" src="frontend\assets\images\navbar\PortfolioLogo.png" alt="Portfolio Logo">
+        <img class="navbar-logo" src="frontend/assets/images/navbar/PortfolioLogo.png" alt="Portfolio Logo">
     </div>
-
-    <!-- <div class="line"></div> -->
 
     <div class="nav-menu">
         <ul class="navbar-links">
@@ -12,7 +12,12 @@
             <li><a href="/projects" class="nav-link h3">Projects</a></li>
             <li><a href="/contact" class="nav-link h3">Contact</a></li>
         </ul>
+        <!-- Mobile Navigation -->
+        <label for="sidebar-active" class="close-sidebar-button">
+            <img src="frontend/assets/images/navbar/close.png" alt="">
+        </label>
+        <label for="sidebar-active" class="open-sidebar-button">
+            <img src="frontend/assets/images/navbar/hamburger.png" alt="">
+        </label>
     </div>
-
-
 </nav>

@@ -4,7 +4,7 @@
 @use '../base/typography' as *;
 
 .navbar {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -12,16 +12,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent; // Changed from $dark-mode-dark-blue
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-    z-index: 1000;
+    background-color: transparent;
+    z-index: 1002;
     flex-direction: column;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: -1;
+    }
 }
 
 .navbar-logo{
     width: 180px;
     height: 75px;
+    margin: 25px;
 }
 .line{
     background-color: $dark-mode-white;
@@ -30,6 +41,9 @@
 }
 
 .nav-menu {
+    position: relative;
+    width: 100%;
+    
     .navbar-links {
         display: flex;
         justify-content: center;
@@ -51,7 +65,7 @@
                 bottom: 0;
                 left: 50%;
                 background-color: $dark-mode-white;
-                transition: all 0.3s ease-in-out;
+                transition: all 0.15s ease-in-out;
                 transform: translateX(-50%);
             }
 

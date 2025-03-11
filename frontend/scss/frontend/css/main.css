@@ -7,7 +7,7 @@
     font-size: 28px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .h1 {
     font-size: 36px;
   }
@@ -27,7 +27,7 @@
     font-size: 24px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .h2 {
     font-size: 30px;
   }
@@ -47,7 +47,7 @@
     font-size: 20px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .h3 {
     font-size: 24px;
   }
@@ -58,22 +58,22 @@
   }
 }
 
-p {
+p, a {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
 }
 @media screen and (min-width: 440px) {
-  p {
+  p, a {
     font-size: 16px;
   }
 }
-@media screen and (min-width: 768px) {
-  p {
+@media screen and (min-width: 600px) {
+  p, a {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 1024px) {
-  p {
+  p, a {
     font-size: 20px;
   }
 }
@@ -87,7 +87,7 @@ p {
     font-size: 16px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .cta {
     font-size: 18px;
   }
@@ -105,6 +105,21 @@ body {
   background-blend-mode: overlay; /* Changed to match Figma's pass through */
   background-attachment: fixed;
   background-size: auto, 100% 100%; /* Ensures texture tiles properly and gradient covers full area */
+}
+
+.home-page {
+  width: 100vw;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+#navbar-container, #footer-container {
+  width: 100vw;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* Box sizing rules */
@@ -184,7 +199,7 @@ select {
   }
 }
 .navbar {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -193,15 +208,25 @@ select {
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+  z-index: 1002;
   flex-direction: column;
+}
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: -1;
 }
 
 .navbar-logo {
   width: 180px;
   height: 75px;
+  margin: 25px;
 }
 
 .line {
@@ -210,6 +235,10 @@ select {
   height: 1px;
 }
 
+.nav-menu {
+  position: relative;
+  width: 100%;
+}
 .nav-menu .navbar-links {
   display: flex;
   justify-content: center;
@@ -232,7 +261,7 @@ select {
   bottom: 0;
   left: 50%;
   background-color: #EDEFF8;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.15s ease-in-out;
   transform: translateX(-50%);
 }
 .nav-menu .navbar-links .nav-link:hover::after {
@@ -242,6 +271,131 @@ select {
   width: 100%;
 }
 
+.footer {
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 1001;
+  flex-direction: column;
+  color: #EDEFF8;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+.footer-logo {
+  width: 180px;
+  height: 75px;
+  margin: 15px;
+}
+
+.socials-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 15px;
+}
+
+.page-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 15px;
+}
+.page-links a {
+  color: #EDEFF8;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
+}
+.page-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #EDEFF8;
+  transition: all 0.15s ease-in-out;
+  transform: translateX(-50%);
+}
+.page-links a:hover::after {
+  width: 100%;
+}
+.page-links .separator {
+  color: #EDEFF8;
+}
+
+#sidebar-active {
+  display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button {
+  display: none;
+}
+
+@media screen and (max-width: 440px) {
+  #sidebar-active {
+    display: none;
+  }
+  .nav-menu .navbar-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: fixed;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0D0D0D;
+    width: 100%;
+    height: 50vh;
+    border-radius: 10px;
+    padding-bottom: 10vh;
+  }
+  .open-sidebar-button {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1003;
+  }
+  .open-sidebar-button img {
+    width: 65px;
+    height: 65px;
+  }
+  .close-sidebar-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1003;
+  }
+  .close-sidebar-button img {
+    width: 65px;
+    height: 65px;
+  }
+}
 .home-page .h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -252,7 +406,7 @@ select {
     font-size: 28px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .home-page .h1 {
     font-size: 36px;
   }
@@ -272,7 +426,7 @@ select {
     font-size: 24px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .home-page .h2 {
     font-size: 30px;
   }
@@ -292,7 +446,7 @@ select {
     font-size: 20px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .home-page .h3 {
     font-size: 24px;
   }
@@ -312,7 +466,7 @@ select {
     font-size: 16px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .home-page .p {
     font-size: 18px;
   }
@@ -332,7 +486,7 @@ select {
     font-size: 24px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .home-page .cta {
     font-size: 30px;
   }

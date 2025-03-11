@@ -1,0 +1,15 @@
+{
+    "watch": [
+        "frontend/scss/**/*.scss",
+        "frontend/templates/**/*.html",
+        "frontend/js/**/*.js",
+        "index.html"
+    ],
+    "ext": "html,js,scss,css",
+    "ignore": [
+        "node_modules/*"
+    ],
+    "verbose": true,
+    "legacyWatch": true,
+    "delay": "500"
+}

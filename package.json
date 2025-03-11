@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "sass": "sass frontend/scss/main.scss frontend/css/styles.css --watch",
-    "serve": "http-server -c-1 -p 3000",
-    "watch": "chokidar '**/*.html' 'frontend/css/**/*.css' -c 'npm run serve'",
-    "dev": "npm-run-all --parallel sass watch",
-    "start": "nodemon --watch frontend --exec \"http-server -c-1 -p 3000\""
+    "sass": "sass --watch frontend/scss:frontend/css --no-source-map",
+    "serve": "http-server ./ -c-1 -p 3000 --cors -o -r",
+    "watch": "nodemon --watch frontend --watch index.html --ext html,js,scss --ignore node_modules/",
+    "dev": "npm-run-all --parallel sass serve watch"
   },
   "keywords": [],
   "author": "",
@@ -28,9 +27,11 @@
   },
   "homepage": "https://github.com/adhenzmiranda/am-portfolio-website#readme",
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "axios": "^1.6.2",
     "dotenv": "^16.4.7",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "gsap": "^3.12.7"
   },
   "directories": {
     "doc": "docs"
