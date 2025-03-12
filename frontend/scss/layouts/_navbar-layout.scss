@@ -2,32 +2,9 @@
 @use '../base/typography' as *;
 @use '../base/colors' as *;
 
-
-#sidebar-active {
-    display: none;
-}
-
-.open-sidebar-button, .close-sidebar-button {
-    display: none;
-}
 // Layout Breakpoints for the navbar layout.
 @media screen and (max-width: $mobile) {
     // Remove the checkbox logic since we're using JavaScript
-    #sidebar-active {
-        display: none;
-        
-        &:checked ~ .navbar-links {
-            transform: translate(-50%, -50%); // Slide up to show
-            opacity: 1;
-            pointer-events: all;
-        }
-        
-        &:not(:checked) ~ .navbar-links {
-            transform: translate(-50%, 50%); // Slide down to hide
-            opacity: 0;
-            pointer-events: none;
-        }
-    }
 
     .nav-menu {
         .navbar-links {
@@ -47,34 +24,6 @@
             transition: all 0.3s ease-in-out;
             opacity: 0;
             pointer-events: none;
-        }
-    }
-
-    .open-sidebar-button {
-        display: block; // Let JavaScript handle the display
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1003;
-        
-        img {
-            width: 65px;
-            height: 65px;
-        }
-    }
-
-    .close-sidebar-button {
-        display: none; // Let JavaScript handle the display
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1003;
-        
-        img {
-            width: 65px;
-            height: 65px;
         }
     }
 }
