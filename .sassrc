@@ -1,0 +1,9 @@
+{
+    "watch": true,
+    "style": "expanded",
+    "no-source-map": true,
+    "load-path": [
+        "frontend/scss"
+    ],
+    "charset": true
+}

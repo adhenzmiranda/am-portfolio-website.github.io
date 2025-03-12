@@ -7,6 +7,11 @@
     // Remove the checkbox logic since we're using JavaScript
 
     .nav-menu {
+        .mobile-nav-btns{
+            button{
+                display:none;   
+            }
+        }
         .navbar-links {
             display: flex;
             flex-direction: column;

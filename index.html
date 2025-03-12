@@ -2,26 +2,36 @@
 <html lang="en">
 
 <head>
+    <!-- Character Encoding and Viewport Settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts Import -->
     <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&family=Montserrat:wght@600;700&family=Raleway:wght@500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="frontend/css/styles.css">
+
+    <!-- Stylesheet and Favicon -->
+    <link rel="stylesheet" href="frontend/css/main.css">
     <link rel="icon" type="image/png" href="frontend/assets/images/navbar/FaviconPortfolioLogo.png">
+
+    <!-- Dynamic Head Content Container -->
     <div id="head-container"></div>
 
-    <!-- Remove all GSAP CDN scripts and replace with your npm bundle -->
+    <!-- GSAP Animation Library -->
     <script src="node_modules/gsap/dist/gsap.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", (event) => {
-            // Import GSAP plugins
+            // Initialize GSAP plugins
             gsap.registerPlugin();
             // gsap code here!
         });
     </script>
 
+    <!-- Navigation Component Script -->
     <script src="frontend/js/components/navbar.js"></script>
+
+    <!-- Page Title -->
     <title>AM04 | Adhenz Miranda</title>
 </head>
 

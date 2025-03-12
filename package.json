@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch frontend/scss:frontend/css --no-source-map",
+    "sass": "sass frontend/scss/main.scss:frontend/css/main.css",
     "serve": "http-server ./ -c-1 -p 3000 --cors -o -r",
     "watch": "nodemon --watch frontend --watch index.html --ext html,js,scss --ignore node_modules/",
     "dev": "npm-run-all --parallel sass serve watch"

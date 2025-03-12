@@ -3,12 +3,15 @@
         {
             "format": "expanded",
             "extensionName": ".css",
-            "savePath": "~/frontend/css",
+            "savePath": "/frontend/css",
             "savePathReplacementPairs": null
         }
     ],
-    "liveSassCompile.settings.generateMap": true,
-    "liveSassCompile.settings.autoprefix": true,
+    "liveSassCompile.settings.includeItems": [
+        "/frontend/scss/main.scss"
+    ],
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.autoprefix": false,
     "liveSassCompile.settings.watchOnLaunch": true,
     "editor.formatOnSave": true,
     "files.exclude": {
