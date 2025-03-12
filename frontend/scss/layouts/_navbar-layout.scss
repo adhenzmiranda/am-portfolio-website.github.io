@@ -15,23 +15,38 @@
     // Remove the checkbox logic since we're using JavaScript
     #sidebar-active {
         display: none;
+        
+        &:checked ~ .navbar-links {
+            transform: translate(-50%, -50%); // Slide up to show
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        &:not(:checked) ~ .navbar-links {
+            transform: translate(-50%, 50%); // Slide down to hide
+            opacity: 0;
+            pointer-events: none;
+        }
     }
 
     .nav-menu {
         .navbar-links {
+            display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
             position: fixed;
             top: 75%;
             left: 50%;
-            transform: translate(-50%, -50%); // Let GSAP handle the transform
+            transform: translate(-50%, 50%); // Initial position (hidden)
             background-color: $dark-mode-dark-blue;
             width: 100%;
             height: 50vh;
             border-radius: 10px;
             padding-bottom: 10vh;
-            // Remove transition properties since GSAP will handle animations
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
         }
     }
 
@@ -62,6 +77,4 @@
             height: 65px;
         }
     }
-
-    // Remove the #sidebar-active:checked rules since we're using JavaScript
 }
