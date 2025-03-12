@@ -1,4 +1,5 @@
 @use "breakpoints" as *;
+@use "colors" as *;
 
 // Font Family Variables
 $font-ibm: 'IBM Plex Sans', sans-serif;
@@ -16,14 +17,17 @@ font-family: $font-montserrat;
 font-weight: $fw-bold;
 
     @include mobile {
+        color: $dark-mode-white;
         font-size: 28px;
     }
 
     @include tablet {
+        color: $dark-mode-white;
         font-size: 36px;
     }
 
     @include desktop {
+        color: $dark-mode-white;
         font-size: 48px;
     }
 }
@@ -33,14 +37,17 @@ font-family: $font-raleway;
 font-weight: $fw-semibold;
 
     @include mobile {
+    color: $dark-mode-white;
         font-size: 24px;
     }
 
     @include tablet {
+    color: $dark-mode-white;
         font-size: 30px;
     }
 
     @include desktop {
+    color: $dark-mode-white;
         font-size: 36px;
     }
 }
@@ -50,14 +57,17 @@ font-weight: $fw-semibold;
     font-weight: $fw-medium;
 
     @include mobile {
+    color: $dark-mode-white;
     font-size: 20px;
     }
 
     @include tablet {
+    color: $dark-mode-white;
     font-size: 24px;
     }
 
     @include desktop {
+    color: $dark-mode-white;
     font-size: 28px;
     }
 }
@@ -67,14 +77,17 @@ p, a{
     font-weight: $fw-regular;
 
     @include mobile {
+    color: $dark-mode-white;
     font-size: 16px;
     }
 
     @include tablet {
+    color: $dark-mode-white;
     font-size: 18px;
     }
 
     @include desktop {
+    color: $dark-mode-white;
     font-size: 20px;
     }                 
 }
@@ -84,14 +97,17 @@ p, a{
     font-weight: $fw-semibold;
 
     @include mobile {
+    color: $dark-mode-white;
     font-size: 16px;
     }
 
     @include tablet {
+    color: $dark-mode-white;
     font-size: 18px;
     }
 
     @include desktop {
+    color: $dark-mode-white;
     font-size: 20px;
     }
 }

@@ -5,19 +5,19 @@ $desktop: 1024px;
 
 // Mixins for media queries
 @mixin mobile {
-    @media screen and (min-width: #{$mobile}) {
-    @content;
+    @media screen and (max-width: #{$mobile}) {
+        @content;
     }
 }
 
 @mixin tablet {
-    @media screen and (min-width: #{$tablet}) {
-    @content;
+    @media screen and (min-width: #{$mobile + 1}) and (max-width: #{$desktop - 1}) {
+        @content;
     }
 }
 
 @mixin desktop {
     @media screen and (min-width: #{$desktop}) {
-    @content;
+        @content;
     }
 }

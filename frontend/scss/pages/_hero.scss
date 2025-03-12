@@ -1,0 +1,67 @@
+@use '../base/breakpoints' as *;
+@use '../base/typography' as *;
+@use '../base/colors' as *;
+@use '../base/mixins' as *;
+@use '../base/variable' as *;
+
+.hero {
+    padding: max(1rem, 3vw);
+}
+
+.name-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    // Remove order since it's handled in layout
+    .line {
+        background-color: $dark-mode-accent-blue;
+        width: 100%;
+        height: 1px;
+    }
+    .name{
+        @extend .h1;
+        font-weight: 600;
+    }
+    .personal-title {
+        @extend .h1; // Use h3 style for smaller heading
+        font-weight: $fw-regular; // Override font weight
+        margin: 0.5rem 0;
+    }
+    .subtext {
+        @extend p; // Extend paragraph styles
+        text-align: left;
+        max-width: 470px;
+        margin: 1rem 0;
+    }
+
+    .about-me-btn{
+        @extend .cta;
+        width: 165px;
+        height: 45px;
+        color: $dark-mode-white;
+        background-color: $dark-mode-primary-blue;
+        outline: none;
+        box-shadow: none; // Add this line to remove shadow
+        border: none;
+        border-radius: 10px;
+        align-self: center;
+    }
+}
+
+.pfp-links-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bld {
+    font-weight: $fw-semibold;
+    color: inherit;
+}
+
+.bld-und {
+    font-weight: $fw-semibold;
+    text-decoration: underline;
+    color: inherit;
+}
