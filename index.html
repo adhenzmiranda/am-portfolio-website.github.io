@@ -51,6 +51,18 @@
         });
     </script>
 
+    <!-- Hero -->
+    <div id="hero-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('frontend/templates/hero.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('hero-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading Hero:', error));
+        });
+    </script>
 
     <!-- Footer -->
     <div id="footer-container"></div>
