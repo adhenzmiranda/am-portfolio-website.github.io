@@ -8,8 +8,30 @@
 
     .nav-menu {
         .mobile-nav-btns{
-            button{
-                display:none;   
+            display:block;
+            img{
+                width:55px;
+                height:55px;
+                position:fixed;
+                bottom: 5vh;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .toggle-nav-btn {
+                background: none;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+            }
+            
+            .toggle-nav-btn:focus {
+                outline: none;
+            }
+            
+            .toggle-nav-btn img {
+                width: 55px;
+                height: 55px;
             }
         }
         .navbar-links {
@@ -18,17 +40,20 @@
             align-items: center;
             gap: 20px;
             position: fixed;
-            top: 75%;
-            left: 50%;
-            transform: translate(-50%, 50%); // Initial position (hidden)
+            top: 55%;
+            // left: 20%;
+            transform: translate(0%, 90%); // Initial position (-10% for stopping/toggle position)
             background-color: $dark-mode-dark-blue;
             width: 100%;
             height: 50vh;
-            border-radius: 10px;
+            // border-radius: 10px;
             padding-bottom: 10vh;
-            transition: all 0.3s ease-in-out;
-            opacity: 0;
-            pointer-events: none;
+            transition: transform 0.3s ease-in-out;
+            // pointer-events: none;
+
+            &.active {
+                transform: translate(0%, -10%); // Show menu when active
+            }
         }
     }
 }

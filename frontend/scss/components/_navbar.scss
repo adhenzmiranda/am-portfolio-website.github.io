@@ -44,6 +44,10 @@
     position: relative;
     width: 100%;
 
+    .mobile-nav-btns{
+        display:none;   
+    }
+
     .navbar-links {
         display: flex;
         justify-content: center;

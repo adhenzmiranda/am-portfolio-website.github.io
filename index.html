@@ -27,10 +27,6 @@
             // gsap code here!
         });
     </script>
-
-    <!-- Navigation Component Script -->
-    <script src="frontend/js/components/navbar.js"></script>
-
     <!-- Page Title -->
     <title>AM04 | Adhenz Miranda</title>
 </head>
@@ -46,6 +42,10 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('navbar-container').innerHTML = data;
+                    // Load navbar.js after navbar content is inserted
+                    const navbarScript = document.createElement('script');
+                    navbarScript.src = 'frontend/js/components/navbar.js';
+                    document.body.appendChild(navbarScript);
                 })
                 .catch(error => console.error('Error loading navbar:', error));
         });
