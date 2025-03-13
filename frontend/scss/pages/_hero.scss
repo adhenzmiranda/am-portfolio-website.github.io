@@ -3,6 +3,7 @@
 @use '../base/colors' as *;
 @use '../base/mixins' as *;
 @use '../base/variable' as *;
+@use '../components/animations' as *;
 
 .hero {
     padding: max(1rem, 3vw);
@@ -42,10 +43,20 @@
         color: $dark-mode-white;
         background-color: $dark-mode-primary-blue;
         outline: none;
-        box-shadow: none; // Add this line to remove shadow
+        box-shadow: none;
         border: none;
         border-radius: 10px;
         align-self: center;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+        transition: transform 0.3s ease;
+
+        @include hover-scale(1.04, -1px); // Custom scale and y-offset
+        @include button-border-animation();
     }
 }
 
@@ -53,6 +64,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
+    .socials-icons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 1rem;
+
+        .icon-img {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            transition: transform 0.3s ease;
+
+            @include icon-scale();
+            
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
 }
 
 .bld {
