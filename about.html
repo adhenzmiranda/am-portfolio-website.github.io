@@ -28,7 +28,7 @@
         });
     </script>
     <!-- Page Title -->
-    <title>AM04 | Adhenz Miranda | Home</title>
+    <title>AM04 | Adhenz Miranda | About</title>
 </head>
 
 <body class="home-page">
@@ -51,18 +51,11 @@
         });
     </script>
 
-    <!-- Hero -->
-    <div id="hero-container"></div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            fetch('hero.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('hero-container').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading Hero:', error));
-        });
-    </script>
+    <!-- About -->
+    <div id="about-container">
+        <div class="h1">This is an About Page</div>
+    </div>
+
 
     <!-- Footer -->
     <div id="footer-container"></div>
