@@ -1,0 +1,117 @@
+@use '../base/breakpoints' as *;
+@use '../base/typography' as *;
+@use '../base/colors' as *;
+@use '../base/mixins' as *;
+@use '../base/variable' as *;
+@use '../components/animations' as *;
+@use '../components/buttons' as *;
+
+#contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem; // Changed from 2rem 6rem
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cv-download{
+    @extend .cta, p;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    max-width:600px;
+    button {
+        @include cta-button;
+    }
+    .cv-title{
+        text-align: center;
+        border-bottom: $dark-mode-secondary-blue 1px solid
+    }
+}
+
+.contact-form-container {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 1.5rem; // More consistent padding
+    background: 
+        url('../assets/images/hero/Voronoi-Texture.png') repeat,
+        linear-gradient(
+            180deg,
+            $gradient-dark-blue 50%,
+            $gradient-black 100%
+        );
+    background-blend-mode: overlay;
+    background-size: contain, 100% 100%;
+    border-radius: 10px;
+    gap: 1.5rem;
+    width: 100%; // Make it take full width of container
+    max-width: 600px; // But limit maximum width
+    .contact-title{ 
+        text-align: center;
+        border-bottom: $dark-mode-secondary-blue 1px solid;
+    }
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    @extend p;
+    width: 100%; // Make form take full width
+    gap: 0.5rem;
+    input, textarea {
+        @extend input;
+        margin: 0.5rem 0;
+        padding: 10px 15px; // Changed from fixed paddings
+        width: 100%; // Make inputs take full width
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.3s ease;
+    }
+    
+    button{
+        @extend .cta;
+        width: 165px;
+        height: 45px;
+        color: $dark-mode-white;
+        background-color: $dark-mode-primary-blue;
+        outline: none;
+        box-shadow: none;
+        border: none;
+        border-radius: 10px;
+        align-self: center;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+        transition: transform 0.3s ease;
+
+        @include hover-scale(1.04, -1px); // Custom scale and y-offset
+        @include button-border-animation();
+    }
+}
+
+// Add responsive breakpoints like you did for the cards
+@include tablet {
+    #contact-container {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@include mobile {
+    #contact-container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .contact-form-container {
+        padding: 1.5rem 1rem;
+    }
+}
