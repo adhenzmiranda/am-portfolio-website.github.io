@@ -12,10 +12,13 @@
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    padding: 2rem; // Changed from 2rem 6rem
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    a {
+        text-decoration: none;
+    }
+    padding: max(1rem, 3vw);
 }
 
 .cv-download{

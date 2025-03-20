@@ -23,11 +23,17 @@
     .name{
         @extend .h1;
         font-weight: 600;
+        width: fit-content;
+        align-self: center;
     }
     .personal-title {
         @extend .h1; // Use h3 style for smaller heading
         font-weight: $fw-regular; // Override font weight
         margin: 0.5rem 0;
+        width: fit-content;
+        align-self: center;
+
+
     }
     .subtext {
         @extend p; // Extend paragraph styles

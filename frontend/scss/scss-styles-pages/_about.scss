@@ -6,9 +6,30 @@
 @use '../components/animations' as *;
 @use '../components/buttons' as *;
 
-.about-container{
+#about-container{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    padding: max(1rem, 3vw);
+    .lets-connect{
+        @extend .cta, p;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        max-width:600px;
+        align-self: center;
+        button {
+            @include cta-button;
+        }
+        .connect-title{
+            text-align: center;
+            border-bottom: $dark-mode-secondary-blue 1px solid
+        }
+        a {
+            text-decoration: none;
+        }
+    }
 }
 
 .about-title{
@@ -115,3 +136,4 @@
         }
     }
 }
+
