@@ -6,28 +6,42 @@
 @use '../components/animations' as *;
 @use '../components/buttons' as *;
 
+.about-container{
+    display: flex;
+    justify-content: center;
+}
+
 .about-title{
         text-align: center;
-        border-bottom: $dark-mode-secondary-blue 1px solid
+        border-bottom: $dark-mode-secondary-blue 1px solid;
+        max-width: fit-content;
+        margin: 0 auto;
 }
 
 .who-am-i{
+    width:100%;
     max-width:620px;
+    align-items: center;
+    display: inline-block;
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
     .who-am-i-title{
-        display: inline-block;  // This makes the element only as wide as its content
-        margin: 0 auto;         // Centers the element horizontally
-        padding: 0 0.5rem;   
-        width: 100%;
-        text-align: center;
         border-bottom: $dark-mode-secondary-blue 1px solid;
     }
 }
 
 .my-expertise-container{
 
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+
     .my-expertise-title{
         text-align: center;
         border-bottom: $dark-mode-secondary-blue 1px solid;
+        margin: 0 auto; 
+        width: fit-content;
     }
     
     .my-expertise-cards-container{
