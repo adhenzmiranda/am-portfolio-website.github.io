@@ -14,6 +14,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    width: 110%;
     // Remove order since it's handled in layout
     .line {
         background-color: $dark-mode-accent-blue;
@@ -32,7 +33,6 @@
         margin: 0.5rem 0;
         width: fit-content;
         align-self: center;
-
 
     }
     .subtext {

@@ -1,1 +1,0 @@
-# Handles HTTP requests and responses.

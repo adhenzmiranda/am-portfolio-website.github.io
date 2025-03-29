@@ -1,0 +1,32 @@
+@use '../base/colors' as *;
+@use '../base/typography' as *;
+@use '../base/breakpoints' as *;
+@use '../components/animations' as *;
+
+#projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    a {
+        text-decoration: none;
+    }
+    padding: max(1rem, 3vw);
+
+
+    .projects-title{
+        width: fit-content;
+        // background-color: $dark-mode-accent-blue;
+    }
+    
+
+
+
+
+
+    
+}
