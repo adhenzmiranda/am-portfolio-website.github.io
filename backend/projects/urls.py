@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from projects import views
 from rest_framework.urlpatterns import format_suffix_patterns
 
@@ -23,6 +25,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('projects/', views.projects_list),
     path('projects/<int:id>', views.projects_detail)
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns = format_suffix_patterns(urlpatterns)
