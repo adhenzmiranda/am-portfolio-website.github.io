@@ -53,6 +53,9 @@
 
     <!-- Projects -->
     <div id="projects-container">
+        <div class="project-title h1">
+            Projects
+        </div>
         <div class="project-contents">
 
         </div>
@@ -81,6 +84,7 @@
                     // Create HTML for each year and its projects
                     Object.keys(projectsByYear).sort((a, b) => b - a).forEach(year => {
                         const yearTitle = document.createElement('h2');
+                        yearTitle.classList.add('project-year'); // Add the .h2 class for styling
                         yearTitle.classList.add('h2'); // Add the .h2 class for styling
                         yearTitle.textContent = `${year}`;
                         projectsContainer.appendChild(yearTitle);
@@ -93,9 +97,6 @@
                             projectDiv.classList.add('project');
                             projectDiv.innerHTML = `
                                 <h3>${project.name}</h3>
-                                <p>${project.description}</p>
-                                <p><strong>Category:</strong> ${project.category}</p>
-                                <p><strong>Tags:</strong> ${project.tags}</p>
                             `;
                             yearGroup.appendChild(projectDiv);
                         });
