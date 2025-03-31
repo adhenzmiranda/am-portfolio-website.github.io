@@ -20,11 +20,17 @@ from django.conf import settings
 from django.conf.urls.static import static
 from projects import views
 from rest_framework.urlpatterns import format_suffix_patterns
+from django.shortcuts import render
+
+# Define a view to serve the index.html file
+def homepage(request):
+    return render(request, 'index.html')  # Render the index.html file
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', homepage, name='homepage'),  # Serve index.html at the root path
     path('projects/', views.projects_list),
-    path('projects/<int:id>', views.projects_detail)
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('projects/<int:id>', views.projects_detail),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns = format_suffix_patterns(urlpatterns)

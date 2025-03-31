@@ -53,37 +53,59 @@
 
     <!-- Projects -->
     <div id="projects-container">
-        <div class="projects-title h1">Projects</div>
+        <div class="project-contents">
 
-        <div class="projects-works-2025">
-            <div class="projects-title">
-
-            </div>
-            <div class="project-contents">
-
-                <div class="project-1">
-                    <iframe src="https://www.behance.net/embed/project/222466593?ilo0=1" height="316" width="404"
-                        allowfullscreen lazyload frameborder="0" allow="clipboard-write"
-                        refererPolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
-                <div class="project-2">
-
-                </div>
-                <div class="project-3">
-
-                </div>
-
-            </div>
         </div>
-
-
-
-
-
-
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('http://127.0.0.1:8000/projects/')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('API Response:', data); // Log the API response
+                    const projectsContainer = document.querySelector('.project-contents');
+                    console.log('Projects Container:', projectsContainer); // Log the container element
+                    projectsContainer.innerHTML = ''; // Clear existing content
 
+                    // Group projects by year
+                    const projectsByYear = {};
+                    data.projects.forEach(project => {
+                        if (!projectsByYear[project.year]) {
+                            projectsByYear[project.year] = [];
+                        }
+                        projectsByYear[project.year].push(project);
+                    });
+                    console.log('Projects Grouped by Year:', projectsByYear); // Log grouped projects
+
+                    // Create HTML for each year and its projects
+                    Object.keys(projectsByYear).sort((a, b) => b - a).forEach(year => {
+                        const yearTitle = document.createElement('h2');
+                        yearTitle.classList.add('h2'); // Add the .h2 class for styling
+                        yearTitle.textContent = `${year}`;
+                        projectsContainer.appendChild(yearTitle);
+
+                        const yearGroup = document.createElement('div');
+                        yearGroup.classList.add('year-group');
+
+                        projectsByYear[year].forEach(project => {
+                            const projectDiv = document.createElement('div');
+                            projectDiv.classList.add('project');
+                            projectDiv.innerHTML = `
+                                <h3>${project.name}</h3>
+                                <p>${project.description}</p>
+                                <p><strong>Category:</strong> ${project.category}</p>
+                                <p><strong>Tags:</strong> ${project.tags}</p>
+                            `;
+                            yearGroup.appendChild(projectDiv);
+                        });
+
+                        projectsContainer.appendChild(yearGroup);
+                    });
+                })
+                .catch(error => console.error('Error fetching projects:', error));
+        });
+    </script>
 
     <!-- Footer -->
     <div id="footer-container"></div>
