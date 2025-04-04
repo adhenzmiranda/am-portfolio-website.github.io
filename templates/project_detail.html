@@ -3,22 +3,93 @@
 <html lang="en">
 
 <head>
+    <!-- Character Encoding and Viewport Settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ project.name }}</title>
+
+    <!-- Google Fonts Import -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet and Favicon -->
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'assets/images/navbar/FaviconPortfolioLogo.png' %}">
+
+    <!-- GSAP Animation Library -->
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            // Initialize GSAP plugins
+            gsap.registerPlugin();
+            // gsap code here!
+        });
+    </script>
+    <!-- Page Title -->
+    <title>AM04 | {{ project.name }}</title>
 </head>
 
-<body>
+<body class="home-page">
     {% include 'navbar.html' %}
 
     <div class="project-detail-container">
-        <h1>{{ project.name }}</h1>
-        <p>{{ project.description }}</p>
-        <p><strong>Category:</strong> {{ project.category }}</p>
-        <p><strong>Tags:</strong> {{ project.tags }}</p>
-        <p><strong>Year:</strong> {{ project.year }}</p>
-        <a href="{% url 'projects_page' %}">Back to Projects</a>
+        <div class="project-detail-header">
+            <h1 class="project-detail-title h1">{{ project.name }}</h1>
+            <div class="project-meta">
+                <span class="project-year">{{ project.year }}</span>
+                <span class="project-category">{{ project.category }}</span>
+            </div>
+        </div>
+
+        <div class="project-detail-content">
+            <div class="project-description">
+                <h2 class="h2">About the Project</h2>
+                <p>{{ project.description }}</p>
+            </div>
+
+            {% if project.image %}
+            <div class="project-image">
+                <img src="{% static project.image %}" alt="{{ project.name }}">
+            </div>
+            {% endif %}
+
+            <div class="project-details">
+                <div class="project-tags">
+                    <h3 class="h3">Technologies Used</h3>
+                    <div class="tags-container">
+                        {% for tag in project.tags.split %}
+                        <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                {% if project.github_link %}
+                <div class="project-links">
+                    <h3 class="h3">Project Links</h3>
+                    <a href="{{ project.github_link }}" class="project-link" target="_blank" rel="noopener noreferrer">
+                        <img src="{% static 'assets/images/footer/github.png' %}" alt="GitHub">
+                        View on GitHub
+                    </a>
+                </div>
+                {% endif %}
+
+                {% if project.demo_link %}
+                <div class="project-links">
+                    <a href="{{ project.demo_link }}" class="project-link" target="_blank" rel="noopener noreferrer">
+                        <img src="{% static 'assets/images/projects/live-demo.png' %}" alt="Live Demo">
+                        View Live Demo
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="project-navigation">
+            <a href="{% url 'projects_page' %}" class="back-to-projects-btn">
+                <img src="{% static 'assets/images/projects/back-arrow.png' %}" alt="Back">
+                Back to Projects
+            </a>
+        </div>
     </div>
 
     {% include 'footer.html' %}

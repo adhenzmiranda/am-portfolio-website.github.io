@@ -47,11 +47,12 @@
             <div class="year-group">
                 {% for project in projects_by_year|get_item:year %}
                 <div class="project">
-                    <h3>{{ project.name }}</h3>
+                    <a href="{% url 'project_detail' project.id %}" class="project-link">
+                        <h3>{{ project.name }}</h3>
+                    </a>
                     <p>{{ project.description }}</p>
                     <p><strong>Category:</strong> {{ project.category }}</p>
                     <p><strong>Tags:</strong> {{ project.tags }}</p>
-                    <a href="{% url 'project_detail' project.id %}" class="view-project-btn">View Project</a>
                 </div>
                 {% endfor %}
             </div>
