@@ -1,9 +1,25 @@
 from django.http import JsonResponse
+from django.shortcuts import render
 from .models import Projects 
 from .serializer import ProjectsSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+
+def home(request):
+    return render(request, 'index.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
+def projects_page(request):
+    return render(request, 'projects.html')
+
+def project_detail_page(request, id):
+    return render(request, 'project_detail.html')
 
 @api_view(['GET', 'POST'])
 def projects_list(request, format=None):

@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character Encoding and Viewport Settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts Import -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet and Favicon -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'assets/images/navbar/FaviconPortfolioLogo.png' %}">
+
+    <!-- Dynamic Head Content Container -->
+    <div id="head-container"></div>
+
+    <!-- GSAP Animation Library -->
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            // Initialize GSAP plugins
+            gsap.registerPlugin();
+            // gsap code here!
+        });
+    </script>
+    <!-- Page Title -->
+    <title>AM04 | Adhenz Miranda | Contact</title>
+</head>
+
+<body class="home-page">
+    {% include 'navbar.html' %}
+
+    <!-- Contact -->
+    <div id="contact-container">
+        <div class="technology-stack">
+            <div class="tech-stack-title h1">
+                Contact Me
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-content">
+                        <img src="{% static 'assets/images/contact/briefcase.png' %}" alt="">
+                        <div class="card-title h3">Work With Me</div>
+                        <p>Looking for a <span class="bld">Creative Developer</span> to join your team?
+                            <br> <br>
+                            I'm currently <span class="bld-und-itl">seeking internships</span> and <span
+                                class="bld-und-itl">job opportunities</span> in the UAE and beyond.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="{% static 'assets/images/contact/collab.png' %}" alt="">
+                        <div class="card-title h3">Collaborate</div>
+                        <p>Have an <span class="bld">exciting project idea?</span><br>Let's <span class="bld">join
+                                forces</span> and <span class="bld">create something amazing</span> together.
+                            <br> <br>
+                            I'm always open to <span class="bld-und-itl">creative collaborations.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="{% static 'assets/images/contact/message.png' %}" alt="">
+                        <div class="card-title h3">Get In Touch</div>
+                        <p><span class="bld-und">Connect with me</span> through my social channels or the <span
+                                class="bld-und">contact form below.</span>
+                            <br> <br>
+                            Feel free to <span class="bld-und-itl">download my CV</span> to learn more about <span
+                                class="bld-und-itl">my skills and experience.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+            <div class="contact-title h2">
+                Contact Form
+            </div>
+
+            <form id="contact-form">
+                <input type="text" id="name" name="name" placeholder="Name">
+                <input type="email" id="email" name="email" placeholder="Email">
+                <input type="text" id="subject" name="subject" placeholder="Subject">
+                <textarea id="message" name="message" placeholder="Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <!-- CV Download -->
+        <div class="cv-download">
+            <div class="cv-title h2">
+                CV Download
+            </div>
+            <p>Get a complete overview of my skills and experience. Download my CV to see how I can contribute to your
+                team or project.
+                <br> <br>
+                Currently seeking internships and job opportunities.
+            </p>
+            <a href="{% static 'assets/files/CV - 3.pdf' %}" download>
+                <button>Download</button>
+            </a>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>
