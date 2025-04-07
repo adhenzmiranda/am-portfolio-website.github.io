@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const navbarLinks = document.querySelector('.navbar-links');
     const menuIcon = toggleButton.querySelector('img');
 
-    // Store the base paths for the icons
-    const menuIconPath = '/static/assets/images/navbar/menu.png';
-    const closeIconPath = '/static/assets/images/navbar/close.png';
+    // Store the base paths for the icons with cache-busting
+    const menuIconPath = `/static/assets/images/navbar/menu.png?v=${Date.now()}`;
+    const closeIconPath = `/static/assets/images/navbar/close.png?v=${Date.now()}`;
 
     toggleButton.addEventListener('click', function () {
         navbarLinks.classList.toggle('active');
