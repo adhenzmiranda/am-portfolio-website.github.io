@@ -1,29 +1,26 @@
 function initializeNavbar() {
-    const toggleNavButton = document.querySelector('.toggle-nav-btn');
+    const toggleNavButton = document.querySelector('.toggle-nav-btn img');
     const navbarLinks = document.querySelector('.navbar-links');
-    const menuIcon = toggleNavButton.querySelector('img');
 
-    if (!toggleNavButton || !navbarLinks || !menuIcon) {
+    if (!toggleNavButton || !navbarLinks) {
         console.error('Required elements not found');
         return;
     }
 
     let isMenuOpen = false;
 
-    toggleNavButton.addEventListener('click', () => {
-        isMenuOpen = !isMenuOpen;
-
-        if (isMenuOpen) {
-            menuIcon.src = '/static/assets/images/navbar/close.png';
+    toggleNavButton.parentElement.addEventListener('click', () => {
+        if (!isMenuOpen) {
+            toggleNavButton.src = 'frontend/assets/images/navbar/close.png';
             navbarLinks.classList.add('active');
-            toggleNavButton.classList.add('active');
+            isMenuOpen = true;
         } else {
-            menuIcon.src = '/static/assets/images/navbar/hamburger.png';
+            toggleNavButton.src = 'frontend/assets/images/navbar/hamburger.png';
             navbarLinks.classList.remove('active');
-            toggleNavButton.classList.remove('active');
+            isMenuOpen = false;
         }
     });
 }
 
 // Initialize when script loads
-document.addEventListener('DOMContentLoaded', initializeNavbar);
+initializeNavbar();
