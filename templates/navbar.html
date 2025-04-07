@@ -5,6 +5,13 @@
         <img class="navbar-logo" src="{% static 'assets/images/navbar/PortfolioLogo.png' %}" alt="Portfolio Logo">
     </div>
 
+    <!-- Mobile Navigation Button -->
+    <div class="mobile-nav-btns">
+        <button class="toggle-nav-btn">
+            <img src="{% static 'assets/images/navbar/hamburger.png' %}" alt="Toggle navigation menu">
+        </button>
+    </div>
+
     <div class="nav-menu">
         <ul class="navbar-links">
             <li><a href="{% url 'home' %}" class="nav-link h3">Home</a></li>
@@ -12,12 +19,5 @@
             <li><a href="{% url 'projects_page' %}" class="nav-link h3">Projects</a></li>
             <li><a href="{% url 'contact' %}" class="nav-link h3">Contact</a></li>
         </ul>
-        <!-- Mobile Navigation -->
-        <div class="mobile-nav-btns">
-            <button class="toggle-nav-btn">
-                <img src="{% static 'assets/images/navbar/hamburger.png' %}" alt="Toggle navigation menu">
-            </button>
-        </div>
     </div>
-
 </nav>
