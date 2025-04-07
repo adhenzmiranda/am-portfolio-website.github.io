@@ -3,14 +3,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const navbarLinks = document.querySelector('.navbar-links');
     const menuIcon = toggleButton.querySelector('img');
 
+    // Store the base paths for the icons
+    const menuIconPath = '/static/assets/images/navbar/menu.png';
+    const closeIconPath = '/static/assets/images/navbar/close.png';
+
     toggleButton.addEventListener('click', function () {
         navbarLinks.classList.toggle('active');
         toggleButton.classList.toggle('active');
 
         if (navbarLinks.classList.contains('active')) {
-            menuIcon.src = "{% static 'assets/images/navbar/close.png' %}";
+            menuIcon.src = closeIconPath;
         } else {
-            menuIcon.src = "{% static 'assets/images/navbar/menu.png' %}";
+            menuIcon.src = menuIconPath;
         }
     });
 
@@ -19,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', () => {
             navbarLinks.classList.remove('active');
             toggleButton.classList.remove('active');
-            menuIcon.src = "{% static 'assets/images/navbar/menu.png' %}";
+            menuIcon.src = menuIconPath;
         });
     });
 }); 
