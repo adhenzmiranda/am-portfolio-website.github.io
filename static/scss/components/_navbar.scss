@@ -4,7 +4,7 @@
 @use '../base/typography' as *;
 
 .navbar {
-    position: relative;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -82,9 +82,14 @@
 
 // Mobile Menu Styles
 @media screen and (max-width: 768px) {
+    .navbar {
+        position: sticky;
+        top: 0;
+    }
+
     .mobile-nav-btns {
         display: block;
-        position: absolute;
+        position: fixed;
         right: 20px;
         top: 20px;
         z-index: 1003;
