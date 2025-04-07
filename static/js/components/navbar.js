@@ -9,6 +9,7 @@ function initializeNavbar() {
     }
 
     let isMenuOpen = false;
+    let rotation = 0;
 
     toggleNavButton.addEventListener('click', () => {
         isMenuOpen = !isMenuOpen;
@@ -17,10 +18,14 @@ function initializeNavbar() {
             menuIcon.src = '/static/assets/images/navbar/close.png';
             navbarLinks.classList.add('active');
             toggleNavButton.classList.add('active');
+            rotation += 180;
+            menuIcon.style.transform = `rotate(${rotation}deg)`;
         } else {
             menuIcon.src = '/static/assets/images/navbar/hamburger.png';
             navbarLinks.classList.remove('active');
             toggleNavButton.classList.remove('active');
+            rotation += 180;
+            menuIcon.style.transform = `rotate(${rotation}deg)`;
         }
     });
 }
