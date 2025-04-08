@@ -4,10 +4,11 @@
 @use '../base/mixins' as *;
 @use '../base/variable' as *;
 @use '../components/animations' as *;
+
 // Styles for buttons used across the site.
 @mixin cta-button {
     @extend .cta;
-    width: 165px;
+    width: fit-content;
     height: 45px;
     color: $dark-mode-white;
     background-color: $dark-mode-primary-blue;

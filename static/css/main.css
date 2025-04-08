@@ -90,24 +90,24 @@ p, .name-title-container .subtext, .cv-download, #contact-form, #about-container
   }
 }
 
-.cta, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button, #about-container .lets-connect, #about-container .lets-connect button {
+.cta, .project-detail-container .project-detail-content .project-details .project-links .project-link, .project-detail-container .project-navigation .back-to-projects-btn, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button, #about-container .lets-connect, #about-container .lets-connect button {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
 @media screen and (max-width: 440px) {
-  .cta, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button, #about-container .lets-connect, #about-container .lets-connect button {
+  .cta, .project-detail-container .project-detail-content .project-details .project-links .project-link, .project-detail-container .project-navigation .back-to-projects-btn, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button, #about-container .lets-connect, #about-container .lets-connect button {
     color: #EDEFF8;
     font-size: 16px;
   }
 }
 @media screen and (min-width: 441px) and (max-width: 1023px) {
-  .cta, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button, #about-container .lets-connect, #about-container .lets-connect button {
+  .cta, .project-detail-container .project-detail-content .project-details .project-links .project-link, .project-detail-container .project-navigation .back-to-projects-btn, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button, #about-container .lets-connect, #about-container .lets-connect button {
     color: #EDEFF8;
     font-size: 18px;
   }
 }
 @media screen and (min-width: 1024px) {
-  .cta, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button, #about-container .lets-connect, #about-container .lets-connect button {
+  .cta, .project-detail-container .project-detail-content .project-details .project-links .project-link, .project-detail-container .project-navigation .back-to-projects-btn, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button, #about-container .lets-connect, #about-container .lets-connect button {
     color: #EDEFF8;
     font-size: 20px;
   }
@@ -779,7 +779,7 @@ select {
   align-self: center;
 }
 #about-container .lets-connect button {
-  width: 165px;
+  width: fit-content;
   height: 45px;
   color: #EDEFF8;
   background-color: #2436BC;
@@ -932,7 +932,7 @@ select {
   max-width: 600px;
 }
 .cv-download button {
-  width: 165px;
+  width: fit-content;
   height: 45px;
   color: #EDEFF8;
   background-color: #2436BC;
@@ -1254,6 +1254,9 @@ select {
   max-width: 1200px;
   margin: 0 auto;
   padding: max(1rem, 3vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .project-detail-container .project-detail-header {
   text-align: center;
@@ -1324,13 +1327,50 @@ select {
   border-radius: 4px;
   transition: background-color 0.3s ease;
   color: #EDEFF8;
+  width: fit-content;
+  height: 45px;
+  color: #EDEFF8;
+  background-color: #2436BC;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 10px;
+  align-self: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.2);
+  position: relative;
+  width: fit-content;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
 }
 .project-detail-container .project-detail-content .project-details .project-links .project-link:hover {
   background-color: #2436BC;
 }
+.project-detail-container .project-detail-content .project-details .project-links .project-link:hover {
+  transform: translateY(-1px) scale(1.04);
+}
+.project-detail-container .project-detail-content .project-details .project-links .project-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid #EDEFF8;
+  border-radius: inherit;
+  clip-path: polygon(50% 100%, 50% 100%, 50% 100%, 50% 100%);
+  transition: all 0.3s ease;
+}
+.project-detail-container .project-detail-content .project-details .project-links .project-link:hover::after {
+  animation: borderAnimation 0.3s ease forwards;
+}
 .project-detail-container .project-detail-content .project-details .project-links .project-link img {
   width: 20px;
   height: 20px;
+  margin-right: 0.5rem;
 }
 .project-detail-container .project-navigation {
   margin-top: 3rem;
@@ -1339,18 +1379,54 @@ select {
 .project-detail-container .project-navigation .back-to-projects-btn {
   display: inline-flex;
   align-items: center;
+  align-self: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
   background-color: #2F50E4;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  width: fit-content;
+  height: 45px;
+  color: #EDEFF8;
+  background-color: #2436BC;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 10px;
+  align-self: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.2);
+  position: relative;
+  padding: 0.75rem 1.5rem;
 }
 .project-detail-container .project-navigation .back-to-projects-btn:hover {
   background-color: rgb(92.1404255319, 117.9787234043, 233.8595744681);
 }
+.project-detail-container .project-navigation .back-to-projects-btn:hover {
+  transform: translateY(-1px) scale(1.04);
+}
+.project-detail-container .project-navigation .back-to-projects-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid #EDEFF8;
+  border-radius: inherit;
+  clip-path: polygon(50% 100%, 50% 100%, 50% 100%, 50% 100%);
+  transition: all 0.3s ease;
+}
+.project-detail-container .project-navigation .back-to-projects-btn:hover::after {
+  animation: borderAnimation 0.3s ease forwards;
+}
 .project-detail-container .project-navigation .back-to-projects-btn img {
   width: 20px;
   height: 20px;
+  margin-right: 0.5rem;
 }
 
 @media (max-width: 600px) {
@@ -1397,11 +1473,9 @@ select {
   }
   .project-detail-container .project-details .project-links .project-link {
     width: 100%;
-    justify-content: center;
   }
   .project-detail-container .project-navigation .back-to-projects-btn {
     width: 100%;
-    justify-content: center;
   }
 }
 

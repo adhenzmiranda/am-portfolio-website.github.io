@@ -2,11 +2,15 @@
 @use '../base/typography' as *;
 @use '../base/breakpoints' as *;
 @use '../components/animations' as *;
+@use '../components/buttons' as *;
 
 .project-detail-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: max(1rem, 3vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .project-detail-header {
         text-align: center;
@@ -95,9 +99,15 @@
                         background-color: $dark-mode-primary-blue;
                     }
 
+                    @include cta-button;
+                    width: fit-content;
+                    padding: 0.75rem 1.5rem;
+                    margin: 0.5rem;
+                    
                     img {
                         width: 20px;
                         height: 20px;
+                        margin-right: 0.5rem;
                     }
                 }
             }
@@ -111,6 +121,7 @@
         .back-to-projects-btn {
             display: inline-flex;
             align-items: center;
+            align-self: center;
             gap: 0.5rem;
             padding: 0.75rem 1.5rem;
             background-color: $dark-mode-secondary-blue;
@@ -121,9 +132,13 @@
                 background-color: lighten($dark-mode-secondary-blue, 10%);
             }
 
+            @include cta-button;
+            padding: 0.75rem 1.5rem;
+            
             img {
                 width: 20px;
                 height: 20px;
+                margin-right: 0.5rem;
             }
         }
     }
@@ -200,7 +215,6 @@
 
                 .project-link {
                     width: 100%;
-                    justify-content: center;
                 }
             }
         }
@@ -208,7 +222,6 @@
         .project-navigation {
             .back-to-projects-btn {
                 width: 100%;
-                justify-content: center;
             }
         }
     }

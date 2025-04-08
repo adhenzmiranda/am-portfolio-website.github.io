@@ -34,11 +34,7 @@
 
     <div class="project-detail-container">
         <div class="project-detail-header">
-            {% if project.thumbnail %}
-            <div class="project-thumbnail">
-                <img src="{{ project.thumbnail.url }}" alt="{{ project.name }} thumbnail">
-            </div>
-            {% endif %}
+
             <h1 class="project-detail-title h1">{{ project.name }}</h1>
             <div class="project-meta">
                 <span class="project-year">{{ project.year }}</span>
