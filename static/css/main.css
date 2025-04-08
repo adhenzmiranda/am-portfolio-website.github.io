@@ -1072,8 +1072,62 @@ select {
   border-bottom: #2F50E4 1px solid;
   max-width: fit-content;
   margin: 0 auto;
+  color: #EDEFF8;
+}
+#projects-container .project-contents {
+  width: 100%;
+}
+#projects-container .project-contents .year-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+#projects-container .project-contents .project {
+  transition: transform 0.3s ease;
+}
+#projects-container .project-contents .project:hover {
+  transform: translateY(-5px);
+}
+#projects-container .project-thumbnail {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background-color: #2436BC;
+}
+#projects-container .project-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+#projects-container .project-thumbnail.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2F50E4;
+  color: #EDEFF8;
+}
+#projects-container .project:hover .project-thumbnail img {
+  transform: scale(1.05);
 }
 
+@media (max-width: 600px) {
+  #projects-container .project-contents .year-group {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+@media (max-width: 440px) {
+  #projects-container .project-contents .year-group {
+    grid-template-columns: 1fr;
+  }
+  #projects-container .project-contents .project-thumbnail {
+    width: 100%;
+    height: 180px;
+  }
+}
 .hero {
   padding: max(1rem, 3vw);
 }
@@ -1194,6 +1248,161 @@ select {
   text-decoration: underline;
   color: inherit;
   font-style: italic;
+}
+
+.project-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: max(1rem, 3vw);
+}
+.project-detail-container .project-detail-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.project-detail-container .project-detail-header .project-thumbnail {
+  width: 400px;
+  height: 300px;
+  margin: 0 auto 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.project-detail-container .project-detail-header .project-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-detail-container .project-detail-header .project-meta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.project-detail-container .project-detail-header .project-meta span {
+  padding: 0.5rem 1rem;
+  background-color: #245CD1;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #EDEFF8;
+}
+.project-detail-container .project-detail-content .project-description {
+  margin-bottom: 2rem;
+}
+.project-detail-container .project-detail-content .project-image {
+  margin: 2rem 0;
+}
+.project-detail-container .project-detail-content .project-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.project-detail-container .project-detail-content .project-details .project-tags {
+  margin-bottom: 2rem;
+}
+.project-detail-container .project-detail-content .project-details .project-tags .tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.project-detail-container .project-detail-content .project-details .project-tags .tags-container .tag {
+  padding: 0.5rem 1rem;
+  background-color: #245CD1;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #EDEFF8;
+}
+.project-detail-container .project-detail-content .project-details .project-links {
+  margin-bottom: 1rem;
+}
+.project-detail-container .project-detail-content .project-details .project-links .project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #2F50E4;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  color: #EDEFF8;
+}
+.project-detail-container .project-detail-content .project-details .project-links .project-link:hover {
+  background-color: #2436BC;
+}
+.project-detail-container .project-detail-content .project-details .project-links .project-link img {
+  width: 20px;
+  height: 20px;
+}
+.project-detail-container .project-navigation {
+  margin-top: 3rem;
+  text-align: center;
+}
+.project-detail-container .project-navigation .back-to-projects-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #2F50E4;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.project-detail-container .project-navigation .back-to-projects-btn:hover {
+  background-color: rgb(92.1404255319, 117.9787234043, 233.8595744681);
+}
+.project-detail-container .project-navigation .back-to-projects-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 600px) {
+  .project-detail-container .project-detail-header .project-thumbnail {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+@media (max-width: 440px) {
+  .project-detail-container .project-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .project-detail-container .project-details .project-tags .tags-container {
+    justify-content: center;
+  }
+  .project-detail-container .project-details .project-links {
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .project-detail-container .project-detail-header .project-thumbnail {
+    width: 100%;
+    max-width: 400px;
+  }
+  .project-detail-container .project-meta {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 440px) {
+  .project-detail-container .project-detail-header .project-thumbnail {
+    height: 250px;
+  }
+  .project-detail-container .project-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .project-detail-container .project-details .project-tags .tags-container {
+    justify-content: center;
+  }
+  .project-detail-container .project-details .project-links {
+    text-align: center;
+  }
+  .project-detail-container .project-details .project-links .project-link {
+    width: 100%;
+    justify-content: center;
+  }
+  .project-detail-container .project-navigation .back-to-projects-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

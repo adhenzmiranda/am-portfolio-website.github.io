@@ -1,0 +1,215 @@
+@use '../base/colors' as *;
+@use '../base/typography' as *;
+@use '../base/breakpoints' as *;
+@use '../components/animations' as *;
+
+.project-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: max(1rem, 3vw);
+
+    .project-detail-header {
+        text-align: center;
+        margin-bottom: 3rem;
+
+        .project-thumbnail {
+            width: 400px;
+            height: 300px;
+            margin: 0 auto 2rem;
+            border-radius: 8px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+
+            span {
+                padding: 0.5rem 1rem;
+                background-color: $dark-mode-accent-blue;
+                border-radius: 4px;
+                font-size: 0.9rem;
+                color: $dark-mode-white;
+            }
+        }
+    }
+
+    .project-detail-content {
+        .project-description {
+            margin-bottom: 2rem;
+        }
+
+        .project-image {
+            margin: 2rem 0;
+            
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        .project-details {
+            .project-tags {
+                margin-bottom: 2rem;
+
+                .tags-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
+                    margin-top: 1rem;
+
+                    .tag {
+                        padding: 0.5rem 1rem;
+                        background-color: $dark-mode-accent-blue;
+                        border-radius: 4px;
+                        font-size: 0.9rem;
+                        color: $dark-mode-white;
+                    }
+                }
+            }
+
+            .project-links {
+                margin-bottom: 1rem;
+
+                .project-link {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    padding: 0.75rem 1.5rem;
+                    background-color: $dark-mode-secondary-blue;
+                    border-radius: 4px;
+                    transition: background-color 0.3s ease;
+                    color: $dark-mode-white;
+
+                    &:hover {
+                        background-color: $dark-mode-primary-blue;
+                    }
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .project-navigation {
+        margin-top: 3rem;
+        text-align: center;
+
+        .back-to-projects-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: $dark-mode-secondary-blue;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: lighten($dark-mode-secondary-blue, 10%);
+            }
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: $tablet) {
+    .project-detail-container {
+        .project-detail-header {
+            .project-thumbnail {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .project-detail-container {
+        .project-meta {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .project-details {
+            .project-tags .tags-container {
+                justify-content: center;
+            }
+
+            .project-links {
+                text-align: center;
+            }
+        }
+    }
+}
+
+// Update the responsive adjustments at the bottom
+@media (max-width: $tablet) {
+    .project-detail-container {
+        .project-detail-header {
+            .project-thumbnail {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+
+        .project-meta {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .project-detail-container {
+        .project-detail-header {
+            .project-thumbnail {
+                height: 250px;
+            }
+        }
+
+        .project-meta {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .project-details {
+            .project-tags .tags-container {
+                justify-content: center;
+            }
+
+            .project-links {
+                text-align: center;
+
+                .project-link {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        }
+
+        .project-navigation {
+            .back-to-projects-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    }
+}

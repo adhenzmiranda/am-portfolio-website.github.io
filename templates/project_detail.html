@@ -34,7 +34,11 @@
 
     <div class="project-detail-container">
         <div class="project-detail-header">
-            <!-- Thumbnail goes here -->
+            {% if project.thumbnail %}
+            <div class="project-thumbnail">
+                <img src="{{ project.thumbnail.url }}" alt="{{ project.name }} thumbnail">
+            </div>
+            {% endif %}
             <h1 class="project-detail-title h1">{{ project.name }}</h1>
             <div class="project-meta">
                 <span class="project-year">{{ project.year }}</span>
@@ -50,7 +54,7 @@
 
             {% if project.image %}
             <div class="project-image">
-                <img src="{% static project.image %}" alt="{{ project.name }}">
+                <img src="{{ project.image.url }}" alt="{{ project.name }}">
             </div>
             {% endif %}
 

@@ -35,8 +35,6 @@ urlpatterns = [
 
 # Serve static files during development
 if settings.DEBUG:
-    for static_dir in settings.STATICFILES_DIRS:
-        urlpatterns += static(settings.STATIC_URL, document_root=static_dir)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns = format_suffix_patterns(urlpatterns)

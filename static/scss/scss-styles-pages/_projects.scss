@@ -12,18 +12,89 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: max(1rem, 3vw);
+
     a {
         text-decoration: none;
     }
-    padding: max(1rem, 3vw);
 
-
-    .project-title, .project-year{
+    .project-title, .project-year {
         text-align: center;
         border-bottom: $dark-mode-secondary-blue 1px solid;
         max-width: fit-content;
         margin: 0 auto;
+        color: $dark-mode-white;
     }
 
+    .project-contents {
+        width: 100%;
 
+        .year-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .project {
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+        }
+    }
+
+    .project-thumbnail {
+        width: 300px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        background-color: $dark-mode-primary-blue;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        &.placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $dark-mode-secondary-blue;
+            color: $dark-mode-white;
+        }
+    }
+
+    .project:hover .project-thumbnail img {
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: $tablet) {
+    #projects-container {
+        .project-contents {
+            .year-group {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    #projects-container {
+        .project-contents {
+            .year-group {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-thumbnail {
+                width: 100%;
+                height: 180px;
+            }
+        }
+    }
 }

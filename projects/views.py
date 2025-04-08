@@ -2,9 +2,10 @@ from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from .models import Projects 
 from .serializer import ProjectsSerializer
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, parser_classes
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.parsers import MultiPartParser, FormParser
 
 def home(request):
     return render(request, 'index.html')
@@ -41,19 +42,22 @@ def project_detail_page(request, id):
     return render(request, 'project_detail.html', context)
 
 @api_view(['GET', 'POST'])
+@parser_classes([MultiPartParser, FormParser])
 def projects_list(request, format=None):
     if request.method == 'GET':
         projects = Projects.objects.all()
-        serializer = ProjectsSerializer(projects, many=True)
-        return JsonResponse({'projects':serializer.data})
+        serializer = ProjectsSerializer(projects, many=True, context={'request': request})
+        return JsonResponse({'projects': serializer.data})
     
     if request.method == 'POST':
-        serializer = ProjectsSerializer(data=request.data)
+        serializer = ProjectsSerializer(data=request.data, context={'request': request})
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['GET', 'PUT', 'DELETE']) 
+@api_view(['GET', 'PUT', 'DELETE'])
+@parser_classes([MultiPartParser, FormParser])
 def projects_detail(request, id, format=None):
     try:
         project = Projects.objects.get(pk=id)
@@ -61,10 +65,10 @@ def projects_detail(request, id, format=None):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = ProjectsSerializer(project)
+        serializer = ProjectsSerializer(project, context={'request': request})
         return Response(serializer.data)
     elif request.method == 'PUT':
-        serializer = ProjectsSerializer(project, data=request.data)
+        serializer = ProjectsSerializer(project, data=request.data, context={'request': request})
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
