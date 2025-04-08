@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with Django and SCSS, showcasing my projects and professional journey.
 
-![Portfolio Preview](static/assets/images/navbar/PortfolioLogo.png)
+![Portfolio Preview](https://am04-c1eccbd13c2a.herokuapp.com/)
 
 ## ✨ Features
 
@@ -116,10 +116,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-Adhenz Miranda - [@yourtwitter](https://twitter.com/yourtwitter)
+Adhenz Miranda - [adhenz.miranda@gmail.com](mailto:adhenz.miranda@gmail.com)
 
-Project Link: [https://github.com/yourusername/am-portfolio-website](https://github.com/yourusername/am-portfolio-website)
+Project Link: [am04.herokuapp.com](https://am04-c1eccbd13c2a.herokuapp.com/)
 
 ---
 
-Made with ❤️ by Adhenz Miranda 
+Made with ❤️ by Adhenz Miranda | AM04 Digital
