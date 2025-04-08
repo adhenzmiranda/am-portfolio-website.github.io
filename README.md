@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with Django and SCSS, showcasing my projects and professional journey.
 
-![Portfolio Preview](https://am04-c1eccbd13c2a.herokuapp.com/)
+![Portfolio Preview](static/assets/images/navbar/PortfolioLogo.png)
 
 ## ✨ Features
 
