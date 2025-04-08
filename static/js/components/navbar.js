@@ -11,11 +11,11 @@ function initializeNavbar() {
 
     toggleNavButton.parentElement.addEventListener('click', () => {
         if (!isMenuOpen) {
-            toggleNavButton.src = 'frontend/assets/images/navbar/close.png';
+            toggleNavButton.src = '/static/assets/images/navbar/close.png';
             navbarLinks.classList.add('active');
             isMenuOpen = true;
         } else {
-            toggleNavButton.src = 'frontend/assets/images/navbar/hamburger.png';
+            toggleNavButton.src = '/static/assets/images/navbar/hamburger.png';
             navbarLinks.classList.remove('active');
             isMenuOpen = false;
         }

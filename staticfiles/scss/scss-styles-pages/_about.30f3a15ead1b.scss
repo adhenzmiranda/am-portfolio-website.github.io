@@ -1,0 +1,139 @@
+@use '../base/breakpoints' as *;
+@use '../base/typography' as *;
+@use '../base/colors' as *;
+@use '../base/mixins' as *;
+@use '../base/variable' as *;
+@use '../components/animations' as *;
+@use '../components/buttons' as *;
+
+#about-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: max(1rem, 3vw);
+    .lets-connect{
+        @extend .cta, p;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        max-width:600px;
+        align-self: center;
+        button {
+            @include cta-button;
+        }
+        .connect-title{
+            text-align: center;
+            border-bottom: $dark-mode-secondary-blue 1px solid
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.about-title{
+        text-align: center;
+        border-bottom: $dark-mode-secondary-blue 1px solid;
+        max-width: fit-content;
+        margin: 0 auto;
+}
+
+.who-am-i{
+    width:100%;
+    max-width:620px;
+    align-items: center;
+    display: inline-block;
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    .who-am-i-title{
+        border-bottom: $dark-mode-secondary-blue 1px solid;
+    }
+}
+
+.my-expertise-container{
+
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+
+    .my-expertise-title{
+        text-align: center;
+        border-bottom: $dark-mode-secondary-blue 1px solid;
+        margin: 0 auto; 
+        width: fit-content;
+    }
+    
+    .my-expertise-cards-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        .card {
+            // Default for screens below 1920px - 2 columns
+            flex: 0 1 calc(50% - 2rem);
+            min-width: 250px;
+            max-width: 330px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            background: 
+                url('../assets/images/hero/Voronoi-Texture.png') repeat,
+                linear-gradient(
+                    180deg,
+                    $gradient-dark-blue 50%,
+                    $gradient-black 100%
+                );
+            background-blend-mode: overlay;
+            background-size: contain, 100% 100%;
+            border-radius: 10px;
+            gap: 1.5rem;
+            
+            .card-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                ul{
+                    @extend p;
+                    text-align: left;
+                    color: $dark-mode-white;
+                    
+                }
+            }
+    
+            .card-title {
+                color: $dark-mode-white;
+                text-align: center;
+                padding: 0 1rem;
+                word-wrap: break-word;
+                width: 100%;
+            }
+        }
+        
+        // Large Desktop (1920px and above) - 4 columns
+        @media (min-width: 1920px) {
+            .card {
+                flex: 0 1 calc(25% - 2rem); // For 4 cards per row
+            }
+        }
+    
+        // Mobile styles (1 column)
+        @include mobile {
+            flex-direction: column;
+            
+            .card {
+                flex: 1 1 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,1 @@
+// Manages local storage interactions.
