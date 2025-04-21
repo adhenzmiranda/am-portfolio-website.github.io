@@ -3,6 +3,7 @@
 @use '../base/breakpoints' as *;
 @use '../components/animations' as *;
 @use '../components/buttons' as *;
+@use "sass:color";
 
 .project-detail-container {
     max-width: 1200px;
@@ -13,8 +14,26 @@
     align-items: center;
 
     .project-detail-header {
+        @extend p;
+        font-family: $font-ibm;
+        font-weight: $fw-regular;
         text-align: center;
         margin-bottom: 3rem;
+
+        @include mobile {
+            color: $dark-mode-white;
+            font-size: 16px;
+        }
+
+        @include tablet {
+            color: $dark-mode-white;
+            font-size: 18px;
+        }
+
+        @include desktop {
+            color: $dark-mode-white;
+            font-size: 20px;
+        }
 
         .project-thumbnail {
             width: 400px;
@@ -37,28 +56,65 @@
             margin-top: 1rem;
 
             span {
+                @extend p;
                 padding: 0.5rem 1rem;
                 background-color: $dark-mode-accent-blue;
                 border-radius: 4px;
                 font-size: 0.9rem;
                 color: $dark-mode-white;
+
+                @include mobile {
+                    color: $dark-mode-white;
+                    font-size: 16px;
+                }
+
+                @include tablet {
+                    color: $dark-mode-white;
+                    font-size: 18px;
+                }
+
+                @include desktop {
+                    color: $dark-mode-white;
+                    font-size: 20px;
+                }
             }
         }
     }
 
     .project-detail-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem 0;
+
+        @include mobile {
+            margin: 1rem 0;
+        }
+
+        @include tablet {
+            margin: 1.5rem 0;
+        }
+
+        @include desktop {
+            margin: 2rem 0;
+        }
+
         .project-description {
             margin-bottom: 2rem;
         }
 
         .project-video {
             margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            @extend p;
 
             .video-container {
                 position: relative;
                 width: 100%;
                 padding-bottom: 56.25%;
-                /* 16:9 Aspect Ratio */
                 margin: 1.5rem 0;
                 border-radius: 8px;
                 overflow: hidden;
@@ -194,7 +250,7 @@
             transition: background-color 0.3s ease;
 
             &:hover {
-                background-color: lighten($dark-mode-secondary-blue, 10%);
+                background-color: color.adjust($dark-mode-secondary-blue, $lightness: 10%);
             }
 
             @include cta-button;

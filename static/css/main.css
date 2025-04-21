@@ -67,24 +67,24 @@ h3 {
   }
 }
 
-p, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
+p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
 }
 @media screen and (max-width: 440px) {
-  p, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
+  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
     color: #EDEFF8;
     font-size: 16px;
   }
 }
 @media screen and (min-width: 441px) and (max-width: 1023px) {
-  p, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
+  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
     color: #EDEFF8;
     font-size: 18px;
   }
 }
 @media screen and (min-width: 1024px) {
-  p, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
+  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
     color: #EDEFF8;
     font-size: 20px;
   }
@@ -1259,8 +1259,28 @@ select {
   align-items: center;
 }
 .project-detail-container .project-detail-header {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
   text-align: center;
   margin-bottom: 3rem;
+}
+@media screen and (max-width: 440px) {
+  .project-detail-container .project-detail-header {
+    color: #EDEFF8;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 441px) and (max-width: 1023px) {
+  .project-detail-container .project-detail-header {
+    color: #EDEFF8;
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .project-detail-container .project-detail-header {
+    color: #EDEFF8;
+    font-size: 20px;
+  }
 }
 .project-detail-container .project-detail-header .project-thumbnail {
   width: 400px;
@@ -1287,8 +1307,71 @@ select {
   font-size: 0.9rem;
   color: #EDEFF8;
 }
+@media screen and (max-width: 440px) {
+  .project-detail-container .project-detail-header .project-meta span {
+    color: #EDEFF8;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 441px) and (max-width: 1023px) {
+  .project-detail-container .project-detail-header .project-meta span {
+    color: #EDEFF8;
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .project-detail-container .project-detail-header .project-meta span {
+    color: #EDEFF8;
+    font-size: 20px;
+  }
+}
+.project-detail-container .project-detail-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+@media screen and (max-width: 440px) {
+  .project-detail-container .project-detail-content {
+    margin: 1rem 0;
+  }
+}
+@media screen and (min-width: 441px) and (max-width: 1023px) {
+  .project-detail-container .project-detail-content {
+    margin: 1.5rem 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .project-detail-container .project-detail-content {
+    margin: 2rem 0;
+  }
+}
 .project-detail-container .project-detail-content .project-description {
   margin-bottom: 2rem;
+}
+.project-detail-container .project-detail-content .project-video {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.project-detail-container .project-detail-content .project-video .video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.project-detail-container .project-detail-content .project-video .video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 .project-detail-container .project-detail-content .project-image {
   margin: 2rem 0;
@@ -1298,6 +1381,41 @@ select {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.project-detail-container .project-detail-content .project-gallery {
+  margin: 3rem 0;
+}
+.project-detail-container .project-detail-content .project-gallery .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.project-detail-container .project-detail-content .project-gallery .gallery-grid .gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.project-detail-container .project-detail-content .project-gallery .gallery-grid .gallery-item:hover {
+  transform: translateY(-5px);
+}
+.project-detail-container .project-detail-content .project-gallery .gallery-grid .gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+.project-detail-container .project-detail-content .project-gallery .gallery-grid .gallery-item .gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: #EDEFF8;
+  font-size: 0.9rem;
 }
 .project-detail-container .project-detail-content .project-details .project-tags {
   margin-bottom: 2rem;
@@ -1434,36 +1552,20 @@ select {
     width: 100%;
     max-width: 400px;
   }
+  .project-detail-container .project-gallery .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 }
 @media (max-width: 440px) {
   .project-detail-container .project-meta {
     flex-direction: column;
     gap: 0.5rem;
   }
-  .project-detail-container .project-details .project-tags .tags-container {
-    justify-content: center;
+  .project-detail-container .project-gallery .gallery-grid {
+    grid-template-columns: 1fr;
   }
-  .project-detail-container .project-details .project-links {
-    text-align: center;
-  }
-}
-@media (max-width: 600px) {
-  .project-detail-container .project-detail-header .project-thumbnail {
-    width: 100%;
-    max-width: 400px;
-  }
-  .project-detail-container .project-meta {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-@media (max-width: 440px) {
-  .project-detail-container .project-detail-header .project-thumbnail {
-    height: 250px;
-  }
-  .project-detail-container .project-meta {
-    flex-direction: column;
-    gap: 0.5rem;
+  .project-detail-container .project-gallery .gallery-grid .gallery-item img {
+    height: 200px;
   }
   .project-detail-container .project-details .project-tags .tags-container {
     justify-content: center;
@@ -1478,5 +1580,3 @@ select {
     width: 100%;
   }
 }
-
-/*# sourceMappingURL=main.css.map */
