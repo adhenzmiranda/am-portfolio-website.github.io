@@ -3,6 +3,10 @@ from PIL import Image
 from django.core.files.uploadedfile import InMemoryUploadedFile
 import sys
 from io import BytesIO
+from cloudinary.models import CloudinaryField
+
+class YourModel(models.Model):
+    image = CloudinaryField('image')
 
 class Projects(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -23,8 +27,8 @@ class Projects(models.Model):
         default='Other'
     )
     tags = models.CharField(max_length=100, blank=True)
-    image = models.ImageField(upload_to='projects/', blank=True, null=True)
-    thumbnail = models.ImageField(upload_to='thumbnails/', blank=True, null=True)
+    image = CloudinaryField('image', folder='projects', blank=True, null=True)
+    thumbnail = CloudinaryField('image', folder='thumbnails', blank=True, null=True)
     video_embed = models.TextField(
         blank=True,
         null=True,
@@ -105,7 +109,7 @@ class Projects(models.Model):
 
 class ProjectPhoto(models.Model):
     project = models.ForeignKey(Projects, on_delete=models.CASCADE, related_name='photos')
-    image = models.ImageField(upload_to='project_photos/')
+    image = CloudinaryField('image', folder='project_photos')
     caption = models.CharField(max_length=200, blank=True)
     order = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)

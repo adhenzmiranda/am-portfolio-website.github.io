@@ -71,36 +71,17 @@ class ProjectPhotoAdmin(admin.ModelAdmin):
 @admin.register(Projects)
 class ProjectsAdmin(admin.ModelAdmin):
     form = ProjectsForm
-    list_display = ('name', 'category', 'year', 'display_thumbnail', 'created_at')
+    list_display = ('name', 'category', 'year', 'created_at')
     list_filter = ('category', 'year')
     search_fields = ('name', 'description', 'tags')
-    readonly_fields = ('display_thumbnail', 'created_at', 'updated_at')
     inlines = [ProjectPhotoInline]
-    save_on_top = True
-    save_as = True
-    
     fieldsets = (
         ('Basic Information', {
-            'fields': ('name', 'description', 'year', 'category', 'tags')
+            'fields': ('name', 'description', 'category', 'year', 'tags')
         }),
         ('Media', {
-            'fields': ('image', 'thumbnail', 'video_embed'),
-            'description': '''
-                <div style="margin-bottom: 10px;">
-                    <strong>Video Embed Instructions:</strong>
-                    <ol style="margin-left: 20px;">
-                        <li>Go to your YouTube/Vimeo video</li>
-                        <li>Click "Share" and then "Embed"</li>
-                        <li>Copy the entire iframe code</li>
-                        <li>Paste it in the video_embed field below</li>
-                    </ol>
-                </div>
-            '''
+            'fields': ('image', 'thumbnail', 'video_embed')
         }),
-        ('Metadata', {
-            'fields': ('created_at', 'updated_at'),
-            'classes': ('collapse',)
-        })
     )
     
     class Media:
@@ -134,9 +115,3 @@ class ProjectsAdmin(admin.ModelAdmin):
             'project': project,
             'title': 'Batch Upload Photos',
         })
-
-    def display_thumbnail(self, obj):
-        if obj.thumbnail:
-            return format_html('<img src="{}" width="100" height="100" />', obj.thumbnail.url)
-        return "No thumbnail"
-    display_thumbnail.short_description = 'Thumbnail'

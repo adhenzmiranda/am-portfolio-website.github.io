@@ -14,6 +14,9 @@ import os
 from pathlib import Path
 import dj_database_url
 from dotenv import load_dotenv
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Load environment variables
 load_dotenv()
@@ -46,6 +49,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'ckeditor',
     'ckeditor_uploader',
+    'cloudinary',
+    'cloudinary_storage',
     'projects',
 ]
 
@@ -171,3 +176,22 @@ CKEDITOR_CONFIGS = {
         'allowedContent': True,
     }
 }
+
+# Imgur Settings
+IMGUR_CLIENT_ID = os.getenv('IMGUR_CLIENT_ID')
+IMGUR_CLIENT_SECRET = os.getenv('IMGUR_CLIENT_SECRET')
+
+# Use Imgur for media files in production
+if not DEBUG:
+    DEFAULT_FILE_STORAGE = 'projects.imgur_storage.ImgurStorage'
+
+# Cloudinary Settings
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+}
+
+# Use Cloudinary for media files
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+MEDIA_URL = '/media/'

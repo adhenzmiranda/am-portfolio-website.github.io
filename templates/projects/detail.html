@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ project.name }} - Portfolio{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'project_list' %}">Projects</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ project.name }}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        {% if project.image %}
+        <img src="{{ project.image_url }}" class="img-fluid rounded mb-4" alt="{{ project.name }}">
+        {% endif %}
+
+        <h1>{{ project.name }}</h1>
+        <div class="mb-3">
+            <span class="badge bg-primary">{{ project.category }}</span>
+            <span class="text-muted ms-2">{{ project.year }}</span>
+        </div>
+
+        <div class="mb-4">
+            {{ project.description|linebreaks }}
+        </div>
+
+        {% if project.video_embed %}
+        <div class="ratio ratio-16x9 mb-4">
+            {{ project.video_embed|safe }}
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Project Details</h5>
+            </div>
+            <div class="card-body">
+                <p><strong>Category:</strong> {{ project.category }}</p>
+                <p><strong>Year:</strong> {{ project.year }}</p>
+                {% if project.tags %}
+                <p><strong>Tags:</strong> {{ project.tags }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if photos %}
+<div class="row mt-4">
+    <div class="col-12">
+        <h2>Gallery</h2>
+        <div class="row">
+            {% for photo in photos %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ photo.image_url }}" class="card-img-top" alt="{{ photo.caption }}">
+                    {% if photo.caption %}
+                    <div class="card-body">
+                        <p class="card-text">{{ photo.caption }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

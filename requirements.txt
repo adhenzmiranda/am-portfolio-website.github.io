@@ -7,4 +7,5 @@ python-dotenv==1.0.1
 dj-database-url==2.1.0
 djangorestframework==3.14.0
 Pillow==10.2.0
-django-ckeditor==6.7.1 
+django-ckeditor==6.7.1
+cloudinary==1.37.0 

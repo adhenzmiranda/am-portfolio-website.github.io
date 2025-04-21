@@ -6,6 +6,27 @@ from rest_framework.decorators import api_view, parser_classes
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.parsers import MultiPartParser, FormParser
+from cloudinary.uploader import upload
+
+def upload_image(request):
+    if request.method == 'POST' and request.FILES.get('image'):
+        try:
+            image = request.FILES['image']
+            upload_result = upload(image, folder="uploads")
+            return JsonResponse({
+                'success': True,
+                'url': upload_result['secure_url'],
+                'public_id': upload_result['public_id']
+            })
+        except Exception as e:
+            return JsonResponse({
+                'success': False,
+                'error': str(e)
+            }, status=400)
+    return JsonResponse({
+        'success': False,
+        'error': 'No image provided'
+    }, status=400)
 
 def home(request):
     return render(request, 'index.html')
@@ -76,3 +97,44 @@ def projects_detail(request, id, format=None):
     elif request.method == 'DELETE':
         project.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+def project_list(request):
+    """
+    View for displaying all projects
+    """
+    projects = Projects.objects.all().order_by('-year', '-created_at')
+    context = {
+        'projects': projects,
+    }
+    return render(request, 'projects/list.html', context)
+
+def project_detail(request, project_id):
+    """
+    View for displaying a single project
+    """
+    project = get_object_or_404(Projects, id=project_id)
+    photos = project.photos.all().order_by('order')
+    
+    # Get optimized image URLs
+    if project.image:
+        project.image_url = get_optimized_url(
+            project.image.public_id,
+            width=1200,
+            height=800,
+            crop='fill'
+        )
+    
+    for photo in photos:
+        if photo.image:
+            photo.image_url = get_optimized_url(
+                photo.image.public_id,
+                width=1200,
+                height=800,
+                crop='fill'
+            )
+    
+    context = {
+        'project': project,
+        'photos': photos,
+    }
+    return render(request, 'projects/detail.html', context)
