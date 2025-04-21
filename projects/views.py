@@ -8,6 +8,8 @@ from rest_framework import status
 from rest_framework.parsers import MultiPartParser, FormParser
 from cloudinary.uploader import upload
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 def upload_image(request):
     if request.method == 'POST' and request.FILES.get('image'):
         try:
