@@ -81,9 +81,14 @@
             <div class="project-details">
                 <div class="project-tags">
                     <h3 class="h3">Technologies Used</h3>
-                    <div class="tags-container">
-                        {% for tag in project.tags.split %}
-                        <span class="tag">{{ tag }}</span>
+                    <div class="tech-stack-container">
+                        {% for tech in project.technologies %}
+                        <div class="tech-item">
+                            <img src="{% static 'assets/tech-stack-used/'|add:tech|add:'.png' %}" 
+                                 alt="{{ tech }}" 
+                                 class="tech-icon">
+                            <span class="tech-name">{{ tech|title }}</span>
+                        </div>
                         {% endfor %}
                     </div>
                 </div>
