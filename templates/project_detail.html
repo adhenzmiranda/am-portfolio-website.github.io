@@ -34,7 +34,6 @@
 
     <div class="project-detail-container">
         <div class="project-detail-header">
-
             <h1 class="project-detail-title h1">{{ project.name }}</h1>
             <div class="project-meta">
                 <span class="project-year">{{ project.year }}</span>
@@ -51,6 +50,31 @@
             {% if project.image %}
             <div class="project-image">
                 <img src="{{ project.image.url }}" alt="{{ project.name }}">
+            </div>
+            {% endif %}
+
+            {% if project.video_embed %}
+            <div class="project-video">
+                <h2 class="h2">Project Video</h2>
+                <div class="video-container">
+                    {{ project.video_embed|safe }}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if project.photos.all %}
+            <div class="project-gallery">
+                <h2 class="h2">Project Gallery</h2>
+                <div class="gallery-grid">
+                    {% for photo in project.photos.all %}
+                    <div class="gallery-item">
+                        <img src="{{ photo.image.url }}" alt="{{ photo.caption|default:project.name }}">
+                        {% if photo.caption %}
+                        <div class="gallery-caption">{{ photo.caption }}</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
             {% endif %}
 

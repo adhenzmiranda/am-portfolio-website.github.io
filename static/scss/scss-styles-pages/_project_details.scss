@@ -51,14 +51,79 @@
             margin-bottom: 2rem;
         }
 
+        .project-video {
+            margin: 2rem 0;
+
+            .video-container {
+                position: relative;
+                width: 100%;
+                padding-bottom: 56.25%;
+                /* 16:9 Aspect Ratio */
+                margin: 1.5rem 0;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
+            }
+        }
+
         .project-image {
             margin: 2rem 0;
-            
+
             img {
                 width: 100%;
                 height: auto;
                 border-radius: 8px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        .project-gallery {
+            margin: 3rem 0;
+
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 1.5rem;
+                margin-top: 1.5rem;
+
+                .gallery-item {
+                    position: relative;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 250px;
+                        object-fit: cover;
+                        display: block;
+                    }
+
+                    .gallery-caption {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        padding: 1rem;
+                        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+                        color: $dark-mode-white;
+                        font-size: 0.9rem;
+                    }
+                }
             }
         }
 
@@ -103,7 +168,7 @@
                     width: fit-content;
                     padding: 0.75rem 1.5rem;
                     margin: 0.5rem;
-                    
+
                     img {
                         width: 20px;
                         height: 20px;
@@ -134,7 +199,7 @@
 
             @include cta-button;
             padding: 0.75rem 1.5rem;
-            
+
             img {
                 width: 20px;
                 height: 20px;
@@ -153,6 +218,12 @@
                 max-width: 400px;
             }
         }
+
+        .project-gallery {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
     }
 }
 
@@ -163,46 +234,16 @@
             gap: 0.5rem;
         }
 
-        .project-details {
-            .project-tags .tags-container {
-                justify-content: center;
+        .project-gallery {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+
+                .gallery-item {
+                    img {
+                        height: 200px;
+                    }
+                }
             }
-
-            .project-links {
-                text-align: center;
-            }
-        }
-    }
-}
-
-// Update the responsive adjustments at the bottom
-@media (max-width: $tablet) {
-    .project-detail-container {
-        .project-detail-header {
-            .project-thumbnail {
-                width: 100%;
-                max-width: 400px;
-            }
-        }
-
-        .project-meta {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-    }
-}
-
-@media (max-width: $mobile) {
-    .project-detail-container {
-        .project-detail-header {
-            .project-thumbnail {
-                height: 250px;
-            }
-        }
-
-        .project-meta {
-            flex-direction: column;
-            gap: 0.5rem;
         }
 
         .project-details {
