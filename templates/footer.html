@@ -30,5 +30,17 @@
         <a href="{% static 'assets/files/CV - 3.pdf' %}" download>CV Download</a>
     </div>
 
-    <p>&copy; 2025 Adhenz Miranda. All rights reserved.</p>
+    <div class="copyright">
+        <p>&copy; {% now 'Y' %} Adhenz Miranda. This work is marked with CC0 1.0 Universal.
+            <br><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank"
+                rel="license noopener noreferrer">View License</a>
+        </p>
+    </div>
+
+    <div class="powered-by">
+        <p>Powered by</p>
+        <a href="https://www.heroku.com" target="_blank" rel="noopener noreferrer">
+            <img src="{% static 'assets/tech-stack-used/heroku.png' %}" alt="Heroku" class="heroku-logo">
+        </a>
+    </div>
 </footer>

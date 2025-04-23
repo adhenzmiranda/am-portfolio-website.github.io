@@ -6,15 +6,13 @@
 @use '../components/animations' as *;
 @use '../components/buttons' as *;
 
-div {
-    margin-bottom: 1rem;
-}
 
 #about-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding: max(1rem, 3vw);
+
 
     .lets-connect {
         @extend .cta, p;
@@ -55,6 +53,7 @@ div {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
 
     .who-am-i-title {
         border-bottom: $dark-mode-secondary-blue 1px solid;
@@ -66,6 +65,8 @@ div {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
     .my-expertise-title {
         text-align: center;

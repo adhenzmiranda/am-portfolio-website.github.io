@@ -67,47 +67,51 @@ h3 {
   }
 }
 
-p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
+p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
 }
 @media screen and (max-width: 440px) {
-  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
+  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
     color: #EDEFF8;
     font-size: 16px;
   }
 }
 @media screen and (min-width: 441px) and (max-width: 1023px) {
-  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
+  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
     color: #EDEFF8;
     font-size: 18px;
   }
 }
 @media screen and (min-width: 1024px) {
-  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
+  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
     color: #EDEFF8;
     font-size: 20px;
   }
 }
 
-.cta, .project-detail-container .project-detail-content .project-details .project-links .project-link, .project-detail-container .project-navigation .back-to-projects-btn, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button, #about-container .lets-connect, #about-container .lets-connect button {
+.cta, .project-detail-container .project-detail-content .project-details .project-links .project-link, .project-detail-container .project-navigation .back-to-projects-btn, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button,
+#contact-form a, #about-container .lets-connect, #about-container .lets-connect button {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
 @media screen and (max-width: 440px) {
-  .cta, .project-detail-container .project-detail-content .project-details .project-links .project-link, .project-detail-container .project-navigation .back-to-projects-btn, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button, #about-container .lets-connect, #about-container .lets-connect button {
+  .cta, .project-detail-container .project-detail-content .project-details .project-links .project-link, .project-detail-container .project-navigation .back-to-projects-btn, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button,
+  #contact-form a, #about-container .lets-connect, #about-container .lets-connect button {
     color: #EDEFF8;
     font-size: 16px;
   }
 }
 @media screen and (min-width: 441px) and (max-width: 1023px) {
-  .cta, .project-detail-container .project-detail-content .project-details .project-links .project-link, .project-detail-container .project-navigation .back-to-projects-btn, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button, #about-container .lets-connect, #about-container .lets-connect button {
+  .cta, .project-detail-container .project-detail-content .project-details .project-links .project-link, .project-detail-container .project-navigation .back-to-projects-btn, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button,
+  #contact-form a, #about-container .lets-connect, #about-container .lets-connect button {
     color: #EDEFF8;
     font-size: 18px;
   }
 }
 @media screen and (min-width: 1024px) {
-  .cta, .project-detail-container .project-detail-content .project-details .project-links .project-link, .project-detail-container .project-navigation .back-to-projects-btn, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button, #about-container .lets-connect, #about-container .lets-connect button {
+  .cta, .project-detail-container .project-detail-content .project-details .project-links .project-link, .project-detail-container .project-navigation .back-to-projects-btn, .name-title-container .about-me-btn, .cv-download, .cv-download button, #contact-form button,
+  #contact-form a, #about-container .lets-connect, #about-container .lets-connect button {
     color: #EDEFF8;
     font-size: 20px;
   }
@@ -233,6 +237,14 @@ select {
     border-color: #EDEFF8;
   }
 }
+.card-float, .my-expertise-container .my-expertise-cards-container .card, .technology-stack .card-container .card {
+  transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
+  will-change: transform;
+}
+.card-float:hover, .my-expertise-container .my-expertise-cards-container .card:hover, .technology-stack .card-container .card:hover, .card-float:focus-visible, .my-expertise-container .my-expertise-cards-container .card:focus-visible, .technology-stack .card-container .card:focus-visible {
+  transform: translateY(-5px);
+}
+
 .technology-stack {
   display: flex;
   justify-content: center;
@@ -413,6 +425,14 @@ select {
 .footer .socials-icons .icon-img:active {
   transform: scale(0.95);
 }
+.footer .copyright {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 15px;
+}
 
 .footer-logo {
   width: 180px;
@@ -426,7 +446,6 @@ select {
   align-items: center;
   gap: 25px;
   list-style: none;
-  margin: 15px;
 }
 
 .page-links {
@@ -764,6 +783,10 @@ select {
   }
 }
 
+div {
+  margin-bottom: 1rem;
+}
+
 #about-container {
   display: flex;
   justify-content: center;
@@ -779,6 +802,7 @@ select {
   align-self: center;
 }
 #about-container .lets-connect button {
+  padding: 15px;
   width: fit-content;
   height: 45px;
   color: #EDEFF8;
@@ -884,8 +908,29 @@ select {
   gap: 1rem;
 }
 .my-expertise-container .my-expertise-cards-container .card .card-content ul {
-  text-align: left;
-  color: #EDEFF8;
+  list-style: none;
+  padding-left: 0;
+}
+.my-expertise-container .my-expertise-cards-container .card .card-content ul li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+}
+.my-expertise-container .my-expertise-cards-container .card .card-content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0.7em;
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #245CD1, #2F50E4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  transform: translateY(-50%);
+}
+.my-expertise-container .my-expertise-cards-container .card .card-content ul li:hover::before {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.24);
+  transform: scale(1.2) translateY(-50%);
 }
 .my-expertise-container .my-expertise-cards-container .card .card-title {
   color: #EDEFF8;
@@ -932,6 +977,7 @@ select {
   max-width: 600px;
 }
 .cv-download button {
+  padding: 15px;
   width: fit-content;
   height: 45px;
   color: #EDEFF8;
@@ -995,8 +1041,15 @@ select {
   flex-direction: column;
   width: 100%;
   gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
 }
-#contact-form input, #contact-form textarea {
+#contact-form .alert {
+  align-self: center;
+  justify-self: center;
+}
+#contact-form input,
+#contact-form textarea {
   margin: 0.5rem 0;
   padding: 10px 15px;
   width: 100%;
@@ -1004,7 +1057,9 @@ select {
   outline: none;
   transition: border-color 0.3s ease;
 }
-#contact-form button {
+#contact-form button,
+#contact-form a {
+  padding: 20px;
   width: 165px;
   height: 45px;
   color: #EDEFF8;
@@ -1024,10 +1079,12 @@ select {
   transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.2);
   position: relative;
 }
-#contact-form button:hover {
+#contact-form button:hover,
+#contact-form a:hover {
   transform: translateY(-1px) scale(1.04);
 }
-#contact-form button::after {
+#contact-form button::after,
+#contact-form a::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -1036,7 +1093,8 @@ select {
   clip-path: polygon(50% 100%, 50% 100%, 50% 100%, 50% 100%);
   transition: all 0.3s ease;
 }
-#contact-form button:hover::after {
+#contact-form button:hover::after,
+#contact-form a:hover::after {
   animation: borderAnimation 0.3s ease forwards;
 }
 
@@ -1095,8 +1153,7 @@ select {
   transform: translateY(-5px);
 }
 #projects-container .project-thumbnail {
-  width: 300px;
-  height: 200px;
+  aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 1rem;
@@ -1215,7 +1272,6 @@ select {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-top: 1rem;
 }
 .pfp-links-container .socials-icons .icon-img {
   display: inline-block;
@@ -1263,18 +1319,30 @@ select {
   flex-direction: column;
   align-items: center;
 }
+.project-detail-container .h2,
+.project-detail-container .h3 {
+  border-bottom: #2F50E4 1px solid;
+  max-width: fit-content;
+  margin: 0 auto;
+}
 .project-detail-container .project-tags {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
+  gap: 1rem;
 }
 .project-detail-container .project-detail-header {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: rem;
+}
+.project-detail-container .project-detail-header .project-detail-title {
+  border-bottom: #2F50E4 1px solid;
+  max-width: fit-content;
+  margin: 0 auto;
 }
 @media screen and (max-width: 440px) {
   .project-detail-container .project-detail-header {
@@ -1443,7 +1511,6 @@ select {
   width: 100%;
   height: auto;
   object-fit: cover;
-  display: block;
 }
 .project-detail-container .project-detail-content .project-gallery .gallery-grid .gallery-item .gallery-caption {
   position: absolute;
@@ -1460,23 +1527,48 @@ select {
 }
 .project-detail-container .project-detail-content .project-embeds .embed-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  align-items: start;
+}
+@media screen and (max-width: 440px) {
+  .project-detail-container .project-detail-content .project-embeds .embed-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (min-width: 441px) and (max-width: 1023px) {
+  .project-detail-container .project-detail-content .project-embeds .embed-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .project-detail-container .project-detail-content .project-embeds .embed-gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .project-detail-container .project-detail-content .project-embeds .embed-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
   aspect-ratio: 16/9;
   background: #181c2b;
-  border-radius: 1rem;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.project-detail-container .project-detail-content .project-embeds .embed-item iframe, .project-detail-container .project-detail-content .project-embeds .embed-item video {
+.project-detail-container .project-detail-content .project-embeds .embed-item:hover {
+  transform: translateY(-5px);
+}
+.project-detail-container .project-detail-content .project-embeds .embed-item iframe,
+.project-detail-container .project-detail-content .project-embeds .embed-item embed,
+.project-detail-container .project-detail-content .project-embeds .embed-item video {
   width: 100%;
   height: 100%;
-  border: none;
-  border-radius: 1rem;
+  object-fit: cover;
+  display: block;
 }
 .project-detail-container .project-detail-content .project-details .project-tags {
   display: flex;
@@ -1510,6 +1602,7 @@ select {
   border-radius: 4px;
   transition: background-color 0.3s ease;
   color: #EDEFF8;
+  padding: 15px;
   width: fit-content;
   height: 45px;
   color: #EDEFF8;
@@ -1568,6 +1661,7 @@ select {
   background-color: #2F50E4;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  padding: 15px;
   width: fit-content;
   height: 45px;
   color: #EDEFF8;

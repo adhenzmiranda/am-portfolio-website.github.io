@@ -425,6 +425,33 @@ select {
 .footer .socials-icons .icon-img:active {
   transform: scale(0.95);
 }
+.footer .copyright {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 15px;
+}
+.footer .powered-by {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 15px;
+  gap: 15px;
+}
+.footer .powered-by a {
+  padding: 0;
+  margin: 0;
+}
+.footer .powered-by img {
+  align-self: center;
+  justify-self: center;
+  width: 50%;
+  height: 50%;
+}
 
 .footer-logo {
   width: 180px;
@@ -775,10 +802,6 @@ select {
   }
 }
 
-div {
-  margin-bottom: 1rem;
-}
-
 #about-container {
   display: flex;
   justify-content: center;
@@ -852,6 +875,7 @@ div {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 .who-am-i .who-am-i-title {
   border-bottom: #2F50E4 1px solid;
@@ -861,6 +885,8 @@ div {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .my-expertise-container .my-expertise-title {
   text-align: center;
@@ -1255,7 +1281,7 @@ div {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 .pfp-links-container .pfp-container {
   align-self: center;
