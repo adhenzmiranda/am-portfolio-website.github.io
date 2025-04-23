@@ -41,15 +41,28 @@
             </div>
         </div>
 
+        <div class="project-tags">
+            <h3 class="h3">Technologies Used</h3>
+            <div class="tech-stack-container">
+                {% for tech in project.technologies %}
+                <div class="tech-item">
+                    <img src="{% static 'assets/tech-stack-used/'|add:tech|add:'.png' %}" alt="{{ tech }}"
+                        class="tech-icon">
+                    <span class="tech-name">{{ tech|title }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
         <div class="project-detail-content">
             <div class="project-description">
                 <h2 class="h2">About the Project</h2>
                 <p>{{ project.description }}</p>
             </div>
 
-            {% if project.image %}
+            {% if project.thumbnail_image %}
             <div class="project-image">
-                <img src="{{ project.image.url }}" alt="{{ project.name }}">
+                <img src="{{ project.thumbnail_image.url }}" alt="{{ project.name }}">
             </div>
             {% endif %}
 
@@ -79,19 +92,6 @@
             {% endif %}
 
             <div class="project-details">
-                <div class="project-tags">
-                    <h3 class="h3">Technologies Used</h3>
-                    <div class="tech-stack-container">
-                        {% for tech in project.technologies %}
-                        <div class="tech-item">
-                            <img src="{% static 'assets/tech-stack-used/'|add:tech|add:'.png' %}" 
-                                 alt="{{ tech }}" 
-                                 class="tech-icon">
-                            <span class="tech-name">{{ tech|title }}</span>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
 
                 {% if project.github_link %}
                 <div class="project-links">

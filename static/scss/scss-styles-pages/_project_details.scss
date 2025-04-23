@@ -100,6 +100,10 @@
         }
 
         .project-description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
             margin-bottom: 2rem;
         }
 
@@ -144,6 +148,13 @@
 
         .project-gallery {
             margin: 3rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .h2 {
+                align-self: center;
+            }
 
             .gallery-grid {
                 display: grid;
@@ -151,6 +162,18 @@
                 gap: 1.5rem;
                 margin-top: 1.5rem;
                 align-items: start;
+
+                @include mobile {
+                    grid-template-columns: 1fr;
+                }
+
+                @include tablet {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                @include desktop {
+                    grid-template-columns: repeat(3, 1fr);
+                }
 
                 .gallery-item {
                     position: relative;

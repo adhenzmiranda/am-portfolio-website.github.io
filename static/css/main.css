@@ -1347,6 +1347,10 @@ select {
   }
 }
 .project-detail-container .project-detail-content .project-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 2rem;
 }
 .project-detail-container .project-detail-content .project-video {
@@ -1384,6 +1388,12 @@ select {
 }
 .project-detail-container .project-detail-content .project-gallery {
   margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project-detail-container .project-detail-content .project-gallery .h2 {
+  align-self: center;
 }
 .project-detail-container .project-detail-content .project-gallery .gallery-grid {
   display: grid;
@@ -1391,6 +1401,21 @@ select {
   gap: 1.5rem;
   margin-top: 1.5rem;
   align-items: start;
+}
+@media screen and (max-width: 440px) {
+  .project-detail-container .project-detail-content .project-gallery .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (min-width: 441px) and (max-width: 1023px) {
+  .project-detail-container .project-detail-content .project-gallery .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .project-detail-container .project-detail-content .project-gallery .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .project-detail-container .project-detail-content .project-gallery .gallery-grid .gallery-item {
   position: relative;

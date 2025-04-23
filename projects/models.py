@@ -20,11 +20,7 @@ class Projects(models.Model):
         default='Other'
     )
     tags = models.CharField(max_length=100, blank=True)
-    main_image = CloudinaryField('image', folder='projects', blank=True, null=True,
-        transformation=[
-            {'width': 1920, 'height': 1080, 'crop': 'limit'},
-            {'quality': 'auto', 'fetch_format': 'auto'}
-        ])
+    # Removed main_image for clarity. Only using one image field now.
     thumbnail_image = CloudinaryField('image', folder='thumbnails', blank=True, null=True,
         transformation=[
             {'width': 600, 'height': 338, 'crop': 'fill'},
