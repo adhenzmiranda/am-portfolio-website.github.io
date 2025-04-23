@@ -6,6 +6,10 @@
 @use '../components/animations' as *;
 @use '../components/buttons' as *;
 
+div {
+    margin-bottom: 1rem;
+}
+
 #about-container {
     display: flex;
     justify-content: center;
@@ -102,7 +106,7 @@
             gap: 1.5rem;
 
             .card-content {
-
+                @extend p;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -110,10 +114,32 @@
                 gap: 1rem;
 
                 ul {
-                    @extend p;
-                    text-align: left;
-                    color: $dark-mode-white;
+                    list-style: none;
+                    padding-left: 0;
 
+                    li {
+                        position: relative;
+                        padding-left: 2rem;
+                        margin-bottom: 0.75rem;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            left: 0.5rem;
+                            top: 0.7em;
+                            width: 0.75em;
+                            height: 0.75em;
+                            border-radius: 50%;
+                            background: linear-gradient(135deg, $dark-mode-accent-blue, $dark-mode-secondary-blue);
+                            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+                            transform: translateY(-50%);
+                        }
+
+                        &:hover::before {
+                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.24);
+                            transform: scale(1.2) translateY(-50%);
+                        }
+                    }
                 }
             }
 

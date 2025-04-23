@@ -8,6 +8,7 @@
 // Styles for buttons used across the site.
 @mixin cta-button {
     @extend .cta;
+    padding: 15px;
     width: fit-content;
     height: 45px;
     color: $dark-mode-white;
