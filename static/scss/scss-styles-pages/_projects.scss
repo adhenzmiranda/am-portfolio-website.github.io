@@ -14,11 +14,17 @@
     margin: 0 auto;
     padding: max(1rem, 3vw);
 
+    .project-subtitle {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
     a {
         text-decoration: none;
     }
 
-    .project-title, .project-year {
+    .project-title,
+    .project-year {
         text-align: center;
         border-bottom: $dark-mode-secondary-blue 1px solid;
         max-width: fit-content;
@@ -90,7 +96,7 @@
             .year-group {
                 grid-template-columns: 1fr;
             }
-            
+
             .project-thumbnail {
                 width: 100%;
                 height: 180px;

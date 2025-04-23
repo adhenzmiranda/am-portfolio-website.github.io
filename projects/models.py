@@ -8,10 +8,10 @@ TECH_STACK_CHOICES = [
         ('javascript', 'JavaScript'),
         ('html', 'HTML'),
         ('css', 'CSS'),
-        ('scss', 'Sass'),
         ('kotlin', 'Kotlin'),
     ]),
     ('Frameworks & Libraries', [
+        ('scss', 'Scss'),
         ('django', 'Django'),
         ('gsap', 'GSAP'),
     ]),
@@ -31,6 +31,7 @@ TECH_STACK_CHOICES = [
         ('aftereffects', 'After Effects'),
         ('audition', 'Audition'),
         ('davinci', 'DaVinci Resolve'),
+        ('canva', 'Canva'),
     ]),
 ]
 
@@ -64,12 +65,19 @@ class Projects(models.Model):
         null=True,
         help_text="Paste the embed code from YouTube, Vimeo, or other video platforms. The code should start with <iframe>"
     )
-    technologies = MultiSelectField(choices=TECH_STACK_CHOICES, blank=True)
+    technologies = MultiSelectField(choices=TECH_STACK_CHOICES, blank=True, max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name + ' - ' + str(self.description)[:20] + '...'
+
+    def get_technology_display(self, tech_value):
+        # Flatten grouped choices for lookup
+        flat_choices = []
+        for group in TECH_STACK_CHOICES:
+            flat_choices.extend(group[1])
+        return dict(flat_choices).get(tech_value, tech_value)
 
 class ProjectPhoto(models.Model):
     project = models.ForeignKey(Projects, on_delete=models.CASCADE, related_name='photos')

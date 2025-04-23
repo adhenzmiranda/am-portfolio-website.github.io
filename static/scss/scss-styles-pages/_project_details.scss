@@ -307,6 +307,8 @@
     gap: 1.5rem;
     margin-top: 1.5rem;
     justify-content: center;
+    max-width: 800px; // Recommended value
+    margin: 0 auto;
 
     .tech-item {
         @extend p;
@@ -400,6 +402,13 @@
         .project-meta {
             flex-direction: column;
             gap: 0.5rem;
+
+            .project-year,
+            .project-category {
+                padding: 1rem;
+                max-width: fit-content;
+                align-self: center;
+            }
         }
 
         .project-gallery {

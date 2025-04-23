@@ -1064,10 +1064,15 @@ select {
   margin: 0 auto;
   padding: max(1rem, 3vw);
 }
+#projects-container .project-subtitle {
+  max-width: 800px;
+  margin: 0 auto;
+}
 #projects-container a {
   text-decoration: none;
 }
-#projects-container .project-title, #projects-container .project-year {
+#projects-container .project-title,
+#projects-container .project-year {
   text-align: center;
   border-bottom: #2F50E4 1px solid;
   max-width: fit-content;
@@ -1590,6 +1595,8 @@ select {
   gap: 1.5rem;
   margin-top: 1.5rem;
   justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .tech-stack-container .tech-item {
   display: flex;
@@ -1664,6 +1671,12 @@ select {
   .project-detail-container .project-meta {
     flex-direction: column;
     gap: 0.5rem;
+  }
+  .project-detail-container .project-meta .project-year,
+  .project-detail-container .project-meta .project-category {
+    padding: 1rem;
+    max-width: fit-content;
+    align-self: center;
   }
   .project-detail-container .project-gallery .gallery-grid {
     grid-template-columns: 1fr;
