@@ -7,31 +7,46 @@ TECH_STACK_CHOICES = [
         ('python', 'Python'),
         ('javascript', 'JavaScript'),
         ('html', 'HTML'),
-        ('css', 'CSS'),
+        ('csharp', 'C#'),
         ('kotlin', 'Kotlin'),
     ]),
     ('Frameworks & Libraries', [
-        ('scss', 'Scss'),
+        ('scss', 'Sass'),
         ('django', 'Django'),
         ('gsap', 'GSAP'),
+        ('cloudinary', 'Cloudinary'),
+        ('nodejs', 'Node.js'),
     ]),
-    ('Databases', [
-        ('sqlite', 'SQLite'),
-    ]),
-    ('Tools & IDEs', [
+    ('Development Tools', [
         ('github', 'GitHub'),
-        ('android_studio', 'Android Studio'),
+        ('heroku', 'Heroku'),
+        ('androidstudio', 'Android Studio'),
+        ('cursor', 'Cursor'),
         ('unity', 'Unity'),
     ]),
-    ('Media', [
+    ('AI & Security Tools', [
+        ('chatgpt', 'ChatGPT'),
+        ('claude', 'Claude'),
+        ('autopsy', 'Autopsy'),
+        ('cisco', 'Cisco'),
+        ('tryhackme', 'TryHackMe'),
+    ]),
+    ('Design & Creative', [
         ('figma', 'Figma'),
         ('photoshop', 'Photoshop'),
         ('illustrator', 'Illustrator'),
-        ('premiere', 'Premiere'),
+        ('lightroom', 'Lightroom'),
+        ('canva', 'Canva'),
+    ]),
+    ('Video & Audio', [
+        ('premiere', 'Premiere Pro'),
         ('aftereffects', 'After Effects'),
         ('audition', 'Audition'),
         ('davinci', 'DaVinci Resolve'),
-        ('canva', 'Canva'),
+    ]),
+    ('Game Development', [
+        ('unity', 'Unity'),
+        ('twine', 'Twine'),
     ]),
 ]
 

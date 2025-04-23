@@ -85,11 +85,19 @@
                 Contact Form
             </div>
 
-            <form id="contact-form">
-                <input type="text" id="name" name="name" placeholder="Name">
-                <input type="email" id="email" name="email" placeholder="Email">
-                <input type="text" id="subject" name="subject" placeholder="Subject">
-                <textarea id="message" name="message" placeholder="Message"></textarea>
+            <form id="contact-form" method="post">
+                {% csrf_token %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {{ form.name }}
+                {{ form.email }}
+                {{ form.subject }}
+                {{ form.message }}
                 <button type="submit">Send</button>
             </form>
         </div>

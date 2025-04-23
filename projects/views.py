@@ -1,7 +1,10 @@
 from django.http import JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.core.mail import send_mail
+from django.contrib import messages
 from .models import Projects 
 from .serializer import ProjectsSerializer
+from .forms import ContactForm
 from rest_framework.decorators import api_view, parser_classes
 from rest_framework.response import Response
 from rest_framework import status
@@ -37,7 +40,32 @@ def about(request):
     return render(request, 'about.html')
 
 def contact(request):
-    return render(request, 'contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+            
+            # Send email
+            email_message = f'From: {name}\nEmail: {email}\n\nMessage:\n{message}'
+            try:
+                send_mail(
+                    subject,
+                    email_message,
+                    email,  # From email
+                    ['your-email@example.com'],  # Replace with your email
+                    fail_silently=False,
+                )
+                messages.success(request, 'Thank you for your message! I will get back to you soon.')
+                return redirect('contact')
+            except Exception as e:
+                messages.error(request, 'An error occurred while sending your message. Please try again later.')
+    else:
+        form = ContactForm()
+    
+    return render(request, 'contact.html', {'form': form})
 
 def projects_page(request):
     projects = Projects.objects.all()

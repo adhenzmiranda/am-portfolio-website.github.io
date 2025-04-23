@@ -15,23 +15,27 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+
     a {
         text-decoration: none;
     }
+
     padding: max(1rem, 3vw);
 }
 
-.cv-download{
+.cv-download {
     @extend .cta, p;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.8rem;
-    max-width:600px;
+    max-width: 600px;
+
     button {
         @include cta-button;
     }
-    .cv-title{
+
+    .cv-title {
         text-align: center;
         border-bottom: $dark-mode-secondary-blue 1px solid
     }
@@ -43,20 +47,19 @@
     align-items: center;
     flex-direction: column;
     padding: 2rem 1.5rem; // More consistent padding
-    background: 
+    background:
         url('../assets/images/hero/Voronoi-Texture.png') repeat,
-        linear-gradient(
-            180deg,
+        linear-gradient(180deg,
             $gradient-dark-blue 50%,
-            $gradient-black 100%
-        );
+            $gradient-black 100%);
     background-blend-mode: overlay;
     background-size: contain, 100% 100%;
     border-radius: 10px;
     gap: 1.5rem;
     width: 100%; // Make it take full width of container
     max-width: 600px; // But limit maximum width
-    .contact-title{ 
+
+    .contact-title {
         text-align: center;
         border-bottom: $dark-mode-secondary-blue 1px solid;
     }
@@ -68,7 +71,9 @@
     @extend p;
     width: 100%; // Make form take full width
     gap: 0.5rem;
-    input, textarea {
+
+    input,
+    textarea {
         @extend input;
         margin: 0.5rem 0;
         padding: 10px 15px; // Changed from fixed paddings
@@ -77,9 +82,11 @@
         outline: none;
         transition: border-color 0.3s ease;
     }
-    
-    button{
+
+    button,
+    a {
         @extend .cta;
+        padding: 20px;
         width: 165px;
         height: 45px;
         color: $dark-mode-white;
@@ -113,7 +120,7 @@
     #contact-container {
         padding: 1.5rem 1rem;
     }
-    
+
     .contact-form-container {
         padding: 1.5rem 1rem;
     }
