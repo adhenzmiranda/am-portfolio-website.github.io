@@ -1165,6 +1165,10 @@ select {
   margin: 2rem 0;
 }
 #projects-container .project-contents .project {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
   transition: transform 0.3s ease;
 }
 #projects-container .project-contents .project:hover {

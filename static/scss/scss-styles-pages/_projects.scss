@@ -43,6 +43,10 @@
         }
 
         .project {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
             transition: transform 0.3s ease;
 
             &:hover {
