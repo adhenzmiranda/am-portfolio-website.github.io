@@ -67,24 +67,24 @@ h3 {
   }
 }
 
-p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
+p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
 }
 @media screen and (max-width: 440px) {
-  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
+  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
     color: #EDEFF8;
     font-size: 16px;
   }
 }
 @media screen and (min-width: 441px) and (max-width: 1023px) {
-  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
+  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
     color: #EDEFF8;
     font-size: 18px;
   }
 }
 @media screen and (min-width: 1024px) {
-  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
+  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
     color: #EDEFF8;
     font-size: 20px;
   }
@@ -1033,6 +1033,12 @@ div {
   flex-direction: column;
   width: 100%;
   gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+#contact-form .alert {
+  align-self: center;
+  justify-self: center;
 }
 #contact-form input,
 #contact-form textarea {

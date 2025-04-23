@@ -71,6 +71,14 @@
     @extend p;
     width: 100%; // Make form take full width
     gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+
+    .alert {
+        align-self: center;
+        @extend p;
+        justify-self: center;
+    }
 
     input,
     textarea {
