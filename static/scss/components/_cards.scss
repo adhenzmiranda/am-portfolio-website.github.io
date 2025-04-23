@@ -1,6 +1,7 @@
 @use '../base/colors' as *;
 @use '../base/typography' as *;
 @use '../base/breakpoints' as *;
+@use 'animations' as *;
 
 // Technology Stack
 .technology-stack {
@@ -29,6 +30,7 @@
         align-content: center;
 
         .card {
+            @extend .card-float;
             flex: 0 1 calc(33.333% - 2rem); // For 3 cards per row
             min-width: 250px;
             display: flex;
@@ -36,18 +38,17 @@
             align-items: center;
             justify-content: center;
             padding: 2rem 1.5rem;
-            background: 
+            background:
                 url('../assets/images/hero/Voronoi-Texture.png') repeat,
-                linear-gradient(
-                    180deg,
+                linear-gradient(180deg,
                     $gradient-dark-blue 50%,
-                    $gradient-black 100%
-                );
+                    $gradient-black 100%);
             background-blend-mode: overlay;
             background-size: contain, 100% 100%;
             border-radius: 10px;
             gap: 1.5rem;
-            .card-content{
+
+            .card-content {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -69,7 +70,7 @@
     @include tablet {
         .card-container .card {
             flex: 0 1 calc(50% - 2rem);
-            
+
             &:last-child {
                 flex: 0 1 calc(50% - 2rem);
                 margin-top: 2rem;
@@ -81,11 +82,11 @@
     @include mobile {
         .card-container {
             flex-direction: column;
-            
+
             .card {
                 flex: 1 1 100%;
                 width: 100%;
-                
+
                 &:last-child {
                     margin-top: 0;
                 }

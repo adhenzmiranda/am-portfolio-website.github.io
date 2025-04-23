@@ -94,7 +94,7 @@ class ProjectPhoto(models.Model):
 class ProjectEmbed(models.Model):
     project = models.ForeignKey(Projects, on_delete=models.CASCADE, related_name='embeds')
     embed_code = models.TextField(
-        help_text="Paste the full embed code (e.g., <iframe ...></iframe>) for a video or interactive media. One per entry. Example: <iframe width='560' height='315' src='https://www.youtube.com/embed/VIDEO_ID' frameborder='0' allowfullscreen></iframe>"
+        help_text="Paste the full embed code (e.g., <iframe ...></iframe>) for a video or interactive media. Example: <iframe width='560' height='315' src='https://www.youtube.com/embed/VIDEO_ID' frameborder='0' allowfullscreen></iframe>"
     )
     order = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)

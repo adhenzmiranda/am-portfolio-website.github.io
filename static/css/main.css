@@ -233,6 +233,14 @@ select {
     border-color: #EDEFF8;
   }
 }
+.card-float, .my-expertise-container .my-expertise-cards-container .card, .technology-stack .card-container .card {
+  transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
+  will-change: transform;
+}
+.card-float:hover, .my-expertise-container .my-expertise-cards-container .card:hover, .technology-stack .card-container .card:hover, .card-float:focus-visible, .my-expertise-container .my-expertise-cards-container .card:focus-visible, .technology-stack .card-container .card:focus-visible {
+  transform: translateY(-5px);
+}
+
 .technology-stack {
   display: flex;
   justify-content: center;
@@ -1095,8 +1103,7 @@ select {
   transform: translateY(-5px);
 }
 #projects-container .project-thumbnail {
-  width: 300px;
-  height: 200px;
+  aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 1rem;
@@ -1263,18 +1270,30 @@ select {
   flex-direction: column;
   align-items: center;
 }
+.project-detail-container .h2,
+.project-detail-container .h3 {
+  border-bottom: #2F50E4 1px solid;
+  max-width: fit-content;
+  margin: 0 auto;
+}
 .project-detail-container .project-tags {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
+  gap: 1rem;
 }
 .project-detail-container .project-detail-header {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: rem;
+}
+.project-detail-container .project-detail-header .project-detail-title {
+  border-bottom: #2F50E4 1px solid;
+  max-width: fit-content;
+  margin: 0 auto;
 }
 @media screen and (max-width: 440px) {
   .project-detail-container .project-detail-header {
@@ -1443,7 +1462,6 @@ select {
   width: 100%;
   height: auto;
   object-fit: cover;
-  display: block;
 }
 .project-detail-container .project-detail-content .project-gallery .gallery-grid .gallery-item .gallery-caption {
   position: absolute;
@@ -1460,23 +1478,48 @@ select {
 }
 .project-detail-container .project-detail-content .project-embeds .embed-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  align-items: start;
+}
+@media screen and (max-width: 440px) {
+  .project-detail-container .project-detail-content .project-embeds .embed-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (min-width: 441px) and (max-width: 1023px) {
+  .project-detail-container .project-detail-content .project-embeds .embed-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .project-detail-container .project-detail-content .project-embeds .embed-gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .project-detail-container .project-detail-content .project-embeds .embed-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
   aspect-ratio: 16/9;
   background: #181c2b;
-  border-radius: 1rem;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.project-detail-container .project-detail-content .project-embeds .embed-item iframe, .project-detail-container .project-detail-content .project-embeds .embed-item video {
+.project-detail-container .project-detail-content .project-embeds .embed-item:hover {
+  transform: translateY(-5px);
+}
+.project-detail-container .project-detail-content .project-embeds .embed-item iframe,
+.project-detail-container .project-detail-content .project-embeds .embed-item embed,
+.project-detail-container .project-detail-content .project-embeds .embed-item video {
   width: 100%;
   height: 100%;
-  border: none;
-  border-radius: 1rem;
+  object-fit: cover;
+  display: block;
 }
 .project-detail-container .project-detail-content .project-details .project-tags {
   display: flex;

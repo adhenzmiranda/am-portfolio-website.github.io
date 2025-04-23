@@ -11,14 +11,17 @@
         clip-path: polygon(50% 100%, 50% 100%, 50% 100%, 50% 100%);
         border-color: $dark-mode-white;
     }
+
     25% {
         clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
         border-color: $dark-mode-white;
     }
+
     50% {
         clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
         border-color: $dark-mode-white;
     }
+
     100% {
         clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
         border-color: $dark-mode-white;
@@ -56,12 +59,22 @@
 @mixin icon-scale($scale: 1.2) {
     display: inline-block;
     transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-    
+
     &:hover {
         transform: scale($scale);
     }
 
     &:active {
         transform: scale(0.95);
+    }
+}
+
+.card-float {
+    transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
+    will-change: transform;
+
+    &:hover,
+    &:focus-visible {
+        transform: translateY(-5px);
     }
 }

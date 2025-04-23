@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Projects, ProjectPhoto
+from .models import Projects, ProjectPhoto, ProjectEmbed
 from django.urls import path
 from django.shortcuts import render, redirect
 from django import forms
@@ -40,6 +40,10 @@ class ProjectPhotoForm(forms.ModelForm):
             'order': forms.HiddenInput(),
         }
 
+class ProjectEmbedInline(admin.TabularInline):
+    model = ProjectEmbed
+    extra = 1
+
 class ProjectsForm(forms.ModelForm):
     video_embed = forms.CharField(
         widget=forms.Textarea(attrs={
@@ -68,13 +72,17 @@ class ProjectPhotoAdmin(admin.ModelAdmin):
         return "No image"
     display_image.short_description = 'Image'
 
+@admin.register(ProjectEmbed)
+class ProjectEmbedAdmin(admin.ModelAdmin):
+    pass
+
 @admin.register(Projects)
 class ProjectsAdmin(admin.ModelAdmin):
     form = ProjectsForm
     list_display = ('name', 'category', 'year', 'created_at')
     list_filter = ('category', 'year')
     search_fields = ('name', 'description', 'tags')
-    inlines = [ProjectPhotoInline]
+    inlines = [ProjectPhotoInline, ProjectEmbedInline]
     fieldsets = (
         ('Basic Information', {
             'fields': ('name', 'description', 'category', 'year', 'tags', 'technologies')
