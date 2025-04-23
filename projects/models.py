@@ -60,11 +60,6 @@ class Projects(models.Model):
             {'width': 600, 'height': 338, 'crop': 'fill'},
             {'quality': 'auto', 'fetch_format': 'auto'}
         ])
-    video_embed = models.TextField(
-        blank=True,
-        null=True,
-        help_text="Paste the embed code from YouTube, Vimeo, or other video platforms. The code should start with <iframe>"
-    )
     technologies = MultiSelectField(choices=TECH_STACK_CHOICES, blank=True, max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -95,3 +90,17 @@ class ProjectPhoto(models.Model):
 
     def __str__(self):
         return f"{self.project.name} - Photo {self.order}"
+
+class ProjectEmbed(models.Model):
+    project = models.ForeignKey(Projects, on_delete=models.CASCADE, related_name='embeds')
+    embed_code = models.TextField(
+        help_text="Paste the full embed code (e.g., <iframe ...></iframe>) for a video or interactive media. One per entry. Example: <iframe width='560' height='315' src='https://www.youtube.com/embed/VIDEO_ID' frameborder='0' allowfullscreen></iframe>"
+    )
+    order = models.IntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['order', 'created_at']
+
+    def __str__(self):
+        return f"Embed for {self.project.name} ({self.id})"

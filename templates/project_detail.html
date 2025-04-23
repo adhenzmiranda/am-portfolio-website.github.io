@@ -69,11 +69,15 @@
                 <p>{{ project.description }}</p>
             </div>
 
-            {% if project.video_embed %}
-            <div class="project-video">
-                <h2 class="h2">Project Video</h2>
-                <div class="video-container">
-                    {{ project.video_embed|safe }}
+            {% if project.embeds.all %}
+            <div class="project-embeds">
+                <h2 class="h2">Project Videos</h2>
+                <div class="embed-gallery-grid">
+                    {% for embed in project.embeds.all %}
+                    <div class="embed-item">
+                        {{ embed.embed_code|safe }}
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
             {% endif %}

@@ -215,6 +215,32 @@
             }
         }
 
+        .project-embeds {
+            margin-top: 2rem;
+
+            .embed-gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 2rem;
+            }
+
+            .embed-item {
+                aspect-ratio: 16 / 9;
+                background: #181c2b;
+                border-radius: 1rem;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                iframe, video {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    border-radius: 1rem;
+                }
+            }
+        }
+
         .project-details {
             .project-tags {
                 display: flex;

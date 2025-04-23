@@ -1455,6 +1455,29 @@ select {
   color: #EDEFF8;
   font-size: 0.9rem;
 }
+.project-detail-container .project-detail-content .project-embeds {
+  margin-top: 2rem;
+}
+.project-detail-container .project-detail-content .project-embeds .embed-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+.project-detail-container .project-detail-content .project-embeds .embed-item {
+  aspect-ratio: 16/9;
+  background: #181c2b;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-detail-container .project-detail-content .project-embeds .embed-item iframe, .project-detail-container .project-detail-content .project-embeds .embed-item video {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 1rem;
+}
 .project-detail-container .project-detail-content .project-details .project-tags {
   display: flex;
   flex-direction: column;
