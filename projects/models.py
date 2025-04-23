@@ -1,5 +1,24 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
+from multiselectfield import MultiSelectField
+
+TECH_STACK_CHOICES = [
+    ('python', 'Python'),
+    ('django', 'Django'),
+    ('javascript', 'JavaScript'),
+    ('html', 'HTML'),
+    ('css', 'CSS'),
+    ('sass', 'Sass'),
+    ('mysql', 'MySQL'),
+    ('git', 'Git'),
+    ('github', 'GitHub'),
+    ('figma', 'Figma'),
+    ('photoshop', 'Photoshop'),
+    ('illustrator', 'Illustrator'), 
+    ('premiere', 'Premiere'),
+    ('aftereffects', 'After Effects'),
+    # Add more as needed, matching your static/assets/tech-stack-used icons
+]
 
 class Projects(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -31,6 +50,7 @@ class Projects(models.Model):
         null=True,
         help_text="Paste the embed code from YouTube, Vimeo, or other video platforms. The code should start with <iframe>"
     )
+    technologies = MultiSelectField(choices=TECH_STACK_CHOICES, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

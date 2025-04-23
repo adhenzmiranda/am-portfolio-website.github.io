@@ -77,7 +77,7 @@ class ProjectsAdmin(admin.ModelAdmin):
     inlines = [ProjectPhotoInline]
     fieldsets = (
         ('Basic Information', {
-            'fields': ('name', 'description', 'category', 'year', 'tags')
+            'fields': ('name', 'description', 'category', 'year', 'tags', 'technologies')
         }),
         ('Media', {
             'fields': ('thumbnail_image', 'video_embed')

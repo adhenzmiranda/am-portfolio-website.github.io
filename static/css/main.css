@@ -67,24 +67,24 @@ h3 {
   }
 }
 
-p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
+p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
 }
 @media screen and (max-width: 440px) {
-  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
+  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
     color: #EDEFF8;
     font-size: 16px;
   }
 }
 @media screen and (min-width: 441px) and (max-width: 1023px) {
-  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
+  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
     color: #EDEFF8;
     font-size: 18px;
   }
 }
 @media screen and (min-width: 1024px) {
-  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
+  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content ul, a {
     color: #EDEFF8;
     font-size: 20px;
   }
@@ -1258,6 +1258,13 @@ select {
   flex-direction: column;
   align-items: center;
 }
+.project-detail-container .project-tags {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
 .project-detail-container .project-detail-header {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
@@ -1444,6 +1451,10 @@ select {
   font-size: 0.9rem;
 }
 .project-detail-container .project-detail-content .project-details .project-tags {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 2rem;
 }
 .project-detail-container .project-detail-content .project-details .project-tags .tags-container {
@@ -1591,8 +1602,8 @@ select {
   transform: translateY(-5px);
 }
 .tech-stack-container .tech-item .tech-icon {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
 }
 .tech-stack-container .tech-item .tech-name {

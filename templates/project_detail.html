@@ -46,8 +46,7 @@
             <div class="tech-stack-container">
                 {% for tech in project.technologies %}
                 <div class="tech-item">
-                    <img src="{% static 'assets/tech-stack-used/'|add:tech|add:'.png' %}" alt="{{ tech }}"
-                        class="tech-icon">
+                    <img src="{% static 'assets/tech-stack-used/'|add:tech|add:'.png' %}" alt="{{ tech|title }}" class="tech-icon">
                     <span class="tech-name">{{ tech|title }}</span>
                 </div>
                 {% endfor %}
