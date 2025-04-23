@@ -3,21 +3,35 @@ from cloudinary.models import CloudinaryField
 from multiselectfield import MultiSelectField
 
 TECH_STACK_CHOICES = [
-    ('python', 'Python'),
-    ('django', 'Django'),
-    ('javascript', 'JavaScript'),
-    ('html', 'HTML'),
-    ('css', 'CSS'),
-    ('sass', 'Sass'),
-    ('mysql', 'MySQL'),
-    ('git', 'Git'),
-    ('github', 'GitHub'),
-    ('figma', 'Figma'),
-    ('photoshop', 'Photoshop'),
-    ('illustrator', 'Illustrator'), 
-    ('premiere', 'Premiere'),
-    ('aftereffects', 'After Effects'),
-    # Add more as needed, matching your static/assets/tech-stack-used icons
+    ('Languages', [
+        ('python', 'Python'),
+        ('javascript', 'JavaScript'),
+        ('html', 'HTML'),
+        ('css', 'CSS'),
+        ('scss', 'Sass'),
+        ('kotlin', 'Kotlin'),
+    ]),
+    ('Frameworks & Libraries', [
+        ('django', 'Django'),
+        ('gsap', 'GSAP'),
+    ]),
+    ('Databases', [
+        ('sqlite', 'SQLite'),
+    ]),
+    ('Tools & IDEs', [
+        ('github', 'GitHub'),
+        ('android_studio', 'Android Studio'),
+        ('unity', 'Unity'),
+    ]),
+    ('Media', [
+        ('figma', 'Figma'),
+        ('photoshop', 'Photoshop'),
+        ('illustrator', 'Illustrator'),
+        ('premiere', 'Premiere'),
+        ('aftereffects', 'After Effects'),
+        ('audition', 'Audition'),
+        ('davinci', 'DaVinci Resolve'),
+    ]),
 ]
 
 class Projects(models.Model):
