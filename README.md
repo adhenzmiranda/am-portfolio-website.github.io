@@ -23,12 +23,13 @@ A modern, responsive portfolio website built with Django and SCSS, showcasing my
   - GSAP (Animations)
 
 - **Backend:**
-  - Django
-  - Django REST Framework
+  - Django 5.3
+  - Django REST Framework 3.15.1
   - SQLite/PostgreSQL
 
 - **Development Tools:**
   - Node.js (for SCSS compilation)
+  - npm (for SCSS scripts)
   - Git
   - VS Code
 
@@ -57,35 +58,48 @@ am-portfolio-website/
 
 ### Installation
 
-1. Clone the repository:
+1. **Clone the repository:**
+
 ```bash
 git clone https://github.com/yourusername/am-portfolio-website.git
 cd am-portfolio-website
 ```
 
 2. Create and activate a virtual environment:
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. Install Python dependencies:
+3. **Install Python dependencies:**
+
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Install Node.js dependencies:
+4. **Install Node.js dependencies (for SCSS):**
+
 ```bash
 npm install
 ```
 
-5. Compile SCSS:
+5. **Compile SCSS:**
+
+```bash
+npm run sass
+```
+
+Or to watch for changes during development:
+
 ```bash
 npm run sass:watch
 ```
 
-6. Run the development server:
+6. **Apply migrations and run the server:**
+
 ```bash
+python manage.py migrate
 python manage.py runserver
 ```
 
