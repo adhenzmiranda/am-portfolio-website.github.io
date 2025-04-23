@@ -20,16 +20,16 @@ class Projects(models.Model):
         default='Other'
     )
     tags = models.CharField(max_length=100, blank=True)
-    image = CloudinaryField('image', folder='projects', blank=True, null=True,
-                          transformation=[
-                              {'width': 1920, 'height': 1080, 'crop': 'limit'},
-                              {'quality': 'auto', 'fetch_format': 'auto'}
-                          ])
-    thumbnail = CloudinaryField('image', folder='thumbnails', blank=True, null=True,
-                              transformation=[
-                                  {'width': 600, 'height': 338, 'crop': 'fill'},
-                                  {'quality': 'auto', 'fetch_format': 'auto'}
-                              ])
+    main_image = CloudinaryField('image', folder='projects', blank=True, null=True,
+        transformation=[
+            {'width': 1920, 'height': 1080, 'crop': 'limit'},
+            {'quality': 'auto', 'fetch_format': 'auto'}
+        ])
+    thumbnail_image = CloudinaryField('image', folder='thumbnails', blank=True, null=True,
+        transformation=[
+            {'width': 600, 'height': 338, 'crop': 'fill'},
+            {'quality': 'auto', 'fetch_format': 'auto'}
+        ])
     video_embed = models.TextField(
         blank=True,
         null=True,
@@ -44,10 +44,10 @@ class Projects(models.Model):
 class ProjectPhoto(models.Model):
     project = models.ForeignKey(Projects, on_delete=models.CASCADE, related_name='photos')
     image = CloudinaryField('image', folder='project_photos',
-                          transformation=[
-                              {'width': 1920, 'height': 1080, 'crop': 'limit'},
-                              {'quality': 'auto', 'fetch_format': 'auto'}
-                          ])
+        transformation=[
+            {'width': 1920, 'height': 1080, 'crop': 'limit'},
+            {'quality': 'auto', 'fetch_format': 'auto'}
+        ])
     caption = models.CharField(max_length=200, blank=True)
     order = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)

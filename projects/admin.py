@@ -80,7 +80,7 @@ class ProjectsAdmin(admin.ModelAdmin):
             'fields': ('name', 'description', 'category', 'year', 'tags')
         }),
         ('Media', {
-            'fields': ('image', 'thumbnail', 'video_embed')
+            'fields': ('main_image', 'thumbnail_image', 'video_embed')
         }),
     )
     
