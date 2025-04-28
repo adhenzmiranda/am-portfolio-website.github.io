@@ -128,6 +128,7 @@
             align-items: center;
             gap: 1rem;
             margin-bottom: 2rem;
+            max-width:600px;
         }
 
         .project-video {
@@ -171,104 +172,96 @@
 
         .project-gallery {
             margin: 3rem 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            .h2 {
-                align-self: center;
+            display: grid;
+            gap: 1.5rem;
+            width: 100%;
+            margin: 0 auto;
+            
+            // Mobile: Always 1 column
+            grid-template-columns: 1fr;
+            
+            // Tablet+: Smart auto-layout (2 cols if space, 3 cols max)
+            @include tablet {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            max-width: 800px; // Prevents stretching on large screens
             }
-
-            .gallery-grid {
-                display: grid;
-                grid-template-columns: 1fr; // Default: 1 column
-                justify-content: center;
-                justify-items: center;
-
-                // 2 photos: 2 columns, centered
-                &:has(.gallery-item:nth-child(2)):not(:has(.gallery-item:nth-child(4))) {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-
-                // 3 or more photos: 3 columns, centered
-                &:has(.gallery-item:nth-child(3)) {
-                    grid-template-columns: repeat(3, 1fr);
-                }
-
-                gap: 1.5rem;
-                margin-top: 1.5rem;
-                align-items: start;
-
-                @include mobile {
-                    grid-template-columns: 1fr !important;
-                }
-
-                @include tablet {
-                    grid-template-columns: repeat(2, 1fr) !important;
+            
+            // Desktop+: Wider columns, max 3 cols
+            @include desktop {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            max-width: 1200px;
+            }
+            
+            // Force single column + centered if only 1 item
+            &:has(> :only-child) {
+            grid-template-columns: minmax(250px, 600px);
+            justify-content: center;
+            }
+        }
+            
+        // Embed Grid (for videos/iframes)
+        .embed-gallery-grid {
+            display: grid;
+            gap: 1.5rem;
+            width: 100%;
+            margin: 0 auto;
+                
+            // Mobile: 1 column (default)
+            grid-template-columns: 1fr;
+                
+            // Tablet: 2 columns (if ≥2 items)
+            @include tablet {
+                grid-template-columns: repeat(2, minmax(300px, 1fr));
+            }
+                
+            // Desktop: 3 columns (if ≥3 items)
+            @include desktop {
+                grid-template-columns: repeat(3, minmax(300px, 1fr));
+            }
+                
+            // Center grid tracks (for 2 items)
+            justify-content: center;
+            }
+                
+                // Fix iframe responsiveness
+                .embed-item {
+                width: 100% !important; // Override fixed width
+                height: auto !important;
+                aspect-ratio: 16/9; // Force 16:9 ratio
+                
+                iframe {
+                    width: 100% !important;
+                    height: 100% !important;
                 }
             }
         }
-
         .project-embeds {
             margin-top: 2rem;
-
-            .embed-gallery-grid {
-                display: grid;
-                grid-template-columns: 1fr; // Default: 1 column
-                justify-content: center;
-                justify-items: center;
-
-                // 2 embeds: 2 columns, centered
-                &:has(.embed-item:nth-child(2)):not(:has(.embed-item:nth-child(4))) {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-
-                // 3 or more embeds: 3 columns, centered
-                &:has(.embed-item:nth-child(3)) {
-                    grid-template-columns: repeat(3, 1fr);
-                }
-
-                gap: 1.5rem;
-                margin-top: 1.5rem;
-                align-items: start;
-
-                @include mobile {
-                    grid-template-columns: 1fr !important;
-                }
-
-                @include tablet {
-                    grid-template-columns: repeat(2, 1fr) !important;
-                }
-            }
-
-            .embed-item {
-                position: relative;
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s ease;
-                aspect-ratio: 16 / 9;
-                background: #181c2b;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                max-width: 700px; // Increase this value as needed
-                width: 100%;
-
-                &:hover {
-                    transform: translateY(-5px);
-                }
-
-                iframe,
-                embed,
-                video {
+            width: 100%; // Ensure full width
+                
+                .embed-gallery-grid {
+                    display: grid;
+                    gap: 1.5rem;
                     width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    display: block;
+                    margin: 0 auto;
+                
+                    // Mobile: Always 1 column
+                    grid-template-columns: 1fr;
+                
+                    // Tablet: 2 columns
+                    @include tablet {
+                    grid-template-columns: repeat(2, minmax(300px, 1fr));
+                    }
+                
+                    // Desktop: 3 columns
+                    @include desktop {
+                    grid-template-columns: repeat(3, minmax(300px, 1fr));
+                    }
+                
+                    // Center the grid container (for 1-2 items)
+                    justify-content: center;
                 }
             }
-        }
 
         .project-details {
             .project-tags {
@@ -354,6 +347,57 @@
                 margin-right: 0.5rem;
             }
         }
+    }
+    
+.project-container {
+    display: grid;
+    gap: 2rem;
+    justify-content: center;
+
+    // Mobile-first: single column
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    // Handle 1-3 items
+    &:has(> :first-child:nth-last-child(1)) {
+        grid-template-columns: minmax(280px, 400px);
+    }
+
+    &:has(> :first-child:nth-last-child(2)) {
+        grid-template-columns: repeat(2, minmax(280px, 1fr));
+    }
+
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        
+        &:has(> :first-child:nth-last-child(3)) {
+            grid-template-columns: repeat(3, minmax(300px, 1fr));
+        }
+    }
+}
+
+.project-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.video-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 8px;
     }
 }
 
@@ -447,15 +491,29 @@
 
         .project-gallery {
             .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-        }
-
-        .project-embeds {
-            .embed-gallery-grid {
+                // Default: 1 column, centered
                 grid-template-columns: 1fr !important;
                 justify-content: center !important;
                 justify-items: center !important;
+
+                // If there are 2 or more items, use 2 columns
+                // REMOVE THIS LINE:
+                // &:has(.gallery-item:nth-child(2)) {
+                //     grid-template-columns: repeat(2, 1fr) !important;
+                // }
+            }
+        }
+        .project-embeds {
+            .embed-gallery-grid {
+                // Default: 1 column, centered
+                grid-template-columns: 1fr !important;
+                justify-content: center !important;
+                justify-items: center !important;
+
+                // If there are 2 or more items, use 2 columns
+                // &:has(.embed-item:nth-child(2)) {
+                //     grid-template-columns: repeat(2, 1fr) !important;
+                // }
             }
         }
     }
@@ -510,17 +568,16 @@
 }
 
 .embed-item {
-    max-width: 900px; // or any size you want
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100% !important;
+    aspect-ratio: 16/9;
+    overflow: hidden; // Prevents iframe overflow
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
     iframe {
-        width: 100%;
-        height: 100%;
-        display: block;
-        border: none;
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    border: none;
     }
 }
