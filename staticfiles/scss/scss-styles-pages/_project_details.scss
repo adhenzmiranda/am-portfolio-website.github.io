@@ -13,20 +13,35 @@
     flex-direction: column;
     align-items: center;
 
+    .h2,
+    .h3 {
+        border-bottom: $dark-mode-secondary-blue 1px solid;
+        max-width: fit-content;
+        margin: 0 auto;
+    }
+
     .project-tags {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         margin-bottom: 2rem;
+        gap: 1rem;
     }
 
     .project-detail-header {
+
+        .project-detail-title {
+            border-bottom: $dark-mode-secondary-blue 1px solid;
+            max-width: fit-content;
+            margin: 0 auto;
+        }
+
         @extend p;
         font-family: $font-ibm;
         font-weight: $fw-regular;
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: rem;
 
         @include mobile {
             color: $dark-mode-white;
@@ -166,51 +181,30 @@
 
             .gallery-grid {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: 1fr; // Default: 1 column
+                justify-content: center;
+                justify-items: center;
+
+                // 2 photos: 2 columns, centered
+                &:has(.gallery-item:nth-child(2)):not(:has(.gallery-item:nth-child(4))) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                // 3 or more photos: 3 columns, centered
+                &:has(.gallery-item:nth-child(3)) {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
                 gap: 1.5rem;
                 margin-top: 1.5rem;
                 align-items: start;
 
                 @include mobile {
-                    grid-template-columns: 1fr;
+                    grid-template-columns: 1fr !important;
                 }
 
                 @include tablet {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-
-                @include desktop {
-                    grid-template-columns: repeat(3, 1fr);
-                }
-
-                .gallery-item {
-                    position: relative;
-                    border-radius: 8px;
-                    overflow: hidden;
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                    transition: transform 0.3s ease;
-
-                    &:hover {
-                        transform: translateY(-5px);
-                    }
-
-                    img {
-                        width: 100%;
-                        height: auto;
-                        object-fit: cover;
-                        display: block;
-                    }
-
-                    .gallery-caption {
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        right: 0;
-                        padding: 1rem;
-                        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-                        color: $dark-mode-white;
-                        font-size: 0.9rem;
-                    }
+                    grid-template-columns: repeat(2, 1fr) !important;
                 }
             }
         }
@@ -220,23 +214,58 @@
 
             .embed-gallery-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-                gap: 2rem;
+                grid-template-columns: 1fr; // Default: 1 column
+                justify-content: center;
+                justify-items: center;
+
+                // 2 embeds: 2 columns, centered
+                &:has(.embed-item:nth-child(2)):not(:has(.embed-item:nth-child(4))) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                // 3 or more embeds: 3 columns, centered
+                &:has(.embed-item:nth-child(3)) {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                gap: 1.5rem;
+                margin-top: 1.5rem;
+                align-items: start;
+
+                @include mobile {
+                    grid-template-columns: 1fr !important;
+                }
+
+                @include tablet {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                }
             }
 
             .embed-item {
+                position: relative;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
                 aspect-ratio: 16 / 9;
                 background: #181c2b;
-                border-radius: 1rem;
-                overflow: hidden;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                iframe, video {
+                max-width: 700px; // Increase this value as needed
+                width: 100%;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                iframe,
+                embed,
+                video {
                     width: 100%;
                     height: 100%;
-                    border: none;
-                    border-radius: 1rem;
+                    object-fit: cover;
+                    display: block;
                 }
             }
         }
@@ -248,6 +277,7 @@
                 align-items: center;
                 justify-content: center;
                 margin-bottom: 2rem;
+
 
                 .tags-container {
                     display: flex;
@@ -420,6 +450,14 @@
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
         }
+
+        .project-embeds {
+            .embed-gallery-grid {
+                grid-template-columns: 1fr !important;
+                justify-content: center !important;
+                justify-items: center !important;
+            }
+        }
     }
 }
 
@@ -468,5 +506,21 @@
                 width: 100%;
             }
         }
+    }
+}
+
+.embed-item {
+    max-width: 900px; // or any size you want
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: none;
     }
 }

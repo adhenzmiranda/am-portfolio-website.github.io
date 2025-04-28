@@ -37,7 +37,20 @@
 
         .year-group {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: 1fr; // Default: 1 column
+            justify-content: center;
+            justify-items: center;
+
+            // 2 projects: 2 columns, centered
+            &:has(.project:nth-child(2)):not(:has(.project:nth-child(4))) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            // 3 or more projects: 3 columns, centered
+            &:has(.project:nth-child(3)) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
             gap: 2rem;
             margin: 2rem 0;
         }
@@ -87,7 +100,7 @@
     #projects-container {
         .project-contents {
             .year-group {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                grid-template-columns: repeat(2, 1fr) !important;
             }
         }
     }
@@ -97,7 +110,7 @@
     #projects-container {
         .project-contents {
             .year-group {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
             }
 
             .project-thumbnail {
