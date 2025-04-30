@@ -16,13 +16,13 @@ TECH_STACK_CHOICES = [
         ('gsap', 'GSAP'),
         ('cloudinary', 'Cloudinary'),
         ('nodejs', 'Node.js'),
+        ('imgur', 'Imgur'),
     ]),
     ('Development Tools', [
         ('github', 'GitHub'),
         ('heroku', 'Heroku'),
         ('androidstudio', 'Android Studio'),
         ('cursor', 'Cursor'),
-        ('unity', 'Unity'),
     ]),
     ('AI & Security Tools', [
         ('chatgpt', 'ChatGPT'),
@@ -47,6 +47,7 @@ TECH_STACK_CHOICES = [
     ('Game Development', [
         ('unity', 'Unity'),
         ('twine', 'Twine'),
+        ('harlowe', 'Harlowe'),
     ]),
 ]
 
@@ -111,6 +112,7 @@ class ProjectEmbed(models.Model):
     embed_code = models.TextField(
         help_text="Paste the full embed code (e.g., <iframe ...></iframe>) for a video or interactive media. Example: <iframe width='560' height='315' src='https://www.youtube.com/embed/VIDEO_ID' frameborder='0' allowfullscreen></iframe>"
     )
+    caption = models.CharField(max_length=200, blank=True)  # <-- Add this line
     order = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
 

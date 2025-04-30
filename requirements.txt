@@ -14,3 +14,10 @@ sqlparse==0.5.3
 typing_extensions==4.13.0
 tzdata==2025.2
 whitenoise==6.9.0
+django-markdownx>=4.0.9
+Markdown>=3.8
+Pillow>=11.2.1
+django-markdownify>=0.9.5
+bleach>=6.2.0
+tinycss2>=1.4.0
+webencodings>=0.5.1

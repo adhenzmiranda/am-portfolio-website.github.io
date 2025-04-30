@@ -1,5 +1,6 @@
 {% load static %}
 {% load custom_filters %}
+{% load markdownify %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,16 +67,19 @@
 
             <div class="project-description">
                 <h2 class="h2">About the Project</h2>
-                <p>{{ project.description|urlize|linebreaksbr }}</p>
+                <p>{{ project.description|markdownify|linebreaksbr }}</p>
             </div>
 
             {% if project.embeds.all %}
             <div class="project-embeds">
-                <h2 class="h2">Project Videos</h2>
+                <h2 class="h2">Project Embeds</h2>
                 <div class="embed-gallery-grid">
                     {% for embed in project.embeds.all %}
                     <div class="embed-item">
                         {{ embed.embed_code|safe }}
+                        {% if embed.caption %}
+                        <div class="embed-caption">{{ embed.caption }}</div>
+                        {% endif %}
                     </div>
                     {% endfor %}
                 </div>

@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'cloudinary_storage',
     'projects',
+    'markdownify'
 ]
 
 MIDDLEWARE = [

@@ -67,24 +67,24 @@ h3 {
   }
 }
 
-p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .project-detail-container .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
+p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .project-detail-container .tech-stack-container .tech-item, .project-detail-container .embed-item .embed-caption, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
 }
 @media screen and (max-width: 440px) {
-  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .project-detail-container .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
+  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .project-detail-container .tech-stack-container .tech-item, .project-detail-container .embed-item .embed-caption, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
     color: #EDEFF8;
     font-size: 16px;
   }
 }
 @media screen and (min-width: 441px) and (max-width: 1023px) {
-  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .project-detail-container .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
+  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .project-detail-container .tech-stack-container .tech-item, .project-detail-container .embed-item .embed-caption, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
     color: #EDEFF8;
     font-size: 18px;
   }
 }
 @media screen and (min-width: 1024px) {
-  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .project-detail-container .tech-stack-container .tech-item, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
+  p, .project-detail-container .project-detail-header, .project-detail-container .project-detail-header .project-meta span, .project-detail-container .project-detail-content .project-video, .project-detail-container .tech-stack-container .tech-item, .project-detail-container .embed-item .embed-caption, .name-title-container .subtext, .cv-download, #contact-form, #contact-form .alert, #about-container .lets-connect, .my-expertise-container .my-expertise-cards-container .card .card-content, a {
     color: #EDEFF8;
     font-size: 20px;
   }
@@ -1549,11 +1549,15 @@ select {
   }
 }
 .project-detail-container .project-detail-content .project-gallery .embed-gallery-grid .embed-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100% !important;
   height: auto !important;
-  aspect-ratio: 16/9;
 }
 .project-detail-container .project-detail-content .project-gallery .embed-gallery-grid .embed-item iframe {
+  aspect-ratio: 16/9;
   width: 100% !important;
   height: 100% !important;
 }
@@ -1879,24 +1883,20 @@ select {
     width: 100%;
   }
 }
-.project-detail-container .embed-item,
-.project-detail-container .video-wrapper {
-  position: relative;
-  aspect-ratio: 16/9;
-  width: 100%;
-  overflow: hidden;
+.project-detail-container .embed-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100% !important;
+  height: auto !important;
+  gap: 10px;
+  margin: 0 auto;
 }
-.project-detail-container .embed-item iframe,
-.project-detail-container .embed-item video,
-.project-detail-container .video-wrapper iframe,
-.project-detail-container .video-wrapper video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 8px;
-  display: block;
+.project-detail-container .embed-item iframe {
+  aspect-ratio: 16/9;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 /*# sourceMappingURL=main.css.map */
