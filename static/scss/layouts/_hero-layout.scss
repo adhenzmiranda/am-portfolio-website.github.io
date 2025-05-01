@@ -6,7 +6,8 @@
 .hero {
     display: flex;
     flex-direction: column;
-    gap:80px;
+    gap: 80px;
+
     .hero-section1 {
         display: flex;
         flex-direction: row;
@@ -30,7 +31,7 @@
                 order: 2;
                 width: 100%;
             }
-        
+
             .pfp-links-container {
                 order: 1;
                 width: 100%;

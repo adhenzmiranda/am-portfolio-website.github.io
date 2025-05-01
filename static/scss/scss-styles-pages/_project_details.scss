@@ -239,7 +239,7 @@
                     flex-direction: column;
                     width: 100% !important; // Override fixed width
                     height: auto !important;
-                    
+
                     iframe {
                         aspect-ratio: 16/9; // Force 16:9 ratio
                         width: 100% !important;
@@ -589,25 +589,26 @@
         }
     }
 
-    .embed-item{
+    .embed-item {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         width: 100% !important; // Override fixed width
         height: auto !important;
-        gap:10px;
+        gap: 10px;
         margin: 0 auto;
 
-        .embed-caption{
+        .embed-caption {
             @extend p;
         }
-        
+
         iframe {
             aspect-ratio: 16/9; // Force 16:9 ratio
             width: 100% !important;
             height: 100% !important;
         }
+
         // position: relative;
         // aspect-ratio: 16/9;
         // width: 100%;

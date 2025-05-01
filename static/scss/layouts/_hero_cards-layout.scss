@@ -21,7 +21,7 @@
     .card-container {
         .card {
             flex: 0 1 calc(50% - 2rem);
-            
+
             &:last-child {
                 flex: 0 1 calc(50% - 2rem);
                 margin-top: 2rem;
@@ -34,11 +34,11 @@
 @include mobile {
     .card-container {
         flex-direction: column;
-        
+
         .card {
             flex: 1 1 100%;
             width: 100%;
-            
+
             &:last-child {
                 margin-top: 0;
             }

@@ -8,31 +8,36 @@
         clip-path: polygon(50% 100%, 50% 100%, 50% 100%, 50% 100%);
         border-color: $dark-mode-white;
     }
+
     25% {
         clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
         border-color: $dark-mode-white;
     }
+
     50% {
         clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
         border-color: $dark-mode-white;
     }
+
     100% {
         clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
         border-color: $dark-mode-white;
     }
 }
 
-.hero-section4{
+.hero-section4 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap:32px;
-    .contact-title{
+    gap: 32px;
+
+    .contact-title {
         text-align: center;
         border-bottom: $dark-mode-secondary-blue 1px solid;
     }
+
     .contact-btn {
         width: 165px;
         height: 45px;
