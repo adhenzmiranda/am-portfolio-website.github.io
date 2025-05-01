@@ -37,17 +37,20 @@ TECH_STACK_CHOICES = [
         ('illustrator', 'Illustrator'),
         ('lightroom', 'Lightroom'),
         ('canva', 'Canva'),
+        ('makeymakey', 'Makey Makey'),
     ]),
     ('Video & Audio', [
         ('premiere', 'Premiere Pro'),
         ('aftereffects', 'After Effects'),
         ('audition', 'Audition'),
         ('davinci', 'DaVinci Resolve'),
+        ('filmora', 'Wondershare Filmora'),
     ]),
     ('Game Development', [
         ('unity', 'Unity'),
         ('twine', 'Twine'),
         ('harlowe', 'Harlowe'),
+        ('bitsy', 'Bitsy'),
     ]),
 ]
 
@@ -65,6 +68,8 @@ class Projects(models.Model):
             ('Game Development', 'Game Development'),
             ('Graphic Design', 'Graphic Design'),
             ('Website Design', 'Website Design'),
+            ('Application Development', 'Application Development'),
+            ('Application Concept', 'Application Concept'),
             ('Other', 'Other')
         ],
         default='Other'
