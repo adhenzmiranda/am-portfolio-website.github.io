@@ -12,7 +12,7 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 1003;
-            
+
             .toggle-nav-btn {
                 background: none;
                 border: none;
@@ -20,7 +20,7 @@
                 cursor: pointer;
                 width: 55px;
                 height: 55px;
-                
+
                 img {
                     width: 100%;
                     height: 100%;
@@ -62,7 +62,7 @@
             display: none;
         }
     }
-    
+
     .nav-menu {
         .navbar-links {
             display: flex;
