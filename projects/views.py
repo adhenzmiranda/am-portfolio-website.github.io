@@ -34,7 +34,9 @@ def upload_image(request):
     }, status=400)
 
 def home(request):
-    return render(request, 'index.html')
+    # Get featured projects for the hero section
+    featured_projects = Projects.objects.filter(featured=True)
+    return render(request, 'index.html', {"featured_projects": featured_projects})
 
 def about(request):
     return render(request, 'about.html')

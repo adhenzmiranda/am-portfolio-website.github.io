@@ -84,8 +84,8 @@
             Featured Projects
         </div>
 
-        <!-- sample template of what i envision it to look like, but iw ant it carousel form -->
         <div class="project-carousel">
+            {% for project in featured_projects %}
             <div class="project">
                 <a href="{% url 'project_detail' project.id %}" class="project-link">
                     {% if project.thumbnail_image %}
@@ -100,11 +100,16 @@
                     <h3>{{ project.name }}</h3>
                 </a>
             </div>
+            {% empty %}
+            <div class="no-featured">No featured projects yet.</div>
             {% endfor %}
         </div>
 
-        <img src="../static/assets/images/hero/arrow-left.png" alt="">
-        <img src="../static/assets/images/hero/arrow-right.png" alt="">
+        <div class="mobile-carousel-indicators">
+            {% for project in featured_projects %}
+            <span class="carousel-dot{% if forloop.first %} active{% endif %}"></span>
+            {% endfor %}
+        </div>
     </div>
 
     <!-- Contact Me Section -->

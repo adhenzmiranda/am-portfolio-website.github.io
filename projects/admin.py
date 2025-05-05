@@ -79,13 +79,14 @@ class ProjectEmbedAdmin(admin.ModelAdmin):
 @admin.register(Projects)
 class ProjectsAdmin(admin.ModelAdmin):
     form = ProjectsForm
-    list_display = ('name', 'category', 'year', 'created_at')
+    list_display = ('name', 'category', 'year', 'created_at', 'featured')
+    list_editable = ('featured',)
     list_filter = ('category', 'year')
     search_fields = ('name', 'description', 'tags')
     inlines = [ProjectPhotoInline, ProjectEmbedInline]
     fieldsets = (
         ('Basic Information', {
-            'fields': ('name', 'description', 'category', 'year', 'tags', 'technologies')
+            'fields': ('name', 'description', 'category', 'year', 'tags', 'technologies', 'featured')
         }),
         ('Media', {
             'fields': ('thumbnail_image', 'video_embed')

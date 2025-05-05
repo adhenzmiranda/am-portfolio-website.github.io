@@ -58,6 +58,7 @@ class Projects(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField()
     year = models.IntegerField(default=2024)
+    featured = models.BooleanField(default=False, help_text="Show this project in the Featured Projects section.")
     category = models.CharField(
         max_length=50, 
         choices=[
