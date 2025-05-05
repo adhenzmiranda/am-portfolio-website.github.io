@@ -84,6 +84,27 @@
             Featured Projects
         </div>
 
+        <!-- sample template of what i envision it to look like, but iw ant it carousel form -->
+        <div class="project-carousel">
+            <div class="project">
+                <a href="{% url 'project_detail' project.id %}" class="project-link">
+                    {% if project.thumbnail_image %}
+                    <div class="project-thumbnail">
+                        <img src="{{ project.thumbnail_image.url }}" alt="{{ project.name }} thumbnail">
+                    </div>
+                    {% else %}
+                    <div class="project-thumbnail placeholder">
+                        <span>No Image</span>
+                    </div>
+                    {% endif %}
+                    <h3>{{ project.name }}</h3>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <img src="../static/assets/images/hero/arrow-left.png" alt="">
+        <img src="../static/assets/images/hero/arrow-right.png" alt="">
     </div>
 
     <!-- Contact Me Section -->
