@@ -118,6 +118,14 @@ am-portfolio-website/
 
 <!-- Add more screenshots as needed -->
 
+## 🖼️ Screenshots
+
+![Screenshot 1](static/assets/screenshots/s1.png)
+![Screenshot 2](static/assets/screenshots/s2.png)
+![Screenshot 3](static/assets/screenshots/s3.png)
+![Screenshot 4](static/assets/screenshots/s4.png)
+![Screenshot 5](static/assets/screenshots/s5.png)
+
 ---
 
 ## 🎨 Design & UX
