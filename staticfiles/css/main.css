@@ -1360,6 +1360,10 @@ select {
   min-width: 250px;
   max-width: 90vw;
 }
+.hero-section3 .project-carousel .project img:hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.05);
+}
 .hero-section3 .project-carousel .project h3 {
   padding: 1rem;
   margin: 0 auto;
