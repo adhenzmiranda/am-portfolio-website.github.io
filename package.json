@@ -8,7 +8,8 @@
   },
   "scripts": {
     "sass": "sass static/scss/main.scss static/css/main.css",
-    "sass:watch": "sass --watch static/scss/main.scss static/css/main.css"
+    "sass:watch": "sass --watch static/scss/main.scss static/css/main.css",
+    "build": "npm run sass && python manage.py collectstatic --noinput"
   },
   "repository": {
     "type": "git",
