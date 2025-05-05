@@ -23,6 +23,7 @@ TECH_STACK_CHOICES = [
         ('heroku', 'Heroku'),
         ('androidstudio', 'Android Studio'),
         ('cursor', 'Cursor'),
+        ('windsurf', 'Windsurf'),
     ]),
     ('AI & Security Tools', [
         ('chatgpt', 'ChatGPT'),
@@ -30,6 +31,7 @@ TECH_STACK_CHOICES = [
         ('autopsy', 'Autopsy'),
         ('cisco', 'Cisco'),
         ('tryhackme', 'TryHackMe'),
+        ('deepseek', 'DeepSeek'),
     ]),
     ('Design & Creative', [
         ('figma', 'Figma'),
