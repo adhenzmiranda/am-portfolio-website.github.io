@@ -1,6 +1,6 @@
 # 🎨 AM Portfolio Website
 
-A modern, responsive portfolio website built with Django and SCSS, showcasing the projects, skills, and professional journey of Adhenz Miranda.
+A modern, responsive portfolio website built with Django and SCSS, showcasing the projects, skills, and professional journey of yours truly, Adhenz Miranda.
 
 ![Portfolio Preview](static/assets/images/navbar/PortfolioLogo.png)
 
