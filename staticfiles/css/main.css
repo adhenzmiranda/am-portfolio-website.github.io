@@ -545,7 +545,7 @@ select {
   justify-content: center;
   cursor: pointer;
   position: relative;
-  transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.2);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
 }
 .hero-section4 .contact-btn:hover {
@@ -834,7 +834,7 @@ select {
   cursor: pointer;
   position: relative;
   transition: transform 0.3s ease;
-  transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.2);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
 }
 #about-container .lets-connect button:hover {
@@ -1012,7 +1012,7 @@ select {
   cursor: pointer;
   position: relative;
   transition: transform 0.3s ease;
-  transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.2);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
 }
 .cv-download button:hover {
@@ -1094,7 +1094,7 @@ select {
   cursor: pointer;
   position: relative;
   transition: transform 0.3s ease;
-  transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.2);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
 }
 #contact-form button:hover,
@@ -1269,7 +1269,7 @@ select {
   cursor: pointer;
   position: relative;
   transition: transform 0.3s ease;
-  transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.2);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
 }
 .name-title-container .about-me-btn:hover {
@@ -1356,13 +1356,13 @@ select {
   -webkit-overflow-scrolling: touch;
 }
 .hero-section3 .project-carousel .project {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   flex: 0 0 auto;
   min-width: 250px;
   max-width: 90vw;
 }
-.hero-section3 .project-carousel .project img:hover {
-  transition: transform 0.3s ease;
-  transform: scale(1.05);
+.hero-section3 .project-carousel .project:hover {
+  transform: translateY(-3px) scale(1.03);
 }
 .hero-section3 .project-carousel .project h3 {
   padding: 1rem;
@@ -1692,7 +1692,7 @@ select {
   cursor: pointer;
   position: relative;
   transition: transform 0.3s ease;
-  transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.2);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   width: fit-content;
   padding: 0.75rem 1.5rem;
@@ -1751,7 +1751,7 @@ select {
   cursor: pointer;
   position: relative;
   transition: transform 0.3s ease;
-  transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.2);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   padding: 0.75rem 1.5rem;
 }

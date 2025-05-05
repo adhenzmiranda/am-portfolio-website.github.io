@@ -30,7 +30,7 @@
 
 // Hover Scale Animation Mixin
 @mixin hover-scale($scale: 1.03, $y-offset: -3px) {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 
     &:hover {
         transform: translateY($y-offset) scale($scale);
