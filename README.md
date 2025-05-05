@@ -114,12 +114,6 @@ am-portfolio-website/
 
 ## 🖼️ Screenshots
 
-![Home Page](static/assets/images/navbar/PortfolioLogo.png)
-
-<!-- Add more screenshots as needed -->
-
-## 🖼️ Screenshots
-
 ![Screenshot 1](static/assets/screenshots/s1.png)
 ![Screenshot 2](static/assets/screenshots/s2.png)
 ![Screenshot 3](static/assets/screenshots/s3.png)
