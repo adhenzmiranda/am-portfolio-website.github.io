@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
 
     // Function to update active project
-    function updateActiveProject(newIndex) {
+    function updateActiveProject(newIndex, shouldScroll = true) {
         // Remove active class from all projects
         projects.forEach(p => p.classList.remove('active'));
         
@@ -21,13 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add active class to new current project
         projects[currentIndex].classList.add('active');
 
-        // Scroll the project into view
-        const activeProject = projects[currentIndex];
-        activeProject.scrollIntoView({
-            behavior: 'smooth',
-            block: 'nearest',
-            inline: 'center'
-        });
+        // Only scroll if shouldScroll is true (for click events)
+        if (shouldScroll) {
+            const activeProject = projects[currentIndex];
+            activeProject.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
+        }
 
         // Update dots if they exist
         updateDots();
@@ -43,14 +45,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Initialize first project as active
-    updateActiveProject(0);
+    // Initialize first project as active without scrolling
+    updateActiveProject(0, false);
 
     // Add click event listeners
     if (leftArrow) {
         leftArrow.addEventListener('click', () => {
             if (currentIndex > 0) {
-                updateActiveProject(currentIndex - 1);
+                updateActiveProject(currentIndex - 1, true);
             }
         });
     }
@@ -58,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (rightArrow) {
         rightArrow.addEventListener('click', () => {
             if (currentIndex < projects.length - 1) {
-                updateActiveProject(currentIndex + 1);
+                updateActiveProject(currentIndex + 1, true);
             }
         });
     }
@@ -66,12 +68,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft' && currentIndex > 0) {
-            updateActiveProject(currentIndex - 1);
+            updateActiveProject(currentIndex - 1, true);
         } else if (e.key === 'ArrowRight' && currentIndex < projects.length - 1) {
-            updateActiveProject(currentIndex + 1);
+            updateActiveProject(currentIndex + 1, true);
         }
     });
 
-    // Log for debugging
     console.log('Carousel initialized with', projects.length, 'projects');
 });

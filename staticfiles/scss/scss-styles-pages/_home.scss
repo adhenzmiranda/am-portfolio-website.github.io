@@ -5,6 +5,7 @@
 @use '../base/variable' as *;
 
 .home-page {
+    overflow-x: hidden;
     // background-color: $dark-mode-dark-blue; // Add this at the top of .home-page
     // min-height: 100vh; // This ensures the background covers the full viewport height
 

@@ -1,6 +1,6 @@
 {% load static %}
 <div class="hero">
-    <script src="{% static 'js/carousel.js' %}"></script>
+
     <!-- Main Hero Section -->
     <div class="hero-section1">
 
@@ -78,6 +78,9 @@
     </div>
 
     <!-- Featured Projects Section -->
+    {% block extra_js %}
+    <script src="{% static 'js/carousel.js' %}"></script>
+    {% endblock %}
     <div class="hero-section3">
         <div class="projects-title h2">
             Featured Projects
