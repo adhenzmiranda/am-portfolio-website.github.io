@@ -1,6 +1,6 @@
 {% load static %}
 <div class="hero">
-
+    <script src="{% static 'js/carousel.js' %}"></script>
     <!-- Main Hero Section -->
     <div class="hero-section1">
 
@@ -78,7 +78,6 @@
     </div>
 
     <!-- Featured Projects Section -->
-
     <div class="hero-section3">
         <div class="projects-title h2">
             Featured Projects
@@ -103,6 +102,11 @@
             {% empty %}
             <div class="no-featured">No featured projects yet.</div>
             {% endfor %}
+        </div>
+
+        <div class="arrows-container">
+            <img src="{% static 'assets/images/hero/arrow-left.png' %}" alt="arrow left" class="arrow a-left">
+            <img src="{% static 'assets/images/hero/arrow-right.png' %}" alt="arrow right" class="arrow a-right">
         </div>
 
         <div class="mobile-carousel-indicators">

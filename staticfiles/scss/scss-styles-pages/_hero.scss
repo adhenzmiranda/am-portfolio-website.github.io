@@ -128,13 +128,35 @@
 }
 
 .hero-section3 {
+
+    .arrows-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap:30px;
+        max-width: 30vw;
+        z-index: 1;
+        
+        .arrow {
+            @include hover-scale(1.03, -3px);
+            border:1px solid $dark-mode-white;
+            border-radius: 10%;
+            padding: 1px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $dark-mode-accent-blue;
+            }
+        }
+    }
+
     .project-carousel {
         display: flex;
         flex-direction: row;
         gap: 20px;
         overflow-x: auto;
         flex-wrap: nowrap;
-        width: 100%;
+        width: 90vw;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
 
@@ -145,6 +167,10 @@
             flex: 0 0 auto;
             min-width: 250px;
             max-width: 90vw;
+
+            &.active {
+                @include hover-scale(1.03, -3px);
+            }
 
             h3 {
                 padding: 1rem;
