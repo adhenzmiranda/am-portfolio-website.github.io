@@ -13,8 +13,10 @@ body {
             $gradient-black 100%
         );
     background-blend-mode: overlay; /* Changed to match Figma's pass through */
-    background-attachment: fixed;
+    background-position: center 0; /* Initial position for parallax */
+    background-attachment: scroll; /* Allow scroll-based animation */
     background-size: auto, 100% 100%; /* Ensures texture tiles properly and gradient covers full area */
+    will-change: background-position; /* Hint GPU for smoother animation */
     display: flex;
     justify-content: center;
 }
@@ -34,4 +36,3 @@ body {
     margin: 0;
     padding: 0;
 }
-

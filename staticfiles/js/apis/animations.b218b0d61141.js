@@ -1,1 +1,0 @@
-// Manages web animations.

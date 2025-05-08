@@ -1,1 +1,0 @@
-// Handles form submissions and validation.

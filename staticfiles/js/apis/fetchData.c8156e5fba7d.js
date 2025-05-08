@@ -1,1 +1,0 @@
-// Fetches external API or backend data.
