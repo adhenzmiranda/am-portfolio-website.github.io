@@ -7,9 +7,11 @@
     "doc": "docs"
   },
   "scripts": {
-    "sass": "sass static/scss/main.scss static/css/main.css",
-    "sass:watch": "sass --watch static/scss/main.scss static/css/main.css",
-    "build": "npm run sass && python manage.py collectstatic --noinput"
+    "sass": "sass staticfiles/scss/main.scss staticfiles/css/main.css",
+    "sass:watch": "sass --watch staticfiles/scss/main.scss staticfiles/css/main.css",
+    "clean": "rmdir /s /q staticfiles",
+    "build": "npm run sass && python manage.py collectstatic --noinput",
+    "dev": "python manage.py runserver"
   },
   "repository": {
     "type": "git",
