@@ -3,25 +3,23 @@
 body {
     min-height: 100vh;
     margin: 0;
-    background: 
+    background:
         /* Layer 1: Texture overlay at the front */
         url('../assets/images/hero/Voronoi-Texture.png') repeat,
         /* Layer 2: Gradient at the back */
-        linear-gradient(
-            180deg,
+        linear-gradient(180deg,
             $gradient-dark-blue 50%,
-            $gradient-black 100%
-        );
-    background-blend-mode: overlay; /* Changed to match Figma's pass through */
-    background-position: center 0; /* Initial position for parallax */
-    background-attachment: scroll; /* Allow scroll-based animation */
-    background-size: auto, 100% 100%; /* Ensures texture tiles properly and gradient covers full area */
-    will-change: background-position; /* Hint GPU for smoother animation */
+            $gradient-black 100%);
+    // background-blend-mode: overlay; /* Changed to match Figma's pass through */
+    // background-position: center 0; /* Initial position for parallax */
+    // background-attachment: scroll; /* Allow scroll-based animation */
+    // background-size: auto, 100% 100%; /* Ensures texture tiles properly and gradient covers full area */
+    // will-change: background-position; /* Hint GPU for smoother animation */
     display: flex;
     justify-content: center;
 }
 
-.home-page{
+.home-page {
     width: 100vw;
     min-height: 100vh;
     flex-direction: column;
@@ -29,7 +27,8 @@ body {
     justify-content: center;
 }
 
-#navbar-container, #footer-container{
+#navbar-container,
+#footer-container {
     width: 100vw;
     left: 0;
     right: 0;
