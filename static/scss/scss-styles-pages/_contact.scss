@@ -59,6 +59,19 @@
     width: 100%; // Make it take full width of container
     max-width: 600px; // But limit maximum width
 
+    border: 1px solid rgba($dark-mode-white, 0.08);
+    box-shadow: 
+    0 0 15px rgba($dark-mode-white, 0.05),
+    0 0 30px rgba($dark-mode-white, 0.03);
+    transition: all 0.3s ease;
+
+    &:hover {
+    border-color: rgba($dark-mode-white, 0.15);
+    box-shadow: 
+        0 0 20px rgba($dark-mode-white, 0.08),
+        0 0 40px rgba($dark-mode-white, 0.05);
+    }
+
     .contact-title {
         text-align: center;
         border-bottom: $dark-mode-secondary-blue 1px solid;

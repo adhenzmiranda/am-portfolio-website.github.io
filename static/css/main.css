@@ -1061,6 +1061,13 @@ select {
   gap: 1.5rem;
   width: 100%;
   max-width: 600px;
+  border: 1px solid rgba(237, 239, 248, 0.08);
+  box-shadow: 0 0 15px rgba(237, 239, 248, 0.05), 0 0 30px rgba(237, 239, 248, 0.03);
+  transition: all 0.3s ease;
+}
+.contact-form-container:hover {
+  border-color: rgba(237, 239, 248, 0.15);
+  box-shadow: 0 0 20px rgba(237, 239, 248, 0.08), 0 0 40px rgba(237, 239, 248, 0.05);
 }
 .contact-form-container .contact-title {
   text-align: center;
