@@ -3,12 +3,19 @@
 body {
     min-height: 100vh;
     margin: 0;
+<<<<<<< Updated upstream
     background:
         /* Layer 1: Texture overlay at the front */
         url('../assets/images/hero/Voronoi-Texture.png') repeat,
+=======
+    background: 
+        /* Layer 1: Smaller texture overlay */
+        url('../assets/images/hero/Voronoi-Texture-256.png') repeat,
+>>>>>>> Stashed changes
         /* Layer 2: Gradient at the back */
         linear-gradient(180deg,
             $gradient-dark-blue 50%,
+<<<<<<< Updated upstream
             $gradient-black 100%);
     background-blend-mode: overlay;
     /* Changed to match Figma's pass through */
@@ -16,6 +23,13 @@ body {
     // background-attachment: scroll; /* Allow scroll-based animation */
     // background-size: auto, 100% 100%; /* Ensures texture tiles properly and gradient covers full area */
     // will-change: background-position; /* Hint GPU for smoother animation */
+=======
+            $gradient-black 100%
+        );
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    background-size: 256px, 100% 100%; /* Specify exact size for texture */
+>>>>>>> Stashed changes
     display: flex;
     justify-content: center;
 }

@@ -120,12 +120,19 @@ p, .project-detail-container .project-detail-header, .project-detail-container .
 body {
   min-height: 100vh;
   margin: 0;
+<<<<<<< Updated upstream
   background: url("../assets/images/hero/Voronoi-Texture.png") repeat, linear-gradient(180deg, #060636 50%, #0D0D0D 100%);
   background-blend-mode: overlay; /* Changed to match Figma's pass through */
   background-position: center 0; /* Initial position for parallax */
   background-attachment: scroll; /* Allow scroll-based animation */
   background-size: auto, 100% 100%; /* Ensures texture tiles properly and gradient covers full area */
   will-change: background-position; /* Hint GPU for smoother animation */
+=======
+  background: url("../assets/images/hero/Voronoi-Texture-256.png") repeat, linear-gradient(180deg, #060636 50%, #0D0D0D 100%);
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+  background-size: 256px, 100% 100%; /* Specify exact size for texture */
+>>>>>>> Stashed changes
   display: flex;
   justify-content: center;
 }
@@ -279,9 +286,9 @@ select {
   align-items: center;
   justify-content: center;
   padding: 2rem 1.5rem;
-  background: url("../assets/images/hero/Voronoi-Texture.png") repeat, linear-gradient(180deg, #060636 50%, #0D0D0D 100%);
+  background: url("../assets/images/hero/Voronoi-Texture-256.png") repeat, linear-gradient(180deg, #060636 50%, #0D0D0D 100%);
   background-blend-mode: overlay;
-  background-size: contain, 100% 100%;
+  background-size: 256px, 100% 100%;
   border-radius: 10px;
   gap: 1.5rem;
 }
@@ -1046,9 +1053,9 @@ select {
   align-items: center;
   flex-direction: column;
   padding: 2rem 1.5rem;
-  background: url("../assets/images/hero/Voronoi-Texture.png") repeat, linear-gradient(180deg, #060636 50%, #0D0D0D 100%);
+  background: url("../assets/images/hero/Voronoi-Texture-256.png") repeat, linear-gradient(180deg, #060636 50%, #0D0D0D 100%);
   background-blend-mode: overlay;
-  background-size: contain, 100% 100%;
+  background-size: 256px, 100% 100%;
   border-radius: 10px;
   gap: 1.5rem;
   width: 100%;

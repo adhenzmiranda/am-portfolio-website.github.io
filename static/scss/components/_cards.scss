@@ -39,12 +39,12 @@
             justify-content: center;
             padding: 2rem 1.5rem;
             background:
-                url('../assets/images/hero/Voronoi-Texture.png') repeat,
+                url('../assets/images/hero/Voronoi-Texture-256.png') repeat,
                 linear-gradient(180deg,
                     $gradient-dark-blue 50%,
                     $gradient-black 100%);
             background-blend-mode: overlay;
-            background-size: contain, 100% 100%;
+            background-size: 256px, 100% 100%;
             border-radius: 10px;
             gap: 1.5rem;
 

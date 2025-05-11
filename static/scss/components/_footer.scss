@@ -50,21 +50,18 @@
         text-align: center;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-        margin: 15px;
+        flex-direction: row;
         gap: 15px;
 
-        a {
+        .heroku-logo {
             padding: 0;
             margin: 0;
-        }
-
-        img {
             align-self: center;
             justify-self: center;
-            width: 50%;
-            height: 50%;
+            width: 30%;
+            height: 30%;
         }
+
     }
 }
 
