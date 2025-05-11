@@ -122,7 +122,8 @@ body {
   margin: 0;
   background: url("../assets/images/hero/Voronoi-Texture-256.png") repeat, linear-gradient(180deg, #060636 50%, #0D0D0D 100%);
   background-blend-mode: overlay;
-  background-attachment: fixed;
+  background-attachment: scroll, fixed; /* Allow texture to move, keep gradient fixed */
+  background-position: center 0, center center; /* Initial position */
   background-size: 256px, 100% 100%; /* Specify exact size for texture */
   display: flex;
   justify-content: center;
@@ -272,17 +273,25 @@ select {
 }
 .technology-stack .card-container .card {
   flex: 0 1 calc(33.333% - 2rem);
-  min-width: 250px;
+  min-width: 300px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1.5rem;
   background: url("../assets/images/hero/Voronoi-Texture-256.png") repeat, linear-gradient(180deg, #060636 50%, #0D0D0D 100%);
   background-blend-mode: overlay;
   background-size: 256px, 100% 100%;
   border-radius: 10px;
   gap: 1.5rem;
+  /* Enhanced white glow effect (+5% brightness) */
+  border: 1px solid rgba(237, 239, 248, 0.08);
+  box-shadow: 0 0 15px rgba(237, 239, 248, 0.05), 0 0 30px rgba(237, 239, 248, 0.03);
+  transition: all 0.3s ease;
+}
+.technology-stack .card-container .card:hover {
+  border-color: rgba(237, 239, 248, 0.15);
+  box-shadow: 0 0 20px rgba(237, 239, 248, 0.08), 0 0 40px rgba(237, 239, 248, 0.05);
 }
 .technology-stack .card-container .card .card-content {
   display: flex;
@@ -297,6 +306,9 @@ select {
   padding: 0 1rem;
   word-wrap: break-word;
   width: 100%;
+}
+.technology-stack .card-container .card p {
+  margin: 0 15px;
 }
 @media screen and (min-width: 441px) and (max-width: 1023px) {
   .technology-stack .card-container .card {
