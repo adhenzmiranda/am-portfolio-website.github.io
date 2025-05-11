@@ -120,19 +120,10 @@ p, .project-detail-container .project-detail-header, .project-detail-container .
 body {
   min-height: 100vh;
   margin: 0;
-<<<<<<< Updated upstream
-  background: url("../assets/images/hero/Voronoi-Texture.png") repeat, linear-gradient(180deg, #060636 50%, #0D0D0D 100%);
-  background-blend-mode: overlay; /* Changed to match Figma's pass through */
-  background-position: center 0; /* Initial position for parallax */
-  background-attachment: scroll; /* Allow scroll-based animation */
-  background-size: auto, 100% 100%; /* Ensures texture tiles properly and gradient covers full area */
-  will-change: background-position; /* Hint GPU for smoother animation */
-=======
   background: url("../assets/images/hero/Voronoi-Texture-256.png") repeat, linear-gradient(180deg, #060636 50%, #0D0D0D 100%);
   background-blend-mode: overlay;
   background-attachment: fixed;
   background-size: 256px, 100% 100%; /* Specify exact size for texture */
->>>>>>> Stashed changes
   display: flex;
   justify-content: center;
 }
@@ -145,7 +136,8 @@ body {
   justify-content: center;
 }
 
-#navbar-container, #footer-container {
+#navbar-container,
+#footer-container {
   width: 100vw;
   left: 0;
   right: 0;
@@ -447,19 +439,16 @@ select {
   text-align: center;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin: 15px;
+  flex-direction: row;
   gap: 15px;
 }
-.footer .powered-by a {
+.footer .powered-by .heroku-logo {
   padding: 0;
   margin: 0;
-}
-.footer .powered-by img {
   align-self: center;
   justify-self: center;
-  width: 50%;
-  height: 50%;
+  width: 30%;
+  height: 30%;
 }
 
 .footer-logo {
@@ -1055,7 +1044,7 @@ select {
   padding: 2rem 1.5rem;
   background: url("../assets/images/hero/Voronoi-Texture-256.png") repeat, linear-gradient(180deg, #060636 50%, #0D0D0D 100%);
   background-blend-mode: overlay;
-  background-size: 256px, 100% 100%;
+  background-size: 100% 100%;
   border-radius: 10px;
   gap: 1.5rem;
   width: 100%;

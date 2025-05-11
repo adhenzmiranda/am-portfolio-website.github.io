@@ -7,11 +7,11 @@
     "doc": "docs"
   },
   "scripts": {
-    "sass": "sass staticfiles/scss/main.scss staticfiles/css/main.css",
-    "sass:watch": "sass --watch staticfiles/scss/main.scss staticfiles/css/main.css",
+    "sass": ".venv\\Scripts\\activate && sass static/scss/main.scss static/css/main.css",
+    "sass:watch": ".venv\\Scripts\\activate && sass --watch static/scss/main.scss static/css/main.css",
     "clean": "rmdir /s /q staticfiles",
-    "build": "npm run sass && python manage.py collectstatic --noinput",
-    "dev": "python manage.py runserver"
+    "build": ".venv\\Scripts\\activate && npm run sass && python manage.py collectstatic --noinput",
+    "dev": ".venv\\Scripts\\activate && python manage.py runserver"
   },
   "repository": {
     "type": "git",
