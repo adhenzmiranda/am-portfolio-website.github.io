@@ -60,6 +60,12 @@
     }
 }
 
+// iOS blend mode fallback for cards
+body.ios-blend-fallback .card {
+    background: linear-gradient(180deg, $gradient-dark-blue 50%, $gradient-black 100%) !important;
+    background-blend-mode: normal !important;
+}
+
 .my-expertise-container {
 
     display: flex;
