@@ -1,1 +1,0 @@
-// Handles lazy loading and element visibility tracking.

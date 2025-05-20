@@ -11,13 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const parallaxSpeed = 2.0;
         const scrollDiff = Math.abs(currentScrollY - lastScrollY) * parallaxSpeed;
 
-        // Update background position with enhanced movement
-        const currentPos = getComputedStyle(body).backgroundPosition.split(',')[0];
-        const yPos = parseInt(currentPos.split(' ')[1]) || 0;
-        const newYPos = yPos + (direction * scrollDiff);
-
-        // Apply new position only to the texture layer
-        body.style.backgroundPosition = `center ${newYPos}px, center center`;
+        // Update parallax Y position using CSS variable
+        const currentParallaxY = parseInt(getComputedStyle(body).getPropertyValue('--parallax-y')) || 0;
+        const newYPos = currentParallaxY + (direction * scrollDiff);
+        body.style.setProperty('--parallax-y', `${newYPos}px`);
 
         lastScrollY = currentScrollY;
     }, { passive: true });

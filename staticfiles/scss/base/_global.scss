@@ -3,20 +3,35 @@
 body {
     min-height: 100vh;
     margin: 0;
-    background:
-        /* Layer 1: Smaller texture overlay */
-        url('../assets/images/hero/Voronoi-Texture-256.png') repeat,
-        /* Layer 2: Gradient at the back */
-        linear-gradient(180deg,
-            $gradient-dark-blue 50%,
-            $gradient-black 100%
-        );
-    background-blend-mode: overlay;
-    background-attachment: scroll, fixed; /* Allow texture to move, keep gradient fixed */
-    background-position: center 0, center center; /* Initial position */
-    background-size: 256px, 100% 100%; /* Specify exact size for texture */
+    position: relative;
+    z-index: 0;
     display: flex;
     justify-content: center;
+
+    // Remove blend mode on iOS fallback
+    &.ios-blend-fallback {
+        background: linear-gradient(180deg, $gradient-dark-blue 50%, $gradient-black 100%);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+            url('../assets/images/hero/Voronoi-Texture-256.png') repeat,
+            linear-gradient(180deg, $gradient-dark-blue 50%, $gradient-black 100%);
+        background-blend-mode: overlay;
+        background-attachment: scroll, fixed;
+        background-position: center var(--parallax-y, 0px), center center;
+        background-size: 256px, 100% 100%;
+        pointer-events: none;
+        opacity: 1;
+        /* Remove blend mode for iOS fallback */
+        body.ios-blend-fallback & {
+            background-blend-mode: normal;
+        }
+    }
 }
 
 .home-page {
