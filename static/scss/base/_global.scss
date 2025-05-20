@@ -10,6 +10,12 @@ body {
 
     // Remove blend mode on iOS fallback
     &.ios-blend-fallback {
+        // Also fallback for all cards
+        .card {
+            background: linear-gradient(180deg, $gradient-dark-blue 50%, $gradient-black 100%) !important;
+            background-blend-mode: normal !important;
+        }
+
         background: linear-gradient(180deg, $gradient-dark-blue 50%, $gradient-black 100%);
     }
 

@@ -7,6 +7,13 @@
 @use '../components/buttons' as *;
 
 
+// iOS blend mode fallback for cards
+body.ios-blend-fallback .card,
+body.ios-blend-fallback .card-float {
+    background: linear-gradient(180deg, $gradient-dark-blue 50%, $gradient-black 100%) !important;
+    background-blend-mode: normal !important;
+}
+
 #about-container {
     display: flex;
     justify-content: center;
@@ -58,12 +65,6 @@
     .who-am-i-title {
         border-bottom: $dark-mode-secondary-blue 1px solid;
     }
-}
-
-// iOS blend mode fallback for cards
-body.ios-blend-fallback .card {
-    background: linear-gradient(180deg, $gradient-dark-blue 50%, $gradient-black 100%) !important;
-    background-blend-mode: normal !important;
 }
 
 .my-expertise-container {
